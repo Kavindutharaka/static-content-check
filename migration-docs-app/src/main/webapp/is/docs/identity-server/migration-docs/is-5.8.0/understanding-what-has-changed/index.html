@@ -1,0 +1,2766 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Identity Server">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/understanding-what-has-changed/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/identity-server-favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Understanding What Has Changed - Identity Server</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/libs/fontawesome-free-6.4.2-web/css/all.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/theme.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#understanding-what-has-changed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+   
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a
+      href="../../../.."
+      title="Identity Server"
+      class="md-header__button md-logo"
+      aria-label="Identity Server"
+      data-md-component="logo"
+    >
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+
+           
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../what-has-changed/config-changes-5.2.0-5.3.0/" class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>  
+        
+        
+      </div>
+    </div>
+
+    
+    
+
+    
+
+    
+
+    
+    <div class="md-header__version-select-dropdown">
+      <a class="dropdown-link" href="#!" id="version-dropdown">
+        Target Version
+
+        <span class="icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+        </span>
+      </a>
+      <ul class="dropdown-content" tabindex="0">
+        <li><a href="/migration/is/docs/identity-server/migration-docs/is-6.1.0/what-has-changed/" target="_blank">is-6.1.0</a></li>
+        <li><a href="/migration/is/docs/identity-server/migration-docs/is-7.0.0/what-has-changed/" target="_blank">is-7.0.0</a></li>
+      </ul>
+    </div>
+    
+
+    
+    
+     
+    <form class="md-header__option" data-md-component="palette">
+       
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: light)"
+        data-md-color-scheme="default"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to dark mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_1"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to dark mode"
+        for="__palette_2"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 0.5C8.5 0.223858 8.27614 0 8 0C7.72386 0 7.5 0.223858 7.5 0.5V1.5C7.5 1.77614 7.72386 2 8 2C8.27614 2 8.5 1.77614 8.5 1.5V0.5ZM8.5 14.5C8.5 14.2239 8.27614 14 8 14C7.72386 14 7.5 14.2239 7.5 14.5V15.5C7.5 15.7761 7.72386 16 8 16C8.27614 16 8.5 15.7761 8.5 15.5V14.5ZM1.5 8.5C1.77614 8.5 2 8.27614 2 8C2 7.72386 1.77614 7.5 1.5 7.5H0.5C0.223858 7.5 0 7.72386 0 8C0 8.27614 0.223858 8.5 0.5 8.5H1.5ZM15.5 8.5C15.7761 8.5 16 8.27614 16 8C16 7.72386 15.7761 7.5 15.5 7.5H14.5C14.2239 7.5 14 7.72386 14 8C14 8.27614 14.2239 8.5 14.5 8.5H15.5ZM12.4464 2.83936C12.2512 3.03463 12.2512 3.35121 12.4464 3.54647C12.6417 3.74173 12.9583 3.74173 13.1535 3.54647L13.8606 2.83936C14.0559 2.6441 14.0559 2.32752 13.8606 2.13226C13.6654 1.937 13.3488 1.937 13.1535 2.13226L12.4464 2.83936ZM2.14645 2.86065C1.95118 2.66539 1.95118 2.3488 2.14645 2.15354C2.34171 1.95828 2.65829 1.95828 2.85355 2.15354L3.56066 2.86065C3.75592 3.05591 3.75592 3.37249 3.56066 3.56775C3.3654 3.76302 3.04882 3.76302 2.85355 3.56775L2.14645 2.86065ZM2.14645 13.1394C1.95118 13.3346 1.95118 13.6512 2.14645 13.8465C2.34171 14.0417 2.65829 14.0417 2.85355 13.8465L3.56066 13.1394C3.75592 12.9441 3.75592 12.6275 3.56066 12.4322C3.3654 12.237 3.04882 12.237 2.85355 12.4322L2.14645 13.1394ZM12.4464 13.1606C12.2512 12.9654 12.2512 12.6488 12.4464 12.4535C12.6417 12.2583 12.9583 12.2583 13.1535 12.4535L13.8606 13.1606C14.0559 13.3559 14.0559 13.6725 13.8606 13.8677C13.6654 14.063 13.3488 14.063 13.1535 13.8677L12.4464 13.1606ZM6.14708 3.35455C4.303 4.09075 3 5.8932 3 7.99998C3 10.7614 5.23858 13 8 13C10.6789 13 12.8657 10.8933 12.994 8.2462C12.998 8.16463 13 8.08254 13 7.99999C13 7.67166 12.9684 7.35072 12.9079 7.04005C12.2805 7.63501 11.4329 7.99999 10.5 7.99999C8.567 7.99999 7 6.43299 7 4.49999C7 3.98143 7.11277 3.48921 7.31514 3.04651C6.90813 3.10226 6.51674 3.20699 6.14708 3.35457C6.14708 3.35456 6.14708 3.35456 6.14708 3.35455ZM6.00013 4.53503C4.80446 5.22663 4 6.51936 4 7.99998C4 10.2091 5.79086 12 8 12C9.94598 12 11.5674 10.6104 11.9261 8.76934C11.478 8.91895 10.9984 8.99999 10.5 8.99999C8.02641 8.99999 6.01896 7.00418 6.00013 4.53503Z" fill="#40404B"/>
+</svg>
+      </label>
+        
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: dark)"
+        data-md-color-scheme="slate"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to light mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_2"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to light mode"
+        for="__palette_1"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C8.27614 0 8.5 0.223858 8.5 0.5V1.5C8.5 1.77614 8.27614 2 8 2C7.72386 2 7.5 1.77614 7.5 1.5V0.5C7.5 0.223858 7.72386 0 8 0ZM8 14C8.27614 14 8.5 14.2239 8.5 14.5V15.5C8.5 15.7761 8.27614 16 8 16C7.72386 16 7.5 15.7761 7.5 15.5V14.5C7.5 14.2239 7.72386 14 8 14ZM2 8C2 8.27614 1.77614 8.5 1.5 8.5H0.5C0.223858 8.5 0 8.27614 0 8C0 7.72386 0.223858 7.5 0.5 7.5H1.5C1.77614 7.5 2 7.72386 2 8ZM16 8C16 8.27614 15.7761 8.5 15.5 8.5H14.5C14.2239 8.5 14 8.27614 14 8C14 7.72386 14.2239 7.5 14.5 7.5H15.5C15.7761 7.5 16 7.72386 16 8ZM12.4464 3.54647C12.2512 3.35121 12.2512 3.03463 12.4464 2.83936L13.1535 2.13226C13.3488 1.937 13.6654 1.937 13.8606 2.13226C14.0559 2.32752 14.0559 2.6441 13.8606 2.83936L13.1535 3.54647C12.9583 3.74173 12.6417 3.74173 12.4464 3.54647ZM2.14645 2.15354C1.95118 2.3488 1.95118 2.66539 2.14645 2.86065L2.85355 3.56775C3.04882 3.76302 3.3654 3.76302 3.56066 3.56775C3.75592 3.37249 3.75592 3.05591 3.56066 2.86065L2.85355 2.15354C2.65829 1.95828 2.34171 1.95828 2.14645 2.15354ZM2.14645 13.8465C1.95118 13.6512 1.95118 13.3346 2.14645 13.1394L2.85355 12.4322C3.04882 12.237 3.3654 12.237 3.56066 12.4322C3.75592 12.6275 3.75592 12.9441 3.56066 13.1394L2.85355 13.8465C2.65829 14.0417 2.34171 14.0417 2.14645 13.8465ZM12.4464 12.4535C12.2512 12.6488 12.2512 12.9654 12.4464 13.1606L13.1535 13.8677C13.3488 14.063 13.6654 14.063 13.8606 13.8677C14.0559 13.6725 14.0559 13.3559 13.8606 13.1606L13.1535 12.4535C12.9583 12.2583 12.6417 12.2583 12.4464 12.4535ZM12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4C10.2091 4 12 5.79086 12 8ZM13 8C13 10.7614 10.7614 13 8 13C5.23858 13 3 10.7614 3 8C3 5.23858 5.23858 3 8 3C10.7614 3 13 5.23858 13 8Z" fill="#40404B"/>
+</svg>
+      </label>
+       
+    </form>
+       
+    <label class="md-header__button md-icon md-icon--hover" for="__search">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+    <div class="md-header__community">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-header__extra">
+  <div class="md-header__links">
+    <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord" onclick="javascript:window.open('https://discord.com/invite/wso2', '', 'noopener')">
+        <div class="md-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <label class="md-header__link__label">Get Help</label>
+      </button>
+      <div class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+    </div>
+    
+  </nav>
+  <script>
+    
+  </script>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Identity Server" class="md-nav__button md-logo" aria-label="Identity Server" data-md-component="logo">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    Identity Server
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          What has changed
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          What has changed
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+          5.2.0 to 5.7.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          5.2.0 to 5.7.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.2.0-5.3.0/" class="md-nav__link">
+        5.2.0 to 5.3.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.3.0-5.4.0/" class="md-nav__link">
+        5.3.0 to 5.4.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.4.0-5.5.0/" class="md-nav__link">
+        5.4.0 to 5.5.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.5.0-5.6.0/" class="md-nav__link">
+        5.5.0 to 5.6.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.6.0-5.7.0/" class="md-nav__link">
+        5.6.0 to 5.7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.7.0%20to%205.8.0/" class="md-nav__link">
+        5.7.0 to 5.8.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.8.0%20to%205.9.0/" class="md-nav__link">
+        5.8.0 to 5.9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.9.0%20to%205.10.0/" class="md-nav__link">
+        5.9.0 to 5.10.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.10.0%20to%205.11.0/" class="md-nav__link">
+        5.10.0 to 5.11.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.11.0%20to%206.0.0/" class="md-nav__link">
+        5.11.0 to 6.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-6.0.0%20to%206.1.0/" class="md-nav__link">
+        6.0.0 to 6.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-6.1.0%20to%207.0.0/" class="md-nav__link">
+        6.1.0 to 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          is-6.1.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          is-6.1.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          Migration process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/prepare-for-migration/" class="md-nav__link">
+        prepare-for-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/migration-process/" class="md-nav__link">
+        migration-process
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Migration Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/migrate-to-610/" class="md-nav__link">
+        migration 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          is-7.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          is-7.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          Migration process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/prepare-for-migration/" class="md-nav__link">
+        prepare-for-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migration-process/" class="md-nav__link">
+        migration-process
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          Migration Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrate-to-700/" class="md-nav__link">
+        migration 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Other Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-configurations/" class="md-nav__link">
+        migrating-configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-customizations/" class="md-nav__link">
+        migrating-customizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-authorization-model/" class="md-nav__link">
+        migrating-authorization-model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-saas-applications/" class="md-nav__link">
+        migrating-saas-applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-roles-related-adaptive-script-functions/" class="md-nav__link">
+        migrating-roles-related-adaptive-script-functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-applications-for-tenanted-qualified-urls/" class="md-nav__link">
+        migrating-applications-for-tenanted-qualified-urls
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="understanding-what-has-changed">Understanding What Has Changed<a class="headerlink" href="#understanding-what-has-changed" title="Permanent link">&para;</a></h1>
+<p>This page provides details about the behavioral changes and configuration changes from WSO2 Identity Server
+5.7.0 to 5.8.0.</p>
+<ul>
+<li><a href="#behavioral-changes">Behavioral changes</a></li>
+<li><a href="#configuration-changes">Configuration changes</a></li>
+</ul>
+<h1 id="behavioral-changes">Behavioral changes<a class="headerlink" href="#behavioral-changes" title="Permanent link">&para;</a></h1>
+<p>This section explains the features for which the behaviour has changed, and the impact is causes on your current
+implementation when you migrate to the latest release. Go through the behavioral changes to understand what has
+changed and prepare for migration impact.</p>
+<h2 id="change-1">Change #1<a class="headerlink" href="#change-1" title="Permanent link">&para;</a></h2>
+<p><strong>Use case</strong></p>
+<p>By default, WSO2 IS supports a fixed set of attributes for the SCIM2 user object. These
+are default attributes that are defined through the <a href="https://tools.ietf.org/html/rfc7643#section-3.3">SCIM2 specification</a>. However, in reality,
+organizations in the industry will have their own defined attributes for users. In such cases, the
+Enterprise User schema extension can be used. The Enterprise User schema extension defines
+attributes commonly used in representing users that belong to, or act on behalf of, a business or
+enterprise.</p>
+<p><strong>Change</strong></p>
+<p>In this release, the urn:ietf:params:scim:schemas:extension:enterprise:
+2.0:User key is used in SCIM user creation to specify the properties of a user specified in urn:
+ietf:params:scim:schemas:extension:enterprise:2.0:User. This behavioral change is
+done in order to comply with the SCIM2 specification.</p>
+<p><strong>Example</strong> </p>
+<p>For example, the SCIM2 response for the List Users API has changed as follows.</p>
+<ul>
+<li>
+<p>5.7.0</p>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin https://localhost:9443/scim2/Users
+/7d132f02-221d-4a5f-8b95-8635666e96c
+</code></pre></div>
+
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code>{&quot;emails&quot;:[&quot;kim@wso2.com&quot;],&quot;urn:ietf:params:scim:schemas:extension:
+enterprise:2.0:User&quot;:{&quot;organization&quot;:&quot;Wso2&quot;},&quot;meta&quot;:{&quot;created&quot;:&quot;2019-
+05-13T06:53:03.382Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T06:57:05.730Z&quot;,&quot;
+resourceType&quot;:&quot;User&quot;},&quot;schemas&quot;:[&quot;urn:ietf:params:scim:schemas:core:
+2.0:User&quot;,&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:
+User&quot;],&quot;roles&quot;:[{&quot;type&quot;:&quot;default&quot;,&quot;value&quot;:&quot;Internal/everyone&quot;}],&quot;
+name&quot;:{&quot;givenName&quot;:&quot;Alex&quot;,&quot;familyName&quot;:&quot;Anderson&quot;},&quot;id&quot;:&quot;7d132f02-
+221d-4a5f-8b95-8635666e96c7&quot;,&quot;userName&quot;:&quot;kim3&quot;}
+</code></pre></div>
+
+</li>
+<li>
+<p>5.8.0</p>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin https://localhost:9443/scim2/Users
+/7d132f02-221d-4a5f-8b95-8635666e96c
+</code></pre></div>
+
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code>{&quot;emails&quot;:[&quot;kim@wso2.com&quot;],&quot;urn:ietf:params:scim:schemas:extension:
+enterprise:2.0:User&quot;:{&quot;organization&quot;:&quot;Wso2&quot;},&quot;meta&quot;:{&quot;created&quot;:&quot;2019-
+05-13T06:53:03.382Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T06:57:05.730Z&quot;,&quot;
+resourceType&quot;:&quot;User&quot;},&quot;schemas&quot;:[&quot;urn:ietf:params:scim:schemas:core:
+2.0:User&quot;,&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:
+User&quot;],&quot;roles&quot;:[{&quot;type&quot;:&quot;default&quot;,&quot;value&quot;:&quot;Internal/everyone&quot;}],&quot;
+name&quot;:{&quot;givenName&quot;:&quot;Alex&quot;,&quot;familyName&quot;:&quot;Anderson&quot;},&quot;id&quot;:&quot;7d132f02-
+221d-4a5f-8b95-8635666e96c7&quot;,&quot;userName&quot;:&quot;kim3&quot;}
+</code></pre></div>
+
+</li>
+</ul>
+<p><strong>Impact</strong></p>
+<p>When using the Enterprise User schema extension, if a client has been written based on the
+5.7.0 response shown above, issues may occur from the client side as the response of the default
+pack has now changed.</p>
+<p><strong>How to revert</strong> </p>
+<p>To revert back to the previous behaviour, change the following attributeName back to
+"urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" in the <IS_HOME>/repository
+/conf/scim2-schema-extension.xml file.</p>
+<div class="highlight"><pre><span></span><code>attributeURI&quot;:&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:
+User&quot;,
+
+&quot;attributeName&quot;:&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:
+User&quot;
+</code></pre></div>
+
+<h2 id="change-2">Change #2<a class="headerlink" href="#change-2" title="Permanent link">&para;</a></h2>
+<p><strong>Use case</strong></p>
+<p>WSO2 IS uses a configuration property to determine the private key that should be used
+to sign the JWTs issued by the WSO2 Identity Server.</p>
+<p><strong>Change</strong></p>
+<p>In IS 5.7.0 the configuration property is set to 'false' by default, which means the JWTs
+such as Id token, Request Object, Self Contain access token etc., are signed using
+the private key of the authorized user's tenant domain keystore. From IS 5.8.0 onwards, the default
+value is set to 'true', which means that JWTs issued from WSO2 IS are signed with the private key
+belonging to the service provider's keystore.</p>
+<p><strong>Impact</strong></p>
+<p>This only makes a difference if the service provider is a SaaS-enabled one; else the user’s
+tenant domain and the service provider’s tenant domain are the same. If the service provider is SaaS-
+enabled and this property is set to false, verifying the signature based on the public key of the
+keystore of the authorized users the signature verification can fail.</p>
+<p><strong>How to revert</strong> </p>
+<p>To revert back to the previous behavior, change the following property value back to
+"false" in the <IS_HOME>/repository/conf/identity/identity.xml file.</p>
+<div class="highlight"><pre><span></span><code>&lt;SignJWTWithSPKey&gt;true&lt;/SignJWTWithSPKey&gt;
+</code></pre></div>
+
+<h2 id="change-3">Change #3<a class="headerlink" href="#change-3" title="Permanent link">&para;</a></h2>
+<p><strong>Use case</strong></p>
+<p>In prior versions of WSO2 Identity Server, data publishers were implementations of the <a href="https://github.com/wso2-extensions/identity-data-publisher-authentication/blob/master/components/org.wso2.carbon.identity.data.publisher.application.authentication/src/main/java/org/wso2/carbon/identity/data/publisher/application/authentication/AbstractAuthenticationDataPublisher.java">Ab
+stractAuthenticationDataPublisher</a> that are invoked iteratively by the <a href="https://github.com/wso2-extensions/identity-data-publisher-authentication/blob/master/components/org.wso2.carbon.identity.data.publisher.application.authentication/src/main/java/org/wso2/carbon/identity/data/publisher/application/authentication/AuthnDataPublisherProxy.java">AuthnDataPublisherProxywhen</a>
+a session changes, such that the data publishers send events to their corresponding destinations.
+From WSO2 Identity Server 5.8.0 onwards, all data publishers have been migrated to act as event
+handlers that subscribe to authentication events.</p>
+<p><strong>Impact</strong></p>
+<p>Custom DataPublishers that were written for previous versions will not work with the default
+pack as these listeners are now disabled. For information about migrating existing data publishers to
+event handlers, see Migrating Data Publishers on the Migration doc.</p>
+<p><strong>How to revert</strong></p>
+<p>To revert back to the previous behavior, do the following:</p>
+<p>Add and enable the following event listeners in the <IS_HOME>/repository/conf/identity
+/identity.xml file.</p>
+<div class="highlight"><pre><span></span><code>&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityMessageHandler&quot; name=&quot;org.wso2.carbon.
+identity.data.publisher.application.authentication.impl.
+DASLoginDataPublisherImpl&quot; orderId=&quot;10&quot; enable=&quot;true&quot;/&gt;
+
+&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityMessageHandler&quot; name=&quot;org.wso2.carbon.identity.data.
+publisher.application.authentication.impl.DASSessionDataPublisherImpl&quot;
+orderId=&quot;11&quot; enable=&quot;true&quot;/&gt;
+
+&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityMessageHandler&quot; name=&quot;org.wso2.carbon.identity.captcha.
+validator.FailLoginAttemptValidator&quot; orderId=&quot;10&quot; enable=&quot;true&quot;/&gt;
+</code></pre></div>
+
+<p>Set the enable parameter of the following properties to "false" in the <IS_HOME>/repository
+/conf/identity/identity-event.properties file.</p>
+<div class="highlight"><pre><span></span><code>module.name.14=analyticsLoginDataPublisheranalyticsLoginDataPublisher.
+subscription.1=AUTHENTICATION_STEP_SUCCESS
+analyticsLoginDataPublisher.subscription.2=AUTHENTICATION_STEP_FAILURE
+analyticsLoginDataPublisher.subscription.3=AUTHENTICATION_SUCCESS
+analyticsLoginDataPublisher.subscription.4=AUTHENTICATION_FAILURE
+analyticsLoginDataPublisher.enable=false
+
+module.name.15=analyticsSessionDataPublisher
+analyticsSessionDataPublisher.subscription.1=SESSION_CREATE
+analyticsSessionDataPublisher.subscription.2=SESSION_UPDATE
+
+analyticsSessionDataPublisher.subscription.3=SESSION_TERMINATE
+analyticsSessionDataPublisher.enable=true
+
+module.name.13=authenticationAuditLogger
+authenticationAuditLogger.subscription.1=AUTHENTICATION_STEP_SUCCESS
+authenticationAuditLogger.subscription.2=AUTHENTICATION_STEP_FAILURE
+authenticationAuditLogger.subscription.3=AUTHENTICATION_SUCCESS
+authenticationAuditLogger.subscription.4=AUTHENTICATION_FAILURE
+authenticationAuditLogger.subscription.5=SESSION_TERMINATE
+authenticationAuditLogger.enable=true&quot;
+
+module.name.16=failLoginAttemptValidator
+failLoginAttemptValidator.subscription.1=AUTHENTICATION_STEP_FAILURE
+failLoginAttemptValidator.enable=true
+</code></pre></div>
+
+<h2 id="change-4">Change #4<a class="headerlink" href="#change-4" title="Permanent link">&para;</a></h2>
+<p><strong>Use case</strong></p>
+<p>The following configuration properties have been added to support filtering^ users or groups only from the PRIMARY domain.</p>
+<div class="highlight"><pre><span></span><code>&lt;MandateDomainForUsernamesAndGroupNamesInResponse&gt;false&lt;
+/MandateDomainForUsernamesAndGroupNamesInResponse&gt;
+&lt;MandateDomainForGroupNamesInGroupsResponse&gt;false&lt;
+/MandateDomainForGroupNamesInGroupsResponse&gt;
+</code></pre></div>
+
+<p><strong>Change</strong></p>
+<p>Enabling the <MandateDomainForUsernamesAndGroupNamesInResponse> property
+prepends the "PRIMARY/" prefix in the SCIM2 response to the user names and role names (group
+names) that belong to the PRIMARY user store, regardless of whether the response is for the users
+endpoint or the groups endpoint. When the properties are set to 'false', the "PRIMARY/" prefix will not
+be prepended.</p>
+<p><strong>Impact</strong></p>
+<p>When this property is enabled, the SCIM response will be different from responses received
+in previous versions of WSO2 IS. Therefore, if some clients have been written based on these SCIM
+responses, there is a possibility that this change could break those clients.</p>
+<p><strong>Example</strong></p>
+<p>The following code blocks show the difference between the requests and responses that
+are recieved when this property is enabled, when it is disabled, and in versions prior to 5.8.0. Note
+that in previous versions, there is an inconsistency in the responses recieved (i.e., the "PRIMARY/"
+prefix is prepended to group names only in the groups endpoint request). This inconsistency has
+been fixed with the introduction of these two new properties. When the <MandateDomainForUsern
+amesAndGroupNamesInResponse> property is enabled, the "PRIMARY/" prefix is prepended to
+both user names and group names for both users and groups endpoint responses, and when the
+property is disabled, it is not prepended at all.</p>
+<ul>
+<li>
+<p><strong>Old behavior</strong></p>
+<p>Groups endpoint request:</p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin &#39;https://localhost:9443/scim2/Groups&#39;
+</code></pre></div>
+
+<p>Groups endpoint response:</p>
+<div class="highlight"><pre><span></span><code>{&quot;totalResults&quot;:4,&quot;startIndex&quot;:1,&quot;itemsPerPage&quot;:4,&quot;schemas&quot;:[&quot;urn:
+ietf:params:scim:api:messages:2.0:ListResponse&quot;],&quot;Resources&quot;:
+[{&quot;displayName&quot;:&quot;PRIMARY/Engineering&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-
+13T03:44:36.787Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups
+/abb1c935-dcd2-4e89-a633-72bf22460463&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:
+44:36.787Z&quot;},&quot;members&quot;:[{&quot;display&quot;:&quot;ann&quot;,&quot;value&quot;:&quot;1ad7272f-82b5-4a44-
+9a86-fe1f31279b29&quot;}],&quot;id&quot;:&quot;abb1c935-dcd2-4e89-a633-72bf22460463&quot;},
+{&quot;displayName&quot;:&quot;Internal/system&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:42:
+53.425Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups/c9f632fa-
+12e9-405d-92c8-076657151104&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:42:53.
+Z&quot;},&quot;id&quot;:&quot;c9f632fa-12e9-405d-92c8-076657151104&quot;},{&quot;displayName&quot;:&quot;
+PRIMARY/admin&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:42:52.839Z&quot;,&quot;
+location&quot;:&quot;https://localhost:9443/scim2/Groups/bebe2740-8490-4da3-
+814b-fc010a92f665&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:42:52.839Z&quot;},&quot;
+members&quot;:[{&quot;display&quot;:&quot;admin&quot;,&quot;value&quot;:&quot;442c1077-75f4-4327-981a-
+4846efff396e&quot;}],&quot;id&quot;:&quot;bebe2740-8490-4da3-814b-fc010a92f665&quot;},
+{&quot;displayName&quot;:&quot;PRIMARY/Manager&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:44:
+54.118Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups/12bf8c7a-
+768e-43b2-b256-14c89b086bd3&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:44:54.
+Z&quot;},&quot;members&quot;:[{&quot;display&quot;:&quot;kim&quot;,&quot;value&quot;:&quot;68ef862d-6013-4bb0-87ad-
+9531d7a99765&quot;}],&quot;id&quot;:&quot;12bf8c7a-768e-43b2-b256-14c89b086bd3&quot;}]}
+</code></pre></div>
+
+<p>Users endpoint request:</p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin &#39;https://localhost:9443/scim2/Users&#39;
+</code></pre></div>
+
+<p>Users endpoint response:</p>
+<div class="highlight"><pre><span></span><code>{&quot;totalResults&quot;:3,&quot;startIndex&quot;:1,&quot;itemsPerPage&quot;:3,&quot;schemas&quot;:[&quot;urn:
+ietf:params:scim:api:messages:2.0:ListResponse&quot;],&quot;Resources&quot;:
+[{&quot;emails&quot;:[&quot;admin@wso2.com&quot;],&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T09:12:
+52Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T09:12:52Z&quot;},&quot;name&quot;:{&quot;givenName&quot;:&quot;
+admin&quot;,&quot;familyName&quot;:&quot;admin&quot;},&quot;groups&quot;:[{&quot;display&quot;:&quot;admin&quot;,&quot;value&quot;:&quot;
+bebe2740-8490-4da3-814b-fc010a92f665&quot;}],&quot;id&quot;:&quot;442c1077-75f4-4327-
+981a-4846efff396e&quot;,&quot;userName&quot;:&quot;admin&quot;},{&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-
+13T03:44:20.474Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:44:20.474Z&quot;,&quot;
+resourceType&quot;:&quot;User&quot;},&quot;name&quot;:{&quot;familyName&quot;:&quot;ann&quot;},&quot;groups&quot;:
+[{&quot;display&quot;:&quot;Engineering&quot;,&quot;value&quot;:&quot;abb1c935-dcd2-4e89-a633-
+72bf22460463&quot;}],&quot;id&quot;:&quot;1ad7272f-82b5-4a44-9a86-fe1f31279b29&quot;,&quot;
+userName&quot;:&quot;ann&quot;},{&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:44:06.517Z&quot;,&quot;
+lastModified&quot;:&quot;2019-05-13T03:44:06.517Z&quot;,&quot;resourceType&quot;:&quot;User&quot;},&quot;
+name&quot;:{&quot;familyName&quot;:&quot;kim&quot;},&quot;groups&quot;:[{&quot;display&quot;:&quot;Manager&quot;,&quot;value&quot;:&quot;
+12bf8c7a-768e-43b2-b256-14c89b086bd3&quot;}],&quot;id&quot;:&quot;68ef862d-6013-4bb0-
+87ad-9531d7a99765&quot;,&quot;userName&quot;:&quot;kim&quot;}]}
+</code></pre></div>
+
+</li>
+<li>
+<p><strong>Enabled</strong></p>
+<p>Groups endpoint request:</p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin &#39;https://localhost:9443/scim2/Groups&#39;
+</code></pre></div>
+
+<p>Groups endpoint response:</p>
+<div class="highlight"><pre><span></span><code>{&quot;totalResults&quot;:4,&quot;startIndex&quot;:1,&quot;itemsPerPage&quot;:4,&quot;schemas&quot;:[&quot;urn:
+ietf:params:scim:api:messages:2.0:ListResponse&quot;],&quot;Resources&quot;:
+[{&quot;displayName&quot;:&quot;PRIMARY/Engineering&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-
+13T03:44:36.787Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups
+/abb1c935-dcd2-4e89-a633-72bf22460463&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:
+44:36.787Z&quot;},&quot;members&quot;:[{&quot;display&quot;:&quot;PRIMARY/ann&quot;,&quot;value&quot;:&quot;1ad7272f-
+82b5-4a44-9a86-fe1f31279b29&quot;}],&quot;id&quot;:&quot;abb1c935-dcd2-4e89-a633-
+72bf22460463&quot;},{&quot;displayName&quot;:&quot;Internal/system&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;
+2019-05-13T03:42:53.425Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim
+/Groups/c9f632fa-12e9-405d-92c8-076657151104&quot;,&quot;lastModified&quot;:&quot;2019-
+05-13T03:42:53.425Z&quot;},&quot;id&quot;:&quot;c9f632fa-12e9-405d-92c8-076657151104&quot;},
+{&quot;displayName&quot;:&quot;PRIMARY/admin&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:42:
+52.839Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups/bebe2740-
+8490-4da3-814b-fc010a92f665&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:42:52.
+Z&quot;},&quot;members&quot;:[{&quot;display&quot;:&quot;PRIMARY/admin&quot;,&quot;value&quot;:&quot;442c1077-75f4-
+4327-981a-4846efff396e&quot;}],&quot;id&quot;:&quot;bebe2740-8490-4da3-814b-
+fc010a92f665&quot;},{&quot;displayName&quot;:&quot;PRIMARY/Manager&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;
+2019-05-13T03:44:54.118Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim
+/Groups/12bf8c7a-768e-43b2-b256-14c89b086bd3&quot;,&quot;lastModified&quot;:&quot;2019-
+05-13T03:44:54.118Z&quot;},&quot;members&quot;:[{&quot;display&quot;:&quot;PRIMARY/kim&quot;,&quot;value&quot;:&quot;
+68ef862d-6013-4bb0-87ad-9531d7a99765&quot;}],&quot;id&quot;:&quot;12bf8c7a-768e-43b2-
+b256-14c89b086bd3&quot;}]}
+</code></pre></div>
+
+<p>Users endpoint request:</p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin &#39;https://localhost:9443/scim2/Users&#39;
+</code></pre></div>
+
+<p>Users endpoint response:</p>
+<div class="highlight"><pre><span></span><code>{&quot;totalResults&quot;:3,&quot;startIndex&quot;:1,&quot;itemsPerPage&quot;:3,&quot;schemas&quot;:[&quot;urn:
+ietf:params:scim:api:messages:2.0:ListResponse&quot;],&quot;Resources&quot;:
+[{&quot;emails&quot;:[&quot;admin@wso2.com&quot;],&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T09:12:
+52Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T09:12:52Z&quot;},&quot;name&quot;:{&quot;givenName&quot;:&quot;
+admin&quot;,&quot;familyName&quot;:&quot;admin&quot;},&quot;groups&quot;:[{&quot;display&quot;:&quot;PRIMARY/admin&quot;,&quot;
+value&quot;:&quot;bebe2740-8490-4da3-814b-fc010a92f665&quot;}],&quot;id&quot;:&quot;442c1077-75f4-
+4327-981a-4846efff396e&quot;,&quot;userName&quot;:&quot;PRIMARY/admin&quot;},{&quot;meta&quot;:
+{&quot;created&quot;:&quot;2019-05-13T03:44:20.474Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:
+44:20.474Z&quot;,&quot;resourceType&quot;:&quot;User&quot;},&quot;name&quot;:{&quot;familyName&quot;:&quot;ann&quot;},&quot;
+groups&quot;:[{&quot;display&quot;:&quot;PRIMARY/Engineering&quot;,&quot;value&quot;:&quot;abb1c935-dcd2-
+4e89-a633-72bf22460463&quot;}],&quot;id&quot;:&quot;1ad7272f-82b5-4a44-9a86-
+fe1f31279b29&quot;,&quot;userName&quot;:&quot;PRIMARY/ann&quot;},{&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-
+13T03:44:06.517Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:44:06.517Z&quot;,&quot;
+resourceType&quot;:&quot;User&quot;},&quot;name&quot;:{&quot;familyName&quot;:&quot;kim&quot;},&quot;groups&quot;:
+[{&quot;display&quot;:&quot;PRIMARY/Manager&quot;,&quot;value&quot;:&quot;12bf8c7a-768e-43b2-b256-
+14c89b086bd3&quot;}],&quot;id&quot;:&quot;68ef862d-6013-4bb0-87ad-9531d7a99765&quot;,&quot;
+userName&quot;:&quot;PRIMARY/kim&quot;}]}
+</code></pre></div>
+
+</li>
+<li>
+<p><strong>Disabled</strong></p>
+<p>Groups endpoint request:</p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin &#39;https://localhost:9443/scim2/Groups&#39;
+</code></pre></div>
+
+</li>
+<li>
+<p>Groups endpoint response:</p>
+<div class="highlight"><pre><span></span><code>{&quot;totalResults&quot;:4,&quot;startIndex&quot;:1,&quot;itemsPerPage&quot;:4,&quot;schemas&quot;:[&quot;urn:
+ietf:params:scim:api:messages:2.0:ListResponse&quot;],&quot;Resources&quot;:
+[{&quot;displayName&quot;:&quot;Engineering&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:44:
+36.787Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups/abb1c935-
+dcd2-4e89-a633-72bf22460463&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:44:36.
+Z&quot;},&quot;members&quot;:[{&quot;display&quot;:&quot;ann&quot;,&quot;value&quot;:&quot;1ad7272f-82b5-4a44-9a86-
+fe1f31279b29&quot;}],&quot;id&quot;:&quot;abb1c935-dcd2-4e89-a633-72bf22460463&quot;},
+{&quot;displayName&quot;:&quot;Internal/system&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:42:
+53.425Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups/c9f632fa-
+12e9-405d-92c8-076657151104&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:42:53.
+Z&quot;},&quot;id&quot;:&quot;c9f632fa-12e9-405d-92c8-076657151104&quot;},{&quot;displayName&quot;:&quot;
+admin&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:42:52.839Z&quot;,&quot;location&quot;:&quot;
+https://localhost:9443/scim2/Groups/bebe2740-8490-4da3-814b-
+fc010a92f665&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:42:52.839Z&quot;},&quot;members&quot;:
+[{&quot;display&quot;:&quot;admin&quot;,&quot;value&quot;:&quot;442c1077-75f4-4327-981a-
+4846efff396e&quot;}],&quot;id&quot;:&quot;bebe2740-8490-4da3-814b-fc010a92f665&quot;},
+{&quot;displayName&quot;:&quot;Manager&quot;,&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:44:54.
+Z&quot;,&quot;location&quot;:&quot;https://localhost:9443/scim2/Groups/12bf8c7a-768e-
+43b2-b256-14c89b086bd3&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:44:54.118Z&quot;},&quot;
+members&quot;:[{&quot;display&quot;:&quot;kim&quot;,&quot;value&quot;:&quot;68ef862d-6013-4bb0-87ad-
+9531d7a99765&quot;}],&quot;id&quot;:&quot;12bf8c7a-768e-43b2-b256-14c89b086bd3&quot;}]}
+</code></pre></div>
+
+<p>Users endpoint request:</p>
+<div class="highlight"><pre><span></span><code>curl -v -k --user admin:admin &#39;https://localhost:9443/scim2/Users&#39;
+</code></pre></div>
+
+<p>Users endpoint response:</p>
+<div class="highlight"><pre><span></span><code>{&quot;totalResults&quot;:3,&quot;startIndex&quot;:1,&quot;itemsPerPage&quot;:3,&quot;schemas&quot;:[&quot;urn:
+ietf:params:scim:api:messages:2.0:ListResponse&quot;],&quot;Resources&quot;:
+[{&quot;emails&quot;:[&quot;admin@wso2.com&quot;],&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T09:12:
+52Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T09:12:52Z&quot;},&quot;name&quot;:{&quot;givenName&quot;:&quot;
+admin&quot;,&quot;familyName&quot;:&quot;admin&quot;},&quot;groups&quot;:[{&quot;display&quot;:&quot;admin&quot;,&quot;value&quot;:&quot;
+bebe2740-8490-4da3-814b-fc010a92f665&quot;}],&quot;id&quot;:&quot;442c1077-75f4-4327-
+981a-4846efff396e&quot;,&quot;userName&quot;:&quot;admin&quot;},{&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-
+13T03:44:20.474Z&quot;,&quot;lastModified&quot;:&quot;2019-05-13T03:44:20.474Z&quot;,&quot;
+resourceType&quot;:&quot;User&quot;},&quot;name&quot;:{&quot;familyName&quot;:&quot;ann&quot;},&quot;groups&quot;:
+[{&quot;display&quot;:&quot;Engineering&quot;,&quot;value&quot;:&quot;abb1c935-dcd2-4e89-a633-
+72bf22460463&quot;}],&quot;id&quot;:&quot;1ad7272f-82b5-4a44-9a86-fe1f31279b29&quot;,&quot;
+userName&quot;:&quot;ann&quot;},{&quot;meta&quot;:{&quot;created&quot;:&quot;2019-05-13T03:44:06.517Z&quot;,&quot;
+lastModified&quot;:&quot;2019-05-13T03:44:06.517Z&quot;,&quot;resourceType&quot;:&quot;User&quot;},&quot;
+name&quot;:{&quot;familyName&quot;:&quot;kim&quot;},&quot;groups&quot;:[{&quot;display&quot;:&quot;Manager&quot;,&quot;value&quot;:&quot;
+12bf8c7a-768e-43b2-b256-14c89b086bd3&quot;}],&quot;id&quot;:&quot;68ef862d-6013-4bb0-
+87ad-9531d7a99765&quot;,&quot;userName&quot;:&quot;kim&quot;}]}
+</code></pre></div>
+
+</li>
+</ul>
+<p><strong>How to revert</strong></p>
+<p>To revert back to the previous behaviour (in versions prior to 5.8.0), set the following
+property value to "true" in the <IS_HOME>/repository/conf/identity/identity.xml file.</p>
+<div class="highlight"><pre><span></span><code>&lt;MandateDomainForGroupNamesInGroupsResponse&gt;true&lt;
+/MandateDomainForGroupNamesInGroupsResponse&gt;
+</code></pre></div>
+
+<h2 id="change-5">Change #5<a class="headerlink" href="#change-5" title="Permanent link">&para;</a></h2>
+<p><strong>Use case</strong></p>
+<p>A new configuration property <ForceLocalCache> has been added. For clustered
+nodes, enabling this property enables local cache invalidations.</p>
+<p><strong>Change</strong></p>
+<p>In a clustered nodes setup, cache invalidation requests for any local cache of a particular
+node will be sent to other nodes in the cluster for each cache related operation such as cache
+update, delete, or add. In previous versions of WSO2 IS, these invalidation requests were not sent to
+other nodes in the cluster by default. Therefore, it is recommended to enable this property if the local
+cache is enabled in a clustered setup.</p>
+<p><strong>How to revert</strong></p>
+<p>To revert back to the previous behavior, change the following property value back to
+"false" in the <IS_HOME>/repository/conf/carbon.xml file.</p>
+<div class="highlight"><pre><span></span><code>&lt;ForceLocalCache&gt;true&lt;/ForceLocalCache&gt;
+</code></pre></div>
+
+<h1 id="configuration-changes">Configuration changes<a class="headerlink" href="#configuration-changes" title="Permanent link">&para;</a></h1>
+<p>This section lists out the configuration changes in each configuration file including new properties, modified
+properties, and deprecated properties.</p>
+<blockquote>
+<p><strong>Note</strong> </p>
+<p>The configuration changes listed below will not affect the existing system because these
+configurations are applied only at first start up and new tenant creation. If you wish to change the configurations for the existing tenants, configure it through the management
+console user interface.</p>
+</blockquote>
+<h2 id="carbonxml-file"><code>carbon.xml</code> file<a class="headerlink" href="#carbonxml-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_HOME>/repository/conf directory.</p>
+<ul>
+<li>
+<p>The version property value has been changed to 5.8.0.</p>
+<div class="highlight"><pre><span></span><code>&lt;Version&gt;5.8.0&lt;/Version&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This property indicates the version of WSO2 IS.</p>
+</li>
+</ul>
+<h2 id="axis2xml-file"><code>axis2.xml</code> file<a class="headerlink" href="#axis2xml-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf/axis2 dire
+ctory.</p>
+<ul>
+<li>
+<p>The following property values have been changed to 5.8.0.</p>
+<div class="highlight"><pre><span></span><code>&lt;parameter name=&quot;userAgent&quot; locked=&quot;true&quot;&gt;
+WSO2 Identity Server-5.8.
+&lt;/parameter&gt;
+&lt;parameter name=&quot;server&quot; locked=&quot;true&quot;&gt;
+WSO2 Identity Server-5.8.
+&lt;/parameter&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following property has been added.</p>
+<div class="highlight"><pre><span></span><code>&lt;parameter name=&quot;forceIncludeNullElements&quot;&gt;false&lt;/parameter&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>Enabling this property forces elements that have the @IgnoreNullElement annotation
+to be returned as well even though the value is null. The default value for this property is
+'false'.</p>
+</li>
+</ul>
+<h2 id="endpointconfigproperties-file"><code>Endpointconfig.properties</code> file<a class="headerlink" href="#endpointconfigproperties-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf/identity
+directory.</p>
+<ul>
+<li>
+<p>The following property has been added.</p>
+<div class="highlight"><pre><span></span><code>mutualSSLManagerEnabled=true
+</code></pre></div>
+
+<p><strong>Why</strong></p>
+<p>Enabling this property allows the MutualSSLManager to initialize the keystores. If it is set to 'false', the MutualSSLManager will not initialize the keystore.</p>
+</li>
+</ul>
+<h3 id="application-authenticationxml-file"><code>application-authentication.xml</code> file<a class="headerlink" href="#application-authenticationxml-file" title="Permanent link">&para;</a></h3>
+<p>Stored in
+the <IS_HOME>
+/repository
+/conf/identity
+directory.</p>
+<ul>
+<li>
+<p>The following property has been added to the following authenticators under the relevant tags.</p>
+<ul>
+<li>BasicAuthenticator - <AuthenticatorConfig name="BasicAuthenticator"
+enabled="true"></li>
+<li>BasicAuthRequestPathAuthenticator - <AuthenticatorConfig name="
+BasicAuthRequestPathAuthenticator" enabled="true"></li>
+</ul>
+<div class="highlight"><pre><span></span><code>&lt;Parameter name=&quot;AuthMechanism&quot;&gt;basic&lt;/Parameter&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This property is used to help identify the authentication mechanism used by the authenticator.</p>
+</li>
+<li>
+<p>The following parameters were added under the <code>&lt;AuthenticatorConfig name="
+EmailOTP" enabled="true"&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;Parameter name=&quot;EMAILOTPAuthenticationEndpointURL&quot;
+&gt;emailotpauthenticationendpoint/emailotp.jsp&lt;/Parameter&gt;
+&lt;Parameter name=&quot;EmailOTPAuthenticationEndpointErrorPage&quot;
+&gt;emailotpauthenticationendpoint/emailotpError.jsp&lt;/Parameter&gt;
+&lt;Parameter name=&quot;EmailAddressRequestPage&quot;
+&gt;emailotpauthenticationendpoint/emailAddress.jsp&lt;/Parameter&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The following parameters make the Email OTP URLs configurable.</p>
+</li>
+<li>
+<p>The totp authenticator configurations were uncommented and the following parameters
+have been added under the <code>&lt;AuthenticatorConfig name="totp" enabled="
+true"&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;Parameter name=&quot;Issuer&quot;&gt;WSO2&lt;/Parameter&gt;
+&lt;Parameter name=&quot;UseCommonIssuer&quot;&gt;true&lt;/Parameter&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The added parameters make the totp issuer configurable instead of showing the domain name.</p>
+</li>
+<li>
+<p>The following parameter has been removed from the totp authenticator as it is redundant.</p>
+<div class="highlight"><pre><span></span><code>&lt;Parameter name=&quot;redirectToMultiOptionPageOnFailure&quot;&gt;false&lt;
+/Parameter&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following property has been added under the <code>&lt;ApplicationAuthentication&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!--Similar to the &#39;AuthenticationEndpointQueryParams&#39; above,
+the following section defines the parameters that should be
+included/excluded in the redirection responses from
+authentication framework. These parameters may be generated
+internally from the framework, handlers or authenticators. The
+filtered parameters will be available via the REST API for
+authentication framework. &quot;removeOnConsumeFromAPI&quot; defines
+whether to make the filtered parameters unavailable from the API
+on the first consumption. --&gt;
+&lt;AuthenticationEndpointRedirectParams action=&quot;exclude&quot;
+removeOnConsumeFromAPI=&quot;true&quot;&gt;
+&lt;AuthenticationEndpointRedirectParam name=&quot;loggedInUser&quot;/&gt;
+&lt;/AuthenticationEndpointRedirectParams&gt;
+</code></pre></div>
+
+</li>
+</ul>
+<h2 id="captcha-configproperties-file"><code>captcha-config.properties</code> file<a class="headerlink" href="#captcha-configproperties-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf/identity
+directory.</p>
+<ul>
+<li>
+<p>The following properties have been added.</p>
+<div class="highlight"><pre><span></span><code>#reCaptcha failed redirect urls
+#recaptcha.failed.redirect.urls=
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The properties listed above allow configuring the list of URLs that can be used for redirection when reCaptcha fails.</p>
+</li>
+</ul>
+<h2 id="scim2-schema-extensionconfig-file"><code>scim2-schema-extension.config</code> file<a class="headerlink" href="#scim2-schema-extensionconfig-file" title="Permanent link">&para;</a></h2>
+<p>Stored
+in the <IS_HOME>
+/repository/conf/
+directory.</p>
+<p>The urn:ietf:params:scim:schemas:extension:enterprise:2.0:User attribute name has been
+changed from what is reflected in the 5.7.0 code block to the configuration shown in the
+5.8.0 code block.</p>
+<ul>
+<li>
+<p>5.7.0</p>
+<div class="highlight"><pre><span></span><code>&quot;attributeURI&quot;:&quot;urn:ietf:params:scim:schemas:extension:
+enterprise:2.0:User&quot;,
+
+&quot;attributeName&quot;:&quot;urn:ietf:params:scim:schemas:extension:
+enterprise:2.0:User&quot;,
+</code></pre></div>
+
+</li>
+<li>
+<p>5.8.0</p>
+<div class="highlight"><pre><span></span><code>attributeURI&quot;:&quot;urn:ietf:params:scim:schemas:extension:enterprise:
+2.0:User&quot;,
+
+&quot;attributeName&quot;:&quot;urn:ietf:params:scim:schemas:extension:
+enterprise:2.0:User&quot;
+</code></pre></div>
+
+</li>
+</ul>
+<p><strong>Why?</strong></p>
+<p>This change is done in order to comply with the SCIM2 specification. For more details, see behavioral change #1 in the behavioral changes section given above.</p>
+<h2 id="identity-eventproperties-file"><code>identity-event.properties</code> file<a class="headerlink" href="#identity-eventproperties-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf/identity
+directory.</p>
+<ul>
+<li>
+<p>The password policy error message has been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>passwordPolicy.errorMsg=&#39;Password pattern policy violated.
+Password should contain a digit[0-9], a lower case letter[a-z],
+an upper case letter[A-Z], and one of !@#$%&amp;* characters&#39;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following handlers have been added.</p>
+<div class="highlight"><pre><span></span><code>module.name.17=SAMLLogoutHandler
+SAMLLogoutHandler.subscription.1=SESSION_TERMINATE
+SAMLLogoutHandler.enable=true
+
+# To delete registration code in database once the user deletion
+module.name.18=confirmationCodesInvalidate
+confirmationCodesInvalidate.subscription.1=POST_DELETE_USER
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>These handlers are introduced to support the cross-protocol logout feature and for migration of existing data publishers to event handlers that subscribe to authentication events. For more information about migrating existing data publishers to event handlers, see the <strong>Migrating Data Publishers</strong> document.</p>
+</li>
+<li>
+<p>The following properties were added.</p>
+<div class="highlight"><pre><span></span><code>module.name.14=analyticsLoginDataPublisher
+analyticsLoginDataPublisher.subscription.
+1=AUTHENTICATION_STEP_SUCCESS
+analyticsLoginDataPublisher.subscription.
+2=AUTHENTICATION_STEP_FAILURE
+analyticsLoginDataPublisher.subscription.3=AUTHENTICATION_SUCCESS
+analyticsLoginDataPublisher.subscription.4=AUTHENTICATION_FAILURE
+analyticsLoginDataPublisher.enable=false
+
+module.name.15=analyticsSessionDataPublisher
+analyticsSessionDataPublisher.subscription.1=SESSION_CREATE
+analyticsSessionDataPublisher.subscription.2=SESSION_UPDATE
+
+analyticsSessionDataPublisher.subscription.3=SESSION_TERMINATE
+analyticsSessionDataPublisher.enable=true
+
+module.name.13=authenticationAuditLogger
+authenticationAuditLogger.subscription.
+1=AUTHENTICATION_STEP_SUCCESS
+authenticationAuditLogger.subscription.
+2=AUTHENTICATION_STEP_FAILURE
+authenticationAuditLogger.subscription.3=AUTHENTICATION_SUCCESS
+authenticationAuditLogger.subscription.4=AUTHENTICATION_FAILURE
+authenticationAuditLogger.subscription.5=SESSION_TERMINATE
+authenticationAuditLogger.enable=true&quot;
+
+module.name.16=failLoginAttemptValidator
+failLoginAttemptValidator.subscription.
+1=AUTHENTICATION_STEP_FAILURE
+failLoginAttemptValidator.enable=true
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The properties listed above are added to support the event listeners that were added for migrating data publishers to event handlers. For more details, see behavioral change #3 in the behavioral changes section given above.</p>
+</li>
+</ul>
+<h2 id="identityxml-file"><code>identity.xml</code> file<a class="headerlink" href="#identityxml-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf/identity
+directory.</p>
+<ul>
+<li>
+<p>The following property has been added to the IntrospectionDataProvider interface.</p>
+<div class="highlight"><pre><span></span><code>&lt;Introspection&gt;
+&lt;EnableDataProviders&gt;false&lt;/EnableDataProviders&gt;
+&lt;/Introspection&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This property is used to inject additional data to the introspection response.</p>
+</li>
+<li>
+<p>The default CleanUpPeriod value has been modified to 1440.</p>
+<div class="highlight"><pre><span></span><code>&lt;CleanUpPeriod&gt;1440&lt;/CleanUpPeriod&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The default value of the following property has been changed from false to true.</p>
+<div class="highlight"><pre><span></span><code>&lt;SignJWTWithSPKey&gt;true&lt;/SignJWTWithSPKey&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>For details about this change, see behavioral change #2 in the behavioral changes section given above.</p>
+</li>
+<li>
+<p>The following property has been added under the <SessionDataPersist> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;UserSessionMapping&gt;
+&lt;Enable&gt;true&lt;/Enable&gt;
+&lt;/UserSessionMapping&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This property enables terminating all the active sessions of a user during password reset, user deletion, and username renaming.</p>
+</li>
+<li>
+<p>The following event listeners have been removed.</p>
+<div class="highlight"><pre><span></span><code>&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityMessageHandler&quot; name=&quot;org.wso2.
+carbon.identity.data.publisher.application.authentication.impl.
+DASLoginDataPublisherImpl&quot; orderId=&quot;10&quot; enable=&quot;true&quot;/&gt;
+
+&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityMessageHandler&quot; name=&quot;org.wso2.carbon.identity.
+data.publisher.application.authentication.impl.
+DASSessionDataPublisherImpl&quot; orderId=&quot;11&quot; enable=&quot;true&quot;/&gt;
+
+&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityMessageHandler&quot; name=&quot;org.wso2.carbon.identity.
+captcha.validator.FailLoginAttemptValidator&quot; orderId=&quot;10&quot;
+enable=&quot;true&quot;/&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>From WSO2 IS 5.8.0 onwards, data publishers are migrated to act as event handlers that
+subscribe to authentication events. Hence, the event listeners listed above have been
+removed by default. For more details, see behavioral change #3 in the behavioral
+changes section given above.</p>
+</li>
+<li>
+<p>The following property has been added.</p>
+<div class="highlight"><pre><span></span><code>&lt;FilterUsersAndGroupsOnlyFromPrimaryDomain&gt;false&lt;
+/FilterUsersAndGroupsOnlyFromPrimaryDomain&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>Enabling this property filters users or groups only from the PRIMARY user store,
+regardless of the Users and Groups endpoints. If it is set to 'false' it filters users or groups
+across all user stores.</p>
+</li>
+<li>
+<p>The following property has been added.</p>
+<div class="highlight"><pre><span></span><code>&lt;MandateDomainForUsernamesAndGroupNamesInResponse&gt;false&lt;
+/MandateDomainForUsernamesAndGroupNamesInResponse&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>Enabling this property prepends the "PRIMARY/" prefix to the user name and role name
+(group name) that belongs to the PRIMARY user store, in the SCIM2 response regardless
+of the Users and Groups endpoint. When it is set to 'false', the "PRIMARY/" prefix will not
+be prepended. For more details, see behavioral change #4 in the behavioral changes section
+given above.</p>
+</li>
+<li>
+<p>The following property has been added.</p>
+<div class="highlight"><pre><span></span><code>&lt;MandateDomainForGroupNamesInGroupsResponse&gt;false&lt;
+/MandateDomainForGroupNamesInGroupsResponse&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>Enabling this property in the Groups endpoints prepends the "PRIMARY/" prefix to the
+role name (group name) that belongs to the PRIMARY user store. When it is set to 'false',
+the "PRIMARY/" prefix will not be prepended. For more details, see behavioral change #
+in the behavioral changes section given above.</p>
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;Server&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!--This configuration is used to define the Service Provider
+name regex in DCR and IdentityApplicationManagementService--&gt;
+&lt;!--&lt;ServiceProviders&gt;--&gt;
+&lt;!--&lt;SPNameRegex&gt;^[a-zA-Z0-9._-]*$&lt;/SPNameRegex&gt;--&gt;
+&lt;!--&lt;/ServiceProviders&gt;--&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;OAuth&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- If enabled, resident Idp entity id will be honoured as the
+issuer location in OpenId Connect Discovery --&gt;
+&lt;UseEntityIdAsIssuerInOidcDiscovery&gt;true&lt;
+/UseEntityIdAsIssuerInOidcDiscovery&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The UMA grant type has been added as a supported grant type under the <code>&lt;SupportedGrantTypes&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- Supported versions: IS 5.7.0 onwards.--&gt;
+&lt;SupportedGrantType&gt;
+&lt;GrantTypeName&gt;urn:ietf:params:oauth:grant-type:uma-ticket&lt;
+/GrantTypeName&gt;
+&lt;GrantTypeHandlerImplClass&gt;org.wso2.carbon.identity.oauth.
+uma.grant.UMA2GrantHandler&lt;/GrantTypeHandlerImplClass&gt;
+&lt;GrantTypeValidatorImplClass&gt;org.wso2.carbon.identity.oauth.
+uma.grant.GrantValidator&lt;/GrantTypeValidatorImplClass&gt;
+&lt;/SupportedGrantType&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;OAuth&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- Configurations for JWT bearer grant. Supported versions: IS
+5.8.0 onwards. --&gt;
+&lt;JWTGrant&gt;
+&lt;!-- Validate issued at time (iat) of JWT token. The
+validity can be set using &#39;IATValidity&#39; configuration.
+Default value is &#39;true&#39;.
+--&gt;
+&lt;EnableIATValidation&gt;true&lt;/EnableIATValidation&gt;
+&lt;!-- Reject the JWT if the iat of JWT is pass a certain time
+period. Time period is in minutes.
+&#39;EnableIATValidation&#39; configuration should be set
+to &#39;true&#39; in order to make use of the validity
+period.
+Default value is &#39;30&#39; minutes.
+--&gt;
+&lt;IATValidityPeriod&gt;30&lt;/IATValidityPeriod&gt;
+&lt;/JWTGrant&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;OpenIDConnect&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- Add tenant domain to &#39;realm&#39; claim of ID Token--&gt;
+&lt;AddTenantDomainToIdToken&gt;false&lt;/AddTenantDomainToIdToken&gt;
+&lt;!-- Add userstore domain to &#39;realm&#39; claim of ID Token--&gt;
+&lt;AddUserstoreDomainToIdToken&gt;false&lt;/AddUserstoreDomainToIdToken&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;OAuth&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!--Configuration provides the ability to renew the access token
+and the refresh token(where applicable) per each token request
+and revoke previously available active token for a matching
+clientid, user and scopes combination.
+Not applicable for refresh token grant type and when when self-
+contained access tokens are used.
+Default value : false
+Supported versions : IS 5.8.0 onwards --&gt;
+&lt;!--&lt;RenewTokenPerRequest&gt;true&lt;/RenewTokenPerRequest&gt;--&gt;
+
+&lt;!--By enabling this property, in a logout request if the opbs
+cookie or a valid session does not exist instead of showing the
+invalid request error page the user will be redirected to the
+successfully logged out page of the IS or if a valid
+id_token_hint and a valid post_logout_redirect_uri is available
+user will be redirected to the post_logout_redirect_uri--&gt;
+&lt;HandleAlreadyLoggedOutSessionsGracefully&gt;false&lt;
+/HandleAlreadyLoggedOutSessionsGracefully&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;SSOService&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;ArtifactResolutionEndpoint&gt;${carbon.protocol}://${carbon.
+host}:${carbon.management.port}/samlartresolve&lt;
+/ArtifactResolutionEndpoint&gt;
+&lt;SAMLECPEndpoint&gt;${carbon.protocol}://${carbon.host}:${carbon.
+management.port}/samlecp&lt;/SAMLECPEndpoint&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>These properties allow adding the Artifact URL as a Resident IDP property in the WSO2 IS management console.</p>
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;SCIM2&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!--&lt;ComplexMultiValuedAttributeSupportEnabled&gt;true&lt;
+/ComplexMultiValuedAttributeSupportEnabled&gt;--&gt;
+&lt;!--&lt;EnableFilteringEnhancements&gt;true&lt;
+/EnableFilteringEnhancements&gt;--&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The <EnableFilteringEnhancements> property was introduced for the purpose of
+applying filtering enhancements for SCIM2 filter results. Enabling this ensures that the Eq
+filter strictly checks for a string match (in this case cross user store search should not be
+performed). This configuration also enforces consistency on the filtered attribute formats
+in the response when filtering is done via different endpoints. e.g. Users and Groups
+endpoints.</p>
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;Recovery&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;ReCaptcha&gt;
+&lt;Password&gt;
+&lt;Enable&gt;false&lt;/Enable&gt;
+&lt;/Password&gt;
+&lt;Username&gt;
+&lt;Enable&gt;false&lt;/Enable&gt;
+&lt;/Username&gt;
+&lt;/ReCaptcha&gt;
+&lt;CallbackRegex&gt;${carbon.protocol}://${carbon.host}:${carbon.
+management.port}/authenticationendpoint/login.do&lt;/CallbackRegex&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This configuration block is used to enable ReCaptcha verification for password recovery and username recovery.</p>
+</li>
+<li>
+<p>The following property have been added under the <code>&lt;SelfRegistration&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;CallbackRegex&gt;${carbon.protocol}://${carbon.host}:${carbon.
+management.port}/authenticationendpoint/login.do&lt;/CallbackRegex&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This property enables configuring a regex pattern for the callback URLs of the account
+recovery and self registration APIs. The callbackURL included in the requests is then
+validated with the configured regex pattern.</p>
+</li>
+<li>
+<p>The following new event listener has been added under the <code>&lt;EventListeners&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;EventListener type=&quot;org.wso2.carbon.identity.core.handler.
+AbstractIdentityHandler&quot;
+name=&quot;org.wso2.carbon.identity.data.
+publisher.oauth.listener.OAuthTokenIssuanceLogPublisher&quot;
+orderId=&quot;12&quot; enable=&quot;false&quot;&gt;
+&lt;Property name=&quot;Log.Token&quot;&gt;false&lt;/Property&gt;
+&lt;/EventListener&gt;
+
+&lt;EventListener type=&quot;org.wso2.carbon.user.core.listener.
+UserOperationEventListener&quot;
+name=&quot;org.wso2.carbon.identity.mgt.
+listener.UserSessionTerminationListener&quot;
+orderId=&quot;85&quot; enable=&quot;true&quot;/&gt;
+
+&lt;EventListener type=&quot;org.wso2.carbon.user.core.listener.
+UserOperationEventListener&quot;
+name=&quot;org.wso2.carbon.user.mgt.listeners.
+UserClaimsAuditLogger&quot;
+orderId=&quot;9&quot; enable=&quot;false&quot;/&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>AbstractIdentityHandler - Enabling this listener logs the audit data for OAuth token
+issuance and token introspection. Adding this property allows you to disable logging, else
+if this property is not present in the configuration file, logging is enabled by default. For
+more information about auditing, see OAuth Transaction Logs.</p>
+<ul>
+<li>
+<p>UserOperationEventListener - This event listener is used to support session
+termination at the point renaming the username.</p>
+</li>
+<li>
+<p>UserOperationEventListener - This event listener allows adding claims to the audit logs.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The following caches have been added under the <code>&lt;CacheManager name="
+IdentityApplicationManagementCacheManager"&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;Cache name=&quot;JWKSCache&quot; enable=&quot;true&quot; timeout=&quot;300&quot; capacity=&quot;
+5000&quot; isDistributed=&quot;false&quot;/&gt;
+&lt;Cache name=&quot;ServiceProviderCache.ID&quot; enable=&quot;true&quot; timeout=&quot;
+900&quot; capacity=&quot;5000&quot; isDistributed=&quot;false&quot;/&gt;
+&lt;Cache name=&quot;ServiceProvideCache.InboundAuth&quot; enable=&quot;true&quot;
+timeout=&quot;900&quot; capacity=&quot;5000&quot; isDistributed=&quot;false&quot;/&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>JKWSCache - This property has been added to support JWKS Endpoint Cache
+invalidation.</p>
+<p>ServiceProviderCache.ID and ServiceProvideCache.InboundAuthKey -
+These two properties have been added in order to cache the service provider against the
+ID and inboundAuth. If these new properties is not present in the configuration file, the
+configuration value of the ServiceProviderCache is applied for these caches.</p>
+</li>
+<li>
+<p>The following resources have been added under the <code>&lt;ResourceAccessControl&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/search(.*)&quot;
+secured=&quot;true&quot; http-method=&quot;GET&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/list&lt;/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource-
+type&quot; secured=&quot;true&quot; http-method=&quot;POST&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt/add&lt;
+/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource-
+type&quot; secured=&quot;true&quot; http-method=&quot;PUT&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/update&lt;/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource-
+type/(.*)&quot; secured=&quot;true&quot; http-method=&quot;GET&quot;/&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource-
+type/(.*)&quot; secured=&quot;true&quot; http-method=&quot;DELETE&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/delete&lt;/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)&quot; secured=&quot;true&quot; http-method=&quot;POST&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt/add&lt;
+/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)&quot; secured=&quot;true&quot; http-method=&quot;PUT&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/update&lt;/Permissions&gt;
+
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)/(.*)&quot; secured=&quot;true&quot; http-method=&quot;GET&quot;/&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)/(.*)&quot; secured=&quot;true&quot; http-method=&quot;DELETE&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/delete&lt;/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)/(.*)&quot; secured=&quot;true&quot; http-method=&quot;POST&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt/add&lt;
+/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)/(.*)&quot; secured=&quot;true&quot; http-method=&quot;PUT&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/update&lt;/Permissions&gt;
+&lt;/Resource&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)/(.*)/(.*)&quot; secured=&quot;true&quot; http-method=&quot;GET&quot;/&gt;
+&lt;Resource context=&quot;(.*)/api/identity/config-mgt/v1.0/resource/(.
+*)/(.*)/(.*)&quot; secured=&quot;true&quot; http-method=&quot;DELETE&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/configmgt
+/delete&lt;/Permissions&gt;
+&lt;/Resource&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>These resources control access to the configuration management resources in WSO2 IS.</p>
+</li>
+<li>
+<p>The resource context /scim2/ResourceType to /scim2/ResourceTypes found
+under the <code>&lt;ResourceAccessControl&gt;</code> tag has been modified as shown below.</p>
+<div class="highlight"><pre><span></span><code>&lt;Resource context=&quot;/scim2/ResourceTypes&quot; secured=&quot;false&quot; http-
+method=&quot;all&quot;&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This change is done in order to comply with the <a href="https://www.rfc-editor.org/rfc/rfc7643#section-3.3">SCIM2 specification</a>.</p>
+</li>
+<li>
+<p>The following resource found under the <code>&lt;ResourceAccessControl&gt;</code> tag has been removed.</p>
+<div class="highlight"><pre><span></span><code>&lt;Resource context=&quot;(.*)/api/identity/auth/(.*)&quot; secured=&quot;true&quot;
+http-method=&quot;all&quot;/&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>This change has been made in order to remove protection for the /api/identity/auth
+/v1.2/authenticate API. This is because the API itself authenticates the user.</p>
+</li>
+<li>
+<p>The following resources have been added under the <code>&lt;ResourceAccessControl&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;Resource context=&quot;(.*)/api/identity/auth/v1.2/data(.*)&quot;
+secured=&quot;true&quot; http-method=&quot;all&quot;/&gt;
+&lt;Resource context=&quot;(.*)/api/identity/auth/v1.2/context(.*)&quot;
+secured=&quot;true&quot; http-method=&quot;all&quot;/&gt;
+&lt;Resource context=&quot;(.*)/api/identity/template/mgt/v1.0.0/(.*)&quot;
+secured=&quot;true&quot; http-method=&quot;all&quot;/&gt;
+&lt;Resource context=&quot;(.*)/api/identity/user/v1.0/update-username(.
+*)&quot; secured=&quot;true&quot; http-method=&quot;PUT&quot;&gt;
+&lt;Permissions&gt;/permission/admin/manage/identity/usermgt
+/update&lt;/Permissions&gt;
+&lt;/Resource&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>These resources have been added to secure the update-username API.</p>
+</li>
+<li>
+<p>The following properties have been added under the <code>&lt;Server&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!--Intermediate certificate validation for certificate based
+requests--&gt;
+&lt;IntermediateCertValidation enable=&quot;false&quot;&gt;
+&lt;IntermediateCerts&gt;
+&lt;!--Add intermediate certificate CN. Multiple &lt;CertCN&gt;
+elements can be used for multiple certificates.--&gt;
+&lt;CertCN&gt;localhost&lt;/CertCN&gt;
+&lt;/IntermediateCerts&gt;
+&lt;ExemptContext&gt;
+&lt;!--Add exemptable context paths. Multiple &lt;Context&gt;
+elements can be used for multiple contexts.--&gt;
+&lt;Context&gt;scim2&lt;/Context&gt;
+&lt;/ExemptContext&gt;
+&lt;/IntermediateCertValidation&gt;
+&lt;!--This is the separator that use to separate multiple roles in
+the role claim value coming from IDP side--&gt;
+&lt;FederatedIDPRoleClaimValueAttributeSeparator&gt;,&lt;
+/FederatedIDPRoleClaimValueAttributeSeparator&gt;
+&lt;!--This configuration is used for X509 Certificate based
+authentication. --&gt;
+&lt;!--&lt;X509&gt;--&gt;
+&lt;!--During ssl termination at LB, the X509 certificate is passed
+over the HTTP header. This configuration
+provides the facility to configure HTTP request header
+name which is configured at LB. --&gt;
+&lt;!--&lt;X509RequestHeaderName&gt;X-SSL-CERT&lt;/X509RequestHeaderName&gt;--&gt;
+&lt;!--&lt;/X509&gt;--&gt;
+&lt;!-- This configuration specifies the claims that should be
+logged to &quot;audit.log&quot; upon changes. --&gt;
+&lt;!--&lt;LoggableUserClaims&gt;--&gt;
+&lt;!--&lt;LoggableUserClaim&gt;http://wso2.org/claims/identity
+/accountLocked&lt;/LoggableUserClaim&gt;--&gt;
+&lt;!--&lt;LoggableUserClaim&gt;http://wso2.org/claims/role&lt;
+/LoggableUserClaim&gt;--&gt;
+&lt;!--&lt;/LoggableUserClaims&gt;--&gt;
+&lt;!--Configuration Store properties--&gt;
+&lt;ConfigurationStore&gt;
+&lt;!--Set an upper limit to the database call queries.
+Configuration store uses dynamic query generation,
+specially for searching resources. This property will
+prevent any unwanted errors due to too large queries.
+Default value is the maximum packet size for MySQL 5.7
+in bytes.--&gt;
+&lt;MaximumQueryLength&gt;4194304&lt;/MaximumQueryLength&gt;
+&lt;/ConfigurationStore&gt;
+</code></pre></div>
+
+</li>
+</ul>
+<h2 id="jaasconf-file"><code>jaas.conf</code> file<a class="headerlink" href="#jaasconf-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf/identity
+directory.</p>
+<p>The value of the following property value has been corrected from 'tfalse' to 'false'.</p>
+<div class="highlight"><pre><span></span><code>useKeyTab=false
+</code></pre></div>
+
+<h2 id="webapp-classloading-environmentsxml-file"><code>Webapp-classloading-environments.xml</code> file<a class="headerlink" href="#webapp-classloading-environmentsxml-file" title="Permanent link">&para;</a></h2>
+<p>Stored in
+the <IS_HOME>
+/repository
+/conf/ directory.</p>
+<p>The following ExclusiveEnvironment has been added under the <code>&lt;Classloading&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;ExclusiveEnvironments&gt;
+&lt;ExclusiveEnvironment&gt;
+&lt;Name&gt;CXF3&lt;/Name&gt;
+&lt;Classpath&gt;${carbon.home}/lib/runtimes/cxf3/*.
+jar;${carbon.home}/lib/runtimes/cxf3/&lt;/Classpath&gt;
+&lt;/ExclusiveEnvironment&gt;
+&lt;/ExclusiveEnvironments&gt;
+</code></pre></div>
+
+<h2 id="carbonxml-file_1"><code>carbon.xml</code> file<a class="headerlink" href="#carbonxml-file_1" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf directory.</p>
+<ul>
+<li>
+<p>The following properties related to the tenant deletion feature have been added under the <code>&lt;Server&gt; &lt;Tenant&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- Flag to enable or disable tenant deletion. By default
+tenant deletion is enabled--&gt;
+&lt;TenantDelete&gt;true&lt;/TenantDelete&gt;
+&lt;!-- Configurations related to listener invocation by tenant
+admin service--&gt;
+&lt;ListenerInvocationPolicy&gt;
+&lt;!-- Flag to enable or disable listener invocation on tenant
+delete. This is disabled by default--&gt;
+&lt;InvokeOnDelete&gt;false&lt;/InvokeOnDelete&gt;
+&lt;/ListenerInvocationPolicy&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following property has been added under the <Server> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!--EnablePasswordTrim&gt;false&lt;/EnablePasswordTrim--&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The following property has been added.</p>
+<div class="highlight"><pre><span></span><code>&lt;ForceLocalCache&gt;true&lt;/ForceLocalCache&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>Enabling this property forces all the caches to behave as local caches. It is required to
+enable this in order to have cache invalidation in between the IS nodes in a clustered
+enviornment. For more details, see behavioral change #5 in the behavioral changes section
+given above.</p>
+</li>
+</ul>
+<h2 id="claim-configxml-file"><code>claim-config.xml</code> file<a class="headerlink" href="#claim-configxml-file" title="Permanent link">&para;</a></h2>
+<p>Stored in
+the <IS_HOME>
+/repository
+/conf directory.</p>
+<ul>
+<li>
+<p>The AttributeID of the http://wso2.org/claims/resourceType claim has been
+modified to "resourceType".</p>
+<div class="highlight"><pre><span></span><code>&lt;AttributeID&gt;resourceType&lt;/AttributeID&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The RegEx of the http://wso2.org/claims/phoneNumbers claim has been
+modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The RegEx of the urn:scim:schemas:core:1.0:phoneNumbers claim has been
+modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The AttributeID of the claim urn:ietf:params:scim:schemas:core:2.0:meta.
+resourceType claim has been modified to "resourceType" instead of "userType".</p>
+<div class="highlight"><pre><span></span><code>&lt;AttributeID&gt;resourceType&lt;/AttributeID&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The value "Ref" is reserved in open LDAPs for referrals. Therefore, this attributeID was
+modified to avoid the errors when using Active Directory open LDAPs.</p>
+</li>
+<li>
+<p>The RegEx of the urn:ietf:params:scim:schemas:core:2.0:User:
+phoneNumbers claim has been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The Regex of the urn:ietf:params:scim:schemas:core:2.0:User:
+phoneNumbers.mobile claim has been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The RegEx of the urn:ietf:params:scim:schemas:core:2.0:User:
+phoneNumbers.home claim has been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The RegEx of the urn:ietf:params:scim:schemas:core:2.0:User:
+phoneNumbers.work claim has been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+</li>
+<li>
+<p>The RegEx of the urn:ietf:params:scim:schemas:core:2.0:User:
+phoneNumbers.other claim has been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>&lt;RegEx&gt;^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d
+{4})(?: *x(\d+))?\s*$&lt;/RegEx&gt;
+</code></pre></div>
+
+<p><strong>Why?</strong></p>
+<p>The default regular expression values for phone numbers were modified in the claim-config.xml file in order to recognize US and Canadian numbers with the extension code as well.</p>
+</li>
+</ul>
+<h2 id="log4jproperties-file"><code>log4j.properties</code> file<a class="headerlink" href="#log4jproperties-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf directory.</p>
+<p>The following properties have been added.</p>
+<div class="highlight"><pre><span></span><code>log4j.logger.TRANSACTION_LOGGER=INFO, TRANSACTION_LOGGER
+
+log4j.appender.TRANSACTION_LOGGER=org.apache.log4j.FileAppender
+log4j.appender.TRANSACTION_LOGGER.File=${carbon.home}/repository
+/logs/transaction.log
+log4j.appender.TRANSACTION_LOGGER.Append=true
+log4j.appender.TRANSACTION_LOGGER.layout=org.apache.log4j.
+PatternLayout
+log4j.appender.TRANSACTION_LOGGER.layout.ConversionPattern=[%d]
+
+- %m %n
+log4j.appender.TRANSACTION_LOGGER.threshold=INFO
+log4j.additivity.TRANSACTION_LOGGER=false
+
+# Appender config to put correlation Log.
+log4j.logger.correlation=INFO, CORRELATION
+log4j.additivity.correlation=false
+log4j.appender.CORRELATION=org.apache.log4j.RollingFileAppender
+log4j.appender.CORRELATION.File=${carbon.home}/repository/logs
+/${instance.log}/correlation.log
+log4j.appender.CORRELATION.MaxFileSize=10MB
+log4j.appender.CORRELATION.layout=org.apache.log4j.PatternLayout
+log4j.appender.CORRELATION.Threshold=INFO
+log4j.appender.CORRELATION.layout.ConversionPattern=%d{yyyy-MM-
+dd HH:mm:ss,SSS}|%X{Correlation-ID}|%t|%m%n
+</code></pre></div>
+
+<h2 id="user-mgtxml-file"><code>user-mgt.xml</code> file<a class="headerlink" href="#user-mgtxml-file" title="Permanent link">&para;</a></h2>
+<p>Stored in the <IS_H
+OME>/repository
+/conf directory.</p>
+<ul>
+<li>
+<p>The following properties have been added under the <code>&lt;UserManager&gt; &lt;Realm&gt;
+&lt;Configuration&gt;</code> tag.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- Enable username claim retrieve from the UM_USER_NAME in
+JDBC datasources --&gt;
+&lt;OverrideUsernameClaimFromInternalUsername&gt;true&lt;
+/OverrideUsernameClaimFromInternalUsername
+</code></pre></div>
+
+</li>
+<li>
+<p>The following property has been under under the JDBCUserStoreManager configuration block.</p>
+<div class="highlight"><pre><span></span><code>&lt;Property name=&quot;LeadingOrTrailingSpaceAllowedInUserName&quot;&gt;false&lt;
+/Property&gt;
+</code></pre></div>
+
+<p>The value of the <code>&lt;UserNameListFilter&gt;</code> property under the ReadOnlyLDAPUserStoreManager configuration block has been modified to the value given below.</p>
+<div class="highlight"><pre><span></span><code>(&amp;amp;(objectClass=person)(!(sn=Service)))
+</code></pre></div>
+
+<p>The value of the <code>&lt;UserNameListFilter&gt;</code> property under the ActiveDirectoryUser
+StoreManager and ReadWriteLDAPUserStoreManager configuration blocks has
+been modified as follows.</p>
+<div class="highlight"><pre><span></span><code>(&amp;amp;(objectClass=user)(!(sn=Service)))
+</code></pre></div>
+
+<p>The following property has been added under the ActiveDirectoryUserStoreManag
+er and the ReadWriteLDAPUserStoreManager configuration blocks.</p>
+<div class="highlight"><pre><span></span><code>&lt;Property name=&quot;StartTLSEnabled&quot;&gt;false&lt;/Property&gt;
+</code></pre></div>
+
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * WSO2 Inc. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+
+ NOTE: Borrowed generously from MkDocs and MkDocs-material
+-->
+
+<footer class="md-footer md-typeset">
+  <div class="md-footer__content">
+    <div class="md-footer__meta-sections">
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="discord-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <div class="md-footer__meta-section__text-content">
+          <h3 class="md-footer__meta-section__heading">Join our Discord</h3>
+          <p class="md-footer__meta-section__description">
+            Connect with our community on our official Discord server. Share ideas, get help, and be a part of the
+            awesome conversations!
+          </p>
+          <a target="_blank" rel="noopener noreferrer" class="md-footer__meta-section__link" role="group"
+            href="https://discord.com/invite/wso2">Join Discord<svg class="chevron" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" height="14" width="14" fill="currentColor" aria-hidden="true" focusable="false"
+              class="chakra-icon css-1nyqxv">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></a>
+        </div>
+      </div>
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="md-footer__meta-section__links">
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="14" width="14">
+              <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" fill="#bcbbbb" />
+              <path
+                d="M8.477 19.8l13.993 2.923.585-2.806-13.993-2.923zm1.832-6.704l12.94 6.04 1.208-2.572-12.94-6.08zm3.586-6.353l10.99 9.12 1.832-2.183-10.99-9.12zM20.99 0l-2.3 1.715 8.536 11.46 2.3-1.715zM8.166 26.27H22.43v-2.845H8.166v2.845z"
+                fill="#f48024" />
+            </svg>
+            <label>Got a tough question?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://stackoverflow.com/questions/tagged/wso2-identity-server?tab=Newest">Ask on Stackoverflow</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" width="14" height="14" viewBox="0 0 256 249"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+              <g fill="#161614">
+                <path
+                  d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
+                <path
+                  d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
+              </g>
+            </svg>
+            <label>Want to contribute?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://github.com/wso2/docs-is">Head over to GitHub</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" fill="none" height="14" width="14"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006">
+              <path
+                d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z"
+                fill="#000" />
+            </svg>
+            <label>Like to stay updated?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://twitter.com/intent/follow?screen_name=wso2">Follow us on X (Formerly Twitter)</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="800px" height="800px" viewBox="0 -7 48 48" version="1.1">
+              <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Color-" transform="translate(-200.000000, -368.000000)" fill="#CE1312">
+                  <path
+                    d="M219.044,391.269916 L219.0425,377.687742 L232.0115,384.502244 L219.044,391.269916 Z M247.52,375.334163 C247.52,375.334163 247.0505,372.003199 245.612,370.536366 C243.7865,368.610299 241.7405,368.601235 240.803,368.489448 C234.086,368 224.0105,368 224.0105,368 L223.9895,368 C223.9895,368 213.914,368 207.197,368.489448 C206.258,368.601235 204.2135,368.610299 202.3865,370.536366 C200.948,372.003199 200.48,375.334163 200.48,375.334163 C200.48,375.334163 200,379.246723 200,383.157773 L200,386.82561 C200,390.73817 200.48,394.64922 200.48,394.64922 C200.48,394.64922 200.948,397.980184 202.3865,399.447016 C204.2135,401.373084 206.612,401.312658 207.68,401.513574 C211.52,401.885191 224,402 224,402 C224,402 234.086,401.984894 240.803,401.495446 C241.7405,401.382148 243.7865,401.373084 245.612,399.447016 C247.0505,397.980184 247.52,394.64922 247.52,394.64922 C247.52,394.64922 248,390.73817 248,386.82561 L248,383.157773 C248,379.246723 247.52,375.334163 247.52,375.334163 L247.52,375.334163 Z"
+                    id="Youtube">
+                  </path>
+                </g>
+              </g>
+            </svg>
+            <label>Prefer video tutorials?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://www.youtube.com/user/WSO2TechFlicks">Subscribe to our YouTube Channel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-copyright md-typeset">
+  <div class="md-copyright__content">
+    <div class="md-copyright__highlight">
+      
+      &copy; 2024 <a href="https://wso2.com/">WSO2</a> LLC.
+      
+    </div>
+    <div class="md-license__highlight">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC By 4.0</a>. |
+      Sample code licensed under <a href="http://www.apache.org/licenses/" target="_blank">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "content.tabs.link", "search.suggest", "search.share"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/js/theme.js"></script>
+      
+        <script src="../../../../assets/js/homePage.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2938 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Identity Server">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://wso2.com/is/docs/identity-server/migration-docs/what-has-changed/what-has-changes-6.1.0%20to%207.0.0/">
+      
+      
+        <link rel="prev" href="../what-has-changes-6.0.0%20to%206.1.0/">
+      
+      
+        <link rel="next" href="../../is-6.1.0/prepare-for-migration/">
+      
+      <link rel="icon" href="../../../../assets/images/identity-server-favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>6.1.0 to 7.0.0 - Identity Server</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/libs/fontawesome-free-6.4.2-web/css/all.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/theme.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-has-changed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+   
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a
+      href="../../../.."
+      title="Identity Server"
+      class="md-header__button md-logo"
+      aria-label="Identity Server"
+      data-md-component="logo"
+    >
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+
+           
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../config-changes-5.2.0-5.3.0/" class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>  
+        
+        
+      </div>
+    </div>
+
+    
+    
+
+    
+
+    
+
+    
+    <div class="md-header__version-select-dropdown">
+      <a class="dropdown-link" href="#!" id="version-dropdown">
+        Target Version
+
+        <span class="icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+        </span>
+      </a>
+      <ul class="dropdown-content" tabindex="0">
+        <li><a href="/migration/is/docs/identity-server/migration-docs/is-6.1.0/what-has-changed/" target="_blank">is-6.1.0</a></li>
+        <li><a href="/migration/is/docs/identity-server/migration-docs/is-7.0.0/what-has-changed/" target="_blank">is-7.0.0</a></li>
+      </ul>
+    </div>
+    
+
+    
+    
+     
+    <form class="md-header__option" data-md-component="palette">
+       
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: light)"
+        data-md-color-scheme="default"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to dark mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_1"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to dark mode"
+        for="__palette_2"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 0.5C8.5 0.223858 8.27614 0 8 0C7.72386 0 7.5 0.223858 7.5 0.5V1.5C7.5 1.77614 7.72386 2 8 2C8.27614 2 8.5 1.77614 8.5 1.5V0.5ZM8.5 14.5C8.5 14.2239 8.27614 14 8 14C7.72386 14 7.5 14.2239 7.5 14.5V15.5C7.5 15.7761 7.72386 16 8 16C8.27614 16 8.5 15.7761 8.5 15.5V14.5ZM1.5 8.5C1.77614 8.5 2 8.27614 2 8C2 7.72386 1.77614 7.5 1.5 7.5H0.5C0.223858 7.5 0 7.72386 0 8C0 8.27614 0.223858 8.5 0.5 8.5H1.5ZM15.5 8.5C15.7761 8.5 16 8.27614 16 8C16 7.72386 15.7761 7.5 15.5 7.5H14.5C14.2239 7.5 14 7.72386 14 8C14 8.27614 14.2239 8.5 14.5 8.5H15.5ZM12.4464 2.83936C12.2512 3.03463 12.2512 3.35121 12.4464 3.54647C12.6417 3.74173 12.9583 3.74173 13.1535 3.54647L13.8606 2.83936C14.0559 2.6441 14.0559 2.32752 13.8606 2.13226C13.6654 1.937 13.3488 1.937 13.1535 2.13226L12.4464 2.83936ZM2.14645 2.86065C1.95118 2.66539 1.95118 2.3488 2.14645 2.15354C2.34171 1.95828 2.65829 1.95828 2.85355 2.15354L3.56066 2.86065C3.75592 3.05591 3.75592 3.37249 3.56066 3.56775C3.3654 3.76302 3.04882 3.76302 2.85355 3.56775L2.14645 2.86065ZM2.14645 13.1394C1.95118 13.3346 1.95118 13.6512 2.14645 13.8465C2.34171 14.0417 2.65829 14.0417 2.85355 13.8465L3.56066 13.1394C3.75592 12.9441 3.75592 12.6275 3.56066 12.4322C3.3654 12.237 3.04882 12.237 2.85355 12.4322L2.14645 13.1394ZM12.4464 13.1606C12.2512 12.9654 12.2512 12.6488 12.4464 12.4535C12.6417 12.2583 12.9583 12.2583 13.1535 12.4535L13.8606 13.1606C14.0559 13.3559 14.0559 13.6725 13.8606 13.8677C13.6654 14.063 13.3488 14.063 13.1535 13.8677L12.4464 13.1606ZM6.14708 3.35455C4.303 4.09075 3 5.8932 3 7.99998C3 10.7614 5.23858 13 8 13C10.6789 13 12.8657 10.8933 12.994 8.2462C12.998 8.16463 13 8.08254 13 7.99999C13 7.67166 12.9684 7.35072 12.9079 7.04005C12.2805 7.63501 11.4329 7.99999 10.5 7.99999C8.567 7.99999 7 6.43299 7 4.49999C7 3.98143 7.11277 3.48921 7.31514 3.04651C6.90813 3.10226 6.51674 3.20699 6.14708 3.35457C6.14708 3.35456 6.14708 3.35456 6.14708 3.35455ZM6.00013 4.53503C4.80446 5.22663 4 6.51936 4 7.99998C4 10.2091 5.79086 12 8 12C9.94598 12 11.5674 10.6104 11.9261 8.76934C11.478 8.91895 10.9984 8.99999 10.5 8.99999C8.02641 8.99999 6.01896 7.00418 6.00013 4.53503Z" fill="#40404B"/>
+</svg>
+      </label>
+        
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: dark)"
+        data-md-color-scheme="slate"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to light mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_2"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to light mode"
+        for="__palette_1"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C8.27614 0 8.5 0.223858 8.5 0.5V1.5C8.5 1.77614 8.27614 2 8 2C7.72386 2 7.5 1.77614 7.5 1.5V0.5C7.5 0.223858 7.72386 0 8 0ZM8 14C8.27614 14 8.5 14.2239 8.5 14.5V15.5C8.5 15.7761 8.27614 16 8 16C7.72386 16 7.5 15.7761 7.5 15.5V14.5C7.5 14.2239 7.72386 14 8 14ZM2 8C2 8.27614 1.77614 8.5 1.5 8.5H0.5C0.223858 8.5 0 8.27614 0 8C0 7.72386 0.223858 7.5 0.5 7.5H1.5C1.77614 7.5 2 7.72386 2 8ZM16 8C16 8.27614 15.7761 8.5 15.5 8.5H14.5C14.2239 8.5 14 8.27614 14 8C14 7.72386 14.2239 7.5 14.5 7.5H15.5C15.7761 7.5 16 7.72386 16 8ZM12.4464 3.54647C12.2512 3.35121 12.2512 3.03463 12.4464 2.83936L13.1535 2.13226C13.3488 1.937 13.6654 1.937 13.8606 2.13226C14.0559 2.32752 14.0559 2.6441 13.8606 2.83936L13.1535 3.54647C12.9583 3.74173 12.6417 3.74173 12.4464 3.54647ZM2.14645 2.15354C1.95118 2.3488 1.95118 2.66539 2.14645 2.86065L2.85355 3.56775C3.04882 3.76302 3.3654 3.76302 3.56066 3.56775C3.75592 3.37249 3.75592 3.05591 3.56066 2.86065L2.85355 2.15354C2.65829 1.95828 2.34171 1.95828 2.14645 2.15354ZM2.14645 13.8465C1.95118 13.6512 1.95118 13.3346 2.14645 13.1394L2.85355 12.4322C3.04882 12.237 3.3654 12.237 3.56066 12.4322C3.75592 12.6275 3.75592 12.9441 3.56066 13.1394L2.85355 13.8465C2.65829 14.0417 2.34171 14.0417 2.14645 13.8465ZM12.4464 12.4535C12.2512 12.6488 12.2512 12.9654 12.4464 13.1606L13.1535 13.8677C13.3488 14.063 13.6654 14.063 13.8606 13.8677C14.0559 13.6725 14.0559 13.3559 13.8606 13.1606L13.1535 12.4535C12.9583 12.2583 12.6417 12.2583 12.4464 12.4535ZM12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4C10.2091 4 12 5.79086 12 8ZM13 8C13 10.7614 10.7614 13 8 13C5.23858 13 3 10.7614 3 8C3 5.23858 5.23858 3 8 3C10.7614 3 13 5.23858 13 8Z" fill="#40404B"/>
+</svg>
+      </label>
+       
+    </form>
+       
+    <label class="md-header__button md-icon md-icon--hover" for="__search">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+    <div class="md-header__community">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-header__extra">
+  <div class="md-header__links">
+    <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord" onclick="javascript:window.open('https://discord.com/invite/wso2', '', 'noopener')">
+        <div class="md-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <label class="md-header__link__label">Get Help</label>
+      </button>
+      <div class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+    </div>
+    
+  </nav>
+  <script>
+    
+  </script>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Identity Server" class="md-nav__button md-logo" aria-label="Identity Server" data-md-component="logo">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    Identity Server
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          What has changed
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          What has changed
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+          5.2.0 to 5.7.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          5.2.0 to 5.7.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-changes-5.2.0-5.3.0/" class="md-nav__link">
+        5.2.0 to 5.3.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-changes-5.3.0-5.4.0/" class="md-nav__link">
+        5.3.0 to 5.4.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-changes-5.4.0-5.5.0/" class="md-nav__link">
+        5.4.0 to 5.5.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-changes-5.5.0-5.6.0/" class="md-nav__link">
+        5.5.0 to 5.6.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-changes-5.6.0-5.7.0/" class="md-nav__link">
+        5.6.0 to 5.7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-has-changes-5.7.0%20to%205.8.0/" class="md-nav__link">
+        5.7.0 to 5.8.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-has-changes-5.8.0%20to%205.9.0/" class="md-nav__link">
+        5.8.0 to 5.9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-has-changes-5.9.0%20to%205.10.0/" class="md-nav__link">
+        5.9.0 to 5.10.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-has-changes-5.10.0%20to%205.11.0/" class="md-nav__link">
+        5.10.0 to 5.11.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-has-changes-5.11.0%20to%206.0.0/" class="md-nav__link">
+        5.11.0 to 6.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-has-changes-6.0.0%20to%206.1.0/" class="md-nav__link">
+        6.0.0 to 6.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          6.1.0 to 7.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        6.1.0 to 7.0.0
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#significant-changes" class="md-nav__link">
+    Significant Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Significant Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenant-qualified-urls-and-tenanted-sessions" class="md-nav__link">
+    Tenant qualified URLs and tenanted sessions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-model" class="md-nav__link">
+    Authorization Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-applications" class="md-nav__link">
+    System applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-minor-changes" class="md-nav__link">
+    Other Minor Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauthoidc" class="md-nav__link">
+    OAuth/OIDC
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth/OIDC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-same-oauth-client-id-to-be-used-in-multiple-organizations" class="md-nav__link">
+    Allow same OAuth Client ID to be used in multiple organizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-scopes-to-access-the-system-apis" class="md-nav__link">
+    Unique scopes to access the system APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevent-issuing-self-service-related-scopes-for-client-credential-grant" class="md-nav__link">
+    Prevent issuing self-service-related scopes for client credential grant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-sending-redundant-query-parameters-in-the-logout-redirect-url" class="md-nav__link">
+    Avoid sending redundant query parameters in the Logout Redirect URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-sending-redundant-query-params-in-the-default-consent-page-url" class="md-nav__link">
+    Avoid sending redundant query params in the default consent page URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjustments-to-access-token-behavior-for-authenticated-clients" class="md-nav__link">
+    Adjustments to Access Token Behavior for Authenticated Clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-returning-oidc-claims-for-the-client-credential-grant-type" class="md-nav__link">
+    Avoid returning OIDC claims for the client credential grant type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restrict-public-client-support-for-client-credentials-grant-type" class="md-nav__link">
+    Restrict public client support for client credentials grant type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplified-configuration-for-public-client-support-a-seamless-transition-to-granular-grant-type-settings" class="md-nav__link">
+    Simplified Configuration for Public Client Support: A Seamless Transition to Granular Grant Type Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecate-revoked-token-headers-from-oauth2revoke-endpoint-response" class="md-nav__link">
+    Deprecate revoked token headers from oauth2/revoke endpoint response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-will-not-issues-unregistered-scopes" class="md-nav__link">
+    Token will not issues unregistered scopes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saml" class="md-nav__link">
+    SAML
+  </a>
+  
+    <nav class="md-nav" aria-label="SAML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustments-to-saml-logout-response-signing" class="md-nav__link">
+    Adjustments to SAML Logout Response Signing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passive-sts" class="md-nav__link">
+    Passive STS
+  </a>
+  
+    <nav class="md-nav" aria-label="Passive STS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-security-with-reply-logout-url-validation-in-passivests" class="md-nav__link">
+    Enhanced Security with reply Logout URL Validation in PassiveSTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-a-different-browser-to-open-the-email-magic-link-and-log-in-to-the-app" class="md-nav__link">
+    Use a different browser to open the email magic link and log in to the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-sending-ske-query-parameter-in-the-totp-enroll-flow" class="md-nav__link">
+    Avoid Sending ske Query Parameter in the TOTP Enroll Flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-the-mutual-tls-client-authenticator-as-the-final-client-authenticator" class="md-nav__link">
+    Executing the Mutual TLS Client Authenticator as the final client authenticator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    User Management
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowing-only-case-insensitive-username-filtering-in-ldap-via-scim2-api" class="md-nav__link">
+    Allowing only Case-Insensitive Username Filtering in LDAP via SCIM2 API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-api-response-http-status-code-for-locked-user-account-scenarios" class="md-nav__link">
+    Update API Response HTTP Status Code for Locked User Account Scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-for-tenant-level-password-input-validation" class="md-nav__link">
+    Support for Tenant Level Password Input Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-secondary-userstore-data-validation" class="md-nav__link">
+    Improved secondary userstore data validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-user-account-recovery-v1-api" class="md-nav__link">
+    Disabling User Account Recovery V1 API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retention-of-manually-added-roles-in-jit-provisioned-users" class="md-nav__link">
+    Retention of Manually Added Roles in JIT Provisioned Users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjustments-to-user-emailmobile-number-update-verification-feature" class="md-nav__link">
+    Adjustments to user email/mobile number update verification feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reintroducing-allowassociatingtoexistinguser-configuration-for-jit-provisioning" class="md-nav__link">
+    Reintroducing AllowAssociatingToExistingUser configuration for JIT provisioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-application-level-outbound-provisioning-support" class="md-nav__link">
+    Disabling application level outbound provisioning support.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-group-unique-id-support" class="md-nav__link">
+    Providing Group Unique ID Support
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claim-mappings" class="md-nav__link">
+    Claim Mappings
+  </a>
+  
+    <nav class="md-nav" aria-label="Claim Mappings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-custom-claim-mapping-behavior-of-connections-using-authenticators-with-standard-dialect" class="md-nav__link">
+    Changing custom claim mapping behavior of connections using authenticators with standard dialect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-configs" class="md-nav__link">
+    System Configs
+  </a>
+  
+    <nav class="md-nav" aria-label="System Configs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-recovery-callback-url-regex-pattern" class="md-nav__link">
+    Changing the Recovery Callback URL Regex Pattern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitioning-from-sha1-to-sha256" class="md-nav__link">
+    Transitioning from SHA1 to SHA256
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitioning-to-the-improved-identitydatastoreservice-updating-configuration-for-custom-data-store-classes" class="md-nav__link">
+    Transitioning to the Improved IdentityDataStoreService: Updating Configuration for Custom Data Store Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-configured-alphanumeric-email-otp-type-has-been-reset-to-the-default-numeric-type" class="md-nav__link">
+    User configured alphanumeric Email OTP type has been reset to the default numeric type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-usages-of-md5-replaced-with-sha256" class="md-nav__link">
+    Default usages of MD5 replaced with SHA256
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements-in-otp-configurations" class="md-nav__link">
+    Enhancements in OTP Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabling-scope-validation-for-resource-access-control-is-no-longer-recommended" class="md-nav__link">
+    Disabling Scope Validation for Resource Access Control is No Longer Recommended
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addition-of-the-j2-file-for-charon-configxml" class="md-nav__link">
+    Addition of the .j2 file for charon-config.xml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-internal-session-data-cleanup-task" class="md-nav__link">
+    Disabling Internal Session Data Cleanup Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-and-logout-consent-are-skipped-by-default-for-newly-created-applications" class="md-nav__link">
+    Login and logout consent are skipped by default for newly created applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-x5ts256-attribute-value-calculation-process-of-the-jwks-response" class="md-nav__link">
+    Changing the x5t#S256 attribute value calculation process of the JWKS response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-jar-removals" class="md-nav__link">
+    Notable JAR Removals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-audit-tables-used-in-token-clean-up-script-should-be-altered-to-have-the-newly-introduced-column" class="md-nav__link">
+    The audit tables used in token clean up script should be altered to have the newly introduced column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          is-6.1.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          is-6.1.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          Migration process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/prepare-for-migration/" class="md-nav__link">
+        prepare-for-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/migration-process/" class="md-nav__link">
+        migration-process
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Migration Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/migrate-to-610/" class="md-nav__link">
+        migration 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          is-7.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          is-7.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          Migration process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/prepare-for-migration/" class="md-nav__link">
+        prepare-for-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migration-process/" class="md-nav__link">
+        migration-process
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          Migration Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrate-to-700/" class="md-nav__link">
+        migration 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Other Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-configurations/" class="md-nav__link">
+        migrating-configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-customizations/" class="md-nav__link">
+        migrating-customizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-authorization-model/" class="md-nav__link">
+        migrating-authorization-model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-saas-applications/" class="md-nav__link">
+        migrating-saas-applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-roles-related-adaptive-script-functions/" class="md-nav__link">
+        migrating-roles-related-adaptive-script-functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-applications-for-tenanted-qualified-urls/" class="md-nav__link">
+        migrating-applications-for-tenanted-qualified-urls
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#significant-changes" class="md-nav__link">
+    Significant Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Significant Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenant-qualified-urls-and-tenanted-sessions" class="md-nav__link">
+    Tenant qualified URLs and tenanted sessions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-model" class="md-nav__link">
+    Authorization Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-applications" class="md-nav__link">
+    System applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-minor-changes" class="md-nav__link">
+    Other Minor Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauthoidc" class="md-nav__link">
+    OAuth/OIDC
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth/OIDC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-same-oauth-client-id-to-be-used-in-multiple-organizations" class="md-nav__link">
+    Allow same OAuth Client ID to be used in multiple organizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-scopes-to-access-the-system-apis" class="md-nav__link">
+    Unique scopes to access the system APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevent-issuing-self-service-related-scopes-for-client-credential-grant" class="md-nav__link">
+    Prevent issuing self-service-related scopes for client credential grant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-sending-redundant-query-parameters-in-the-logout-redirect-url" class="md-nav__link">
+    Avoid sending redundant query parameters in the Logout Redirect URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-sending-redundant-query-params-in-the-default-consent-page-url" class="md-nav__link">
+    Avoid sending redundant query params in the default consent page URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjustments-to-access-token-behavior-for-authenticated-clients" class="md-nav__link">
+    Adjustments to Access Token Behavior for Authenticated Clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-returning-oidc-claims-for-the-client-credential-grant-type" class="md-nav__link">
+    Avoid returning OIDC claims for the client credential grant type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restrict-public-client-support-for-client-credentials-grant-type" class="md-nav__link">
+    Restrict public client support for client credentials grant type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simplified-configuration-for-public-client-support-a-seamless-transition-to-granular-grant-type-settings" class="md-nav__link">
+    Simplified Configuration for Public Client Support: A Seamless Transition to Granular Grant Type Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecate-revoked-token-headers-from-oauth2revoke-endpoint-response" class="md-nav__link">
+    Deprecate revoked token headers from oauth2/revoke endpoint response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-will-not-issues-unregistered-scopes" class="md-nav__link">
+    Token will not issues unregistered scopes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saml" class="md-nav__link">
+    SAML
+  </a>
+  
+    <nav class="md-nav" aria-label="SAML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustments-to-saml-logout-response-signing" class="md-nav__link">
+    Adjustments to SAML Logout Response Signing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passive-sts" class="md-nav__link">
+    Passive STS
+  </a>
+  
+    <nav class="md-nav" aria-label="Passive STS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-security-with-reply-logout-url-validation-in-passivests" class="md-nav__link">
+    Enhanced Security with reply Logout URL Validation in PassiveSTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-a-different-browser-to-open-the-email-magic-link-and-log-in-to-the-app" class="md-nav__link">
+    Use a different browser to open the email magic link and log in to the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-sending-ske-query-parameter-in-the-totp-enroll-flow" class="md-nav__link">
+    Avoid Sending ske Query Parameter in the TOTP Enroll Flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-the-mutual-tls-client-authenticator-as-the-final-client-authenticator" class="md-nav__link">
+    Executing the Mutual TLS Client Authenticator as the final client authenticator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    User Management
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowing-only-case-insensitive-username-filtering-in-ldap-via-scim2-api" class="md-nav__link">
+    Allowing only Case-Insensitive Username Filtering in LDAP via SCIM2 API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-api-response-http-status-code-for-locked-user-account-scenarios" class="md-nav__link">
+    Update API Response HTTP Status Code for Locked User Account Scenarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-for-tenant-level-password-input-validation" class="md-nav__link">
+    Support for Tenant Level Password Input Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-secondary-userstore-data-validation" class="md-nav__link">
+    Improved secondary userstore data validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-user-account-recovery-v1-api" class="md-nav__link">
+    Disabling User Account Recovery V1 API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retention-of-manually-added-roles-in-jit-provisioned-users" class="md-nav__link">
+    Retention of Manually Added Roles in JIT Provisioned Users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjustments-to-user-emailmobile-number-update-verification-feature" class="md-nav__link">
+    Adjustments to user email/mobile number update verification feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reintroducing-allowassociatingtoexistinguser-configuration-for-jit-provisioning" class="md-nav__link">
+    Reintroducing AllowAssociatingToExistingUser configuration for JIT provisioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-application-level-outbound-provisioning-support" class="md-nav__link">
+    Disabling application level outbound provisioning support.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-group-unique-id-support" class="md-nav__link">
+    Providing Group Unique ID Support
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claim-mappings" class="md-nav__link">
+    Claim Mappings
+  </a>
+  
+    <nav class="md-nav" aria-label="Claim Mappings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-custom-claim-mapping-behavior-of-connections-using-authenticators-with-standard-dialect" class="md-nav__link">
+    Changing custom claim mapping behavior of connections using authenticators with standard dialect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-configs" class="md-nav__link">
+    System Configs
+  </a>
+  
+    <nav class="md-nav" aria-label="System Configs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-recovery-callback-url-regex-pattern" class="md-nav__link">
+    Changing the Recovery Callback URL Regex Pattern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitioning-from-sha1-to-sha256" class="md-nav__link">
+    Transitioning from SHA1 to SHA256
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitioning-to-the-improved-identitydatastoreservice-updating-configuration-for-custom-data-store-classes" class="md-nav__link">
+    Transitioning to the Improved IdentityDataStoreService: Updating Configuration for Custom Data Store Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-configured-alphanumeric-email-otp-type-has-been-reset-to-the-default-numeric-type" class="md-nav__link">
+    User configured alphanumeric Email OTP type has been reset to the default numeric type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-usages-of-md5-replaced-with-sha256" class="md-nav__link">
+    Default usages of MD5 replaced with SHA256
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements-in-otp-configurations" class="md-nav__link">
+    Enhancements in OTP Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabling-scope-validation-for-resource-access-control-is-no-longer-recommended" class="md-nav__link">
+    Disabling Scope Validation for Resource Access Control is No Longer Recommended
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addition-of-the-j2-file-for-charon-configxml" class="md-nav__link">
+    Addition of the .j2 file for charon-config.xml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-internal-session-data-cleanup-task" class="md-nav__link">
+    Disabling Internal Session Data Cleanup Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-and-logout-consent-are-skipped-by-default-for-newly-created-applications" class="md-nav__link">
+    Login and logout consent are skipped by default for newly created applications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-x5ts256-attribute-value-calculation-process-of-the-jwks-response" class="md-nav__link">
+    Changing the x5t#S256 attribute value calculation process of the JWKS response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notable-jar-removals" class="md-nav__link">
+    Notable JAR Removals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-audit-tables-used-in-token-clean-up-script-should-be-altered-to-have-the-newly-introduced-column" class="md-nav__link">
+    The audit tables used in token clean up script should be altered to have the newly introduced column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="what-has-changed">What Has Changed<a class="headerlink" href="#what-has-changed" title="Permanent link">&para;</a></h1>
+<p>WSO2 Identity Server 7.0.0 brings a range of new features and major improvements. This page provides details about the behavioral changes from WSO2 Identity Server 6.1.0 to 7.0.0.</p>
+<blockquote>
+<p><strong>If you are migrating from an older version of Identity Server</strong></p>
+<p>To find the changes introduced in the previous versions, you can refer to the following documents
+ - <a href="../../is-6.1.0/what-has-changed/">What Has Changed in IS 6.1.0</a>
+ - <a href="../../is-6.0.0/what-has-changed/">What Has Changed in IS 6.0.0</a>
+ - <a href="../../is-5.11.0/migrating-what-has-changed/">What Has Changed in IS 5.11.0</a>
+ - <a href="../../is-5.10.0/migrating-what-has-changed/">What Has Changed in IS 5.10.0</a>
+ - <a href="../../is-5.9.0/migrating-what-has-changed/">What Has Changed in IS 5.9.0</a>
+ - <strong>Migrating the Configurations</strong> section in the <a href="../../is-5.8.0/upgrading-from-older-version/">Upgrading From an Older Version of WSO2 IS</a> document</p>
+</blockquote>
+<h2 id="significant-changes">Significant Changes<a class="headerlink" href="#significant-changes" title="Permanent link">&para;</a></h2>
+<h3 id="tenant-qualified-urls-and-tenanted-sessions">Tenant qualified URLs and tenanted sessions<a class="headerlink" href="#tenant-qualified-urls-and-tenanted-sessions" title="Permanent link">&para;</a></h3>
+<p>WSO2 Identity Server now supports tenant-qualified URLs for all the endpoints exposed from the product. This enables clear
+isolation between tenants, especially with managing non-conflicting tenant bound user sessions, and provides the
+capability to easily configure routing rules.</p>
+<p><strong>This change only impacts deployments with multi tenant setups.</strong> Application in other tenants except the super 
+tenant should be migrated to support the tenant-qualified URLs. Migration impact related details are included in the 
+<a href="migrating-applications-for-tenanted-qualified-urls.md">Migrating applications for tenanted qualified URLs</a> document.</p>
+<h3 id="authorization-model">Authorization Model<a class="headerlink" href="#authorization-model" title="Permanent link">&para;</a></h3>
+<p>With IS 7.0.0, the authorization model has undergone significant changes. The following are the key changes in the
+authorization model.</p>
+<h4>Scopes/Permissions representation</h4>
+<p>In prior versions, customer scopes were represented using OAuth2 scopes and system permissions and scopes were
+represented using internal permissions/scopes as defined in the <code>oauth-scope-binding.xml</code> file. From IS 7.0.0 onwards,
+both customer scopes and system scopes are represented as API Resources.</p>
+<p>Migration of the scopes from previous model to the new model is handled through the migration client as explained in
+the <a href="migrating-authorization-model.md">Migrating Authorization Model</a> document.</p>
+<h4>API Authorization</h4>
+<p>In prior versions, scopes are issued for the applications if the user roles are permitted access for the requested scopes. From IS 7.0.0
+onwards, scopes should be authorized through the API authorization capability in order to be issued for the applications.</p>
+<p>Migration of the scopes from previous model to the new model is handled through the migration client as explained in the <a href="migrating-authorization-model.md">Migrating Authorization Model</a> document.</p>
+<h4>Roles implementation</h4>
+<p>IS 7.0.0 introduces roles V2 implementation with audience support giving you capability to create both organization audience roles and application audience roles.</p>
+<p>Migration of the roles from previous model to the new model is handled through the migration client as explained in the <a href="migrating-authorization-model.md">Migrating Authorization Model</a> document.</p>
+<p>Along with the new role V2 implementation, new adaptive script functions are introduced to handle the role-related operations which were previously handled by functions specific to the V1 implementation.</p>
+<p>Migration of the roles related adaptive script functions needs to be handled as explained in the <a href="migrating-roles-related-adaptive-script-functions.md">Migrating Roles Related Adaptive Script Functions</a> document.</p>
+<h4>IdP role to local role mappings</h4>
+<p>In the prior versions, IdP role to local role mappings were used for federated user authorization. In IS 7.0.0, IdP groups capability will be used for the authorization of federated users.</p>
+<p>Migration of IdP roles to local role mappings to IdP groups to local role assignments is handled through the migration client as explained in the <a href="migrating-authorization-model.md">Migrating Authorization Model</a> document.</p>
+<p>With the IdP Group capability, attribute mapped to local group claim is used as the IdP group attribute. You need to configure the IdP group attribute in the connection configurations using attribute mappings. If you need to use the previous attribute used with the IdP role to local role mappings, you can add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[federated.idp]
+use_idp_role_claim_as_idp_group_claim=true
+</code></pre></div>
+
+<p>Additionally, IdP role to local role mappings support had the capability to send unmapped roles. Since IdP groups feature uses IdP groups to local role assignments to resolve roles, there is no concept of sending unmapped roles and only local roles with IdP group assignments should be returned. Since IdP role to local role mappings are migrated to IdP group to role assignments, support of sending unmapped roles behaviour incorporating IdP groups is introduced with a backward compatible configuration. When this configuration is enabled, the IdP groups derived using the group attribute during authentication which do not have an IdP group created under the connection will be treated as unmapped roles. To enable this behaviour, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[idp_role_management]
+return_only_mapped_local_roles=false
+</code></pre></div>
+
+<blockquote>
+<p>Note : We highly recommend not to enable this configuration unless you have a specific requirement to send unmapped roles. If you have already sending unmapped roles using IdP role to local role mappings, we recommend to configure them with IdP groups and local role assignments.</p>
+</blockquote>
+<h3 id="system-applications">System applications<a class="headerlink" href="#system-applications" title="Permanent link">&para;</a></h3>
+<h4>Console</h4>
+<p>From IS 7.0.0 onwards, the Console application is changed to a non-SaaS behavior model along with the new authorization model.
+With this change, the Console application will be created for each tenant.
+Console access urls will be changed to tenant qualified urls.</p>
+<p>Migration of the Console application is handled through the migration client as explained in the <a href="migrating-authorization-model.md">Migrating Authorization Model</a> document.</p>
+<h4>My Account</h4>
+<p>From IS 7.0.0 onwards, the My Account application is changed to a non-SaaS behavior model along with the new authorization model.
+With this change, the My Account application will be created for each tenant.
+My Account access urls will be changed to tenant qualified urls.</p>
+<p>Migration of the My Account application is handled through the migration client as explained in the <a href="migrating-authorization-model.md">Migrating Authorization Model</a> document.</p>
+<h4>Management Console</h4>
+<p>From IS 7.0.0 onwards, management console is deprecated in favor of the new console UI with a refreshing look and feel. And it is now only available for a subset of features which are still not available in the new console.
+This includes XACML policy administration and editor, workflow configurations, key store management, registry configurations, tenant management, consent purpose management, and function libraries.</p>
+<p>Removed sections include <code>Users and Roles</code> (now replaced by a new <code>Roles</code> section for managing management console permissions), <code>User Stores</code>, <code>Claims</code>, <code>Service Providers</code>, <code>Identity Verification Providers</code>, <code>Identity Providers</code>, <code>Email Templates</code>, <code>OIDC Scopes</code>, <code>Admin Advisory</code>, <code>Remote Logging</code>, and <code>Server Roles</code>. Given these changes, our suggestion is to transition to using the new console, which offers a more streamlined interface and improved functionality.</p>
+<p>In order to configure the OTP related configurations, resident identity provider UI can be enabled by adding following configuration to <code>deployment.toml</code> file.
+<div class="highlight"><pre><span></span><code>[resident_idp]
+enable = &quot;true&quot;
+</code></pre></div></p>
+<blockquote>
+<p>Note: It is not recommended to update any other resident identity provider configurations from here as the legacy management console will soon be removed. Use the latest console to access up-to-date features and for a safer and a more stable experience.</p>
+</blockquote>
+<h2 id="other-minor-changes">Other Minor Changes<a class="headerlink" href="#other-minor-changes" title="Permanent link">&para;</a></h2>
+<h2 id="oauthoidc">OAuth/OIDC<a class="headerlink" href="#oauthoidc" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done to the OAuth/OIDC related features of IS 7.0.0.</p>
+<h3 id="allow-same-oauth-client-id-to-be-used-in-multiple-organizations">Allow same OAuth Client ID to be used in multiple organizations<a class="headerlink" href="#allow-same-oauth-client-id-to-be-used-in-multiple-organizations" title="Permanent link">&para;</a></h3>
+<p>With IS 7.0.0, OAuth consumer application client IDs are now tenant unique allowing the same client ID to exist in multiple organizations.</p>
+<h3 id="unique-scopes-to-access-the-system-apis">Unique scopes to access the system APIs<a class="headerlink" href="#unique-scopes-to-access-the-system-apis" title="Permanent link">&para;</a></h3>
+<p>With the IS 7.0.0, we have introduced new internal scopes for existing system APIs which shared the same scope in prior versions to maintain the uniqueness.</p>
+<blockquote>
+<p>For example: <code>internal_application_mgt_create</code> scope was used for Application Management, OIDC Scope Management, OAuth2 Scope Management, and Dynamic Client Registration API POST calls. From IS 7.0.0, <code>internal_application_mgt_create</code> is only used for Application Management POST calls and new internal scopes are introduced for the other APIs which shared the same scope.</p>
+</blockquote>
+<p>With the above mentioned change, clients which used to invoke the system APIs might be impacted due to not getting the scopes to invoke some APIs which were previously invoked using previous scopes. Scopes of the user roles and requested scopes of the clients should be updated accordingly with this change.</p>
+<p>Since there are changes needed from the clients regarding the requested scopes, we have also provided a backward compatibility configuration for migrating purposes to issue the new scopes which are corresponding to the previous scopes when requesting the previous scopes. You can enable the configuration by adding the following configuration to <code>deployment.toml</code> file.
+<div class="highlight"><pre><span></span><code>[oauth]
+use_legacy_scopes_as_alias_for_new_scopes=true
+</code></pre></div></p>
+<blockquote>
+<p>Note: This backward compatible behaviour will be only enforced on the migrating applications. We highly recommend configuring the scope assignments of the roles and the requested scopes of the clients and remove the above configuration since this backward compatible support will be removed in future releases.</p>
+</blockquote>
+<p>In addition to the above configuration, we have introduced another backward compatibility configuration to give the same access level for invoking system APIs using authentication handlers like Basic Authentication which previously relied on user permissions. You can enable the configuration by adding the following configuration to <code>deployment.toml</code> file.
+<div class="highlight"><pre><span></span><code>[oauth]
+use_legacy_permission_access_for_user_based_auth=true
+</code></pre></div></p>
+<blockquote>
+<p>Note: We highly recommend enabling this configuration only if you have used authentication handlers which previously used user permissions for access control of the system APIs. If you have a requirement to enable the configuration initially with the migration, we also recommend configuring the scope assignments of the roles properly with the new scopes and removing the configuration.</p>
+</blockquote>
+<h3 id="prevent-issuing-self-service-related-scopes-for-client-credential-grant">Prevent issuing self-service-related scopes for client credential grant<a class="headerlink" href="#prevent-issuing-self-service-related-scopes-for-client-credential-grant" title="Permanent link">&para;</a></h3>
+<p>In IS 7.0.0, the <code>internal_login</code> scope, which is used to access the self-service APIs, is no longer issued for the client credential grant. There is no reason for the scope to be issued for the client credential grant as an app is not used to perform any self-service capabilities. Further, issuing the <code>internal_login</code> scope for the client credential grant leads to security issues as well.</p>
+<p>Users should be aware that this change may affect existing applications, as the omission of the <code>internal_login</code> scope could alter application behavior. It is recommended to review and test affected processes thoroughly to ensure smooth operation and to minimize any potential disruptions this update may bring.</p>
+<h3 id="avoid-sending-redundant-query-parameters-in-the-logout-redirect-url">Avoid sending redundant query parameters in the Logout Redirect URL<a class="headerlink" href="#avoid-sending-redundant-query-parameters-in-the-logout-redirect-url" title="Permanent link">&para;</a></h3>
+<p>In prior IS versions, a successful OIDC logout results in the <code>crId</code> and <code>sp</code> query parameters in the redirect url. With IS 7.0.0, these query parameters are removed from the logout redirect url as they are redundant to be shared with the application.</p>
+<p>If you have implemented customizations based on these query parameters, or if maintaining the previous behavior is necessary, you can retain the earlier functionality by adding the following configuration to the <code>&lt;IS_HOME&gt;/repository/conf/deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[oauth.oidc] 
+allow_additional_params_from_post_logout_redirect_uri=true
+</code></pre></div>
+
+<h3 id="avoid-sending-redundant-query-params-in-the-default-consent-page-url">Avoid sending redundant query params in the default consent page URL<a class="headerlink" href="#avoid-sending-redundant-query-params-in-the-default-consent-page-url" title="Permanent link">&para;</a></h3>
+<p>In prior versions of IS, the default consent page URL included several query parameters: <code>spQueryParams, application, loggedInUser, tenantDomain, scope, requestedClaims, and userClaimsConsentOnly</code>. However, to mitigate security risks, IS 7.0.0 will no longer include these query parameters.</p>
+<p>If you have implemented customizations based on these query parameters, or if maintaining the previous behavior is necessary, you can retain the earlier functionality by adding the following configuration to the <code>&lt;IS_HOME&gt;/repository/conf/deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[authentication.endpoint.consent_page_redirect_params] 
+allow = true
+</code></pre></div>
+
+<h3 id="adjustments-to-access-token-behavior-for-authenticated-clients">Adjustments to Access Token Behavior for Authenticated Clients<a class="headerlink" href="#adjustments-to-access-token-behavior-for-authenticated-clients" title="Permanent link">&para;</a></h3>
+<p>In IS 7.0.0, the behavior related to token issuance for authenticated clients has been changed, especially when using grant types such as client credential.</p>
+<p>Here are the key alterations:
+1) Subject Claim Modification: The sub claim of the JWT tokens, when issued for an authenticated client, is now set as the client id of the authenticated application. Previously, the sub claim was set as the user ID of the application owner.
+2) Username Field Removal: The username field has been removed from the introspection response for access tokens issued for authenticated clients.</p>
+<p>These changes might affect existing workflows and systems that rely on the previous token behavior.</p>
+<p>To facilitate users who wish to retain the previous behavior for backward compatibility, two configurations have been introduced. Set the following configurations to false in the <code>&lt;IS_HOME&gt;/repository/conf/deployment.toml</code> file if you wish to revert to the former behavior.</p>
+<div class="highlight"><pre><span></span><code>[oauth] 
+use_client_id_as_sub_claim_for_app_tokens=false 
+remove_username_from_introspection_response_for_app_tokens=false
+</code></pre></div>
+
+<h3 id="avoid-returning-oidc-claims-for-the-client-credential-grant-type">Avoid returning OIDC claims for the client credential grant type<a class="headerlink" href="#avoid-returning-oidc-claims-for-the-client-credential-grant-type" title="Permanent link">&para;</a></h3>
+<p>In WSO2 IS 7.0.0, there is a behavioral change regarding the retrieval of OIDC claims for the client credential grant type: OIDC claims are no longer included by default in the JWT token issued for this grant type.</p>
+<p>To revert to the previous behavior and include OIDC claims, the following configuration can be added to the <code>&lt;IS_HOME&gt;/repository/conf/deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[oauth.grant_type.client_credentials]
+skip_oidc_claims = false
+</code></pre></div>
+
+<h3 id="restrict-public-client-support-for-client-credentials-grant-type">Restrict public client support for client credentials grant type<a class="headerlink" href="#restrict-public-client-support-for-client-credentials-grant-type" title="Permanent link">&para;</a></h3>
+<p>Starting from IS version 7.0.0, the retrieval of an access token using the client credentials grant type for an application defined as a public client will be disabled due to security concerns. This security enhancement is implemented, by default, by setting the <code>PublicClientAllowed</code> property value to false for the client credentials grant type.</p>
+<p>If the previous behavior is desired, it can be preserved by adding the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[oauth.grant_type.client_credentials] 
+allow_public_client=&quot;true&quot;
+</code></pre></div>
+
+<h3 id="simplified-configuration-for-public-client-support-a-seamless-transition-to-granular-grant-type-settings">Simplified Configuration for Public Client Support: A Seamless Transition to Granular Grant Type Settings<a class="headerlink" href="#simplified-configuration-for-public-client-support-a-seamless-transition-to-granular-grant-type-settings" title="Permanent link">&para;</a></h3>
+<p>In the latest version of WSO2 Identity Server 7.0.0, we've made improvements to the way you configure support for public clients. Specifically, the process of indicating which grant types should support public client authentication has been refined for better precision and flexibility.</p>
+<p>In the earlier version, an array configuration was used to specify grant types supporting public client authentication. An example looked like this:</p>
+<div class="highlight"><pre><span></span><code>[oauth.public_client_support]
+grant_type_names = [&quot;customGrant1&quot;]
+</code></pre></div>
+
+<p>Now, we've introduced a more granular way to configure public client support using a property called <code>PublicClientAllowed</code>. This property accepts a boolean value (true or false) and is applied to each grant type individually. Here's how you can set it up in the new configuration:</p>
+<div class="highlight"><pre><span></span><code>[[oauth.custom_grant_type]]
+name=&quot;customGrant1&quot;
+grant_handler=&quot;org.wso2.carbon.identity.oauth2.customGrantHandler&quot;
+grant_validator=&quot;org.wso2.carbon.identity.oauth2.customGrantValidator&quot;
+[oauth.custom_grant_type.properties]
+PublicClientAllowed=true
+</code></pre></div>
+
+<p>Changes and Migration:</p>
+<ul>
+<li>The array configuration for public client support has been removed. If you were using this method, you now need to declare grant types with the new PublicClientAllowed property.</li>
+<li>Default grant types within Identity Server have been updated with this new property and default values. You can customize these defaults in the <code>deployment.toml</code> file.</li>
+<li>Public client support for the client credentials grant type is now disabled by default. If needed, you can enable it explicitly in the configuration.</li>
+</ul>
+<p>For those who had not specified any grant types using the array and relied on the default behavior where all grant types supported public clients, they will now need to configure each required custom grant type with PublicClientAllowed=true to maintain the same functionality.</p>
+<h3 id="deprecate-revoked-token-headers-from-oauth2revoke-endpoint-response">Deprecate revoked token headers from <code>oauth2/revoke</code> endpoint response<a class="headerlink" href="#deprecate-revoked-token-headers-from-oauth2revoke-endpoint-response" title="Permanent link">&para;</a></h3>
+<p>We are updating the response behavior for the <code>oauth2/revoke</code> endpoint. This update involves the deprecation of including revoked token headers in the response. This change is in alignment with the <a href="https://www.rfc-editor.org/rfc/rfc7009.html">OAuth 2.0 Token Revocation specification (RFC 7009)</a>, which specifies that a successful token revocation should result in a 200 status code response and does not mandate the inclusion of revoked tokens in the response headers.</p>
+<p>Going forward, the <code>oauth2/revoke</code> endpoint will no longer include headers containing revoked tokens in its response. This update simplifies the response structure and adheres to the OAuth 2.0 specification more closely.</p>
+<p>If the original functionality with revoked token headers in the response is needed, the following configuration can be added to the <code>deployment.toml</code> file:</p>
+<div class="highlight"><pre><span></span><code>[oauth.revoked_token_headers_in_response] 
+enable=true
+</code></pre></div>
+
+<h3 id="token-will-not-issues-unregistered-scopes">Token will not issues unregistered scopes<a class="headerlink" href="#token-will-not-issues-unregistered-scopes" title="Permanent link">&para;</a></h3>
+<p>With the IS 7.0.0 release,  all the unregistered scopes will be ignored from the token. if you want to add an unregistered scope, then you have to send a scope that matches the <code>^device_.*</code> regex pattern (like <code>device_1</code>, <code>device_2</code>, etc.). Unregistered scopes that match this pattern are automatically included in the token. However, it's key to understand that these unregistered scopes do not show up on the consent page. This means when a user requests both standard system-registered scopes and a scope that follows the <code>^device_.*</code> pattern, the consent page will only display the system-registered scopes. Despite this, the final token issued will contain both the system-registered scopes and any scopes that align with the <code>^device_.*</code> regex pattern.</p>
+<h4>Disabling the Default Scope Inclusion</h4>
+<p>If the user wants to disable this behavior, they can do it by adding the following configurations into deployment.toml</p>
+<div class="highlight"><pre><span></span><code>[oauth]
+drop_unregistered_scopes = &quot;false&quot;
+allowed_scopes = []
+</code></pre></div>
+
+<blockquote>
+<p>Note : If you already have scopes mentioned in allowed_scopes, you do not need to set allowed_scopes = []</p>
+</blockquote>
+<p>This change will disable the above-mentioned behavior and issue a token with any random scope.</p>
+<h4>Introducing Custom Scope Patterns</h4>
+<p>If needed, you can also define your own custom scope patterns. To do this, you need to modify the <code>deployment.toml</code> file as shown below</p>
+<div class="highlight"><pre><span></span><code>[oauth]
+allowed_scopes = [&quot;^device_.*&quot;, &quot;&lt;any_custom_regex_pattern&gt;&quot;]
+</code></pre></div>
+
+<p>With this configuration, the system will recognize both the default regex pattern (<code>^device_.*</code>) and any user-defined custom regex patterns as valid for inclusion in tokens. If you prefer to use only your custom patterns, excluding the default, you can simply remove the <code>^device_.*</code> pattern from the allowed_scopes configuration and include only your specified patterns and scopes. This setup allows for the inclusion of both regex patterns and plain string text in the allowed_scopes configuration.</p>
+<p>In summary, these configurations offer you flexibility in managing which scopes are included in tokens, be it through the system's default settings or through customized configurations defined in the <code>deployment.toml</code> file.</p>
+<h2 id="saml">SAML<a class="headerlink" href="#saml" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done to the SAML features of IS 7.0.0.</p>
+<h3 id="adjustments-to-saml-logout-response-signing">Adjustments to SAML Logout Response Signing<a class="headerlink" href="#adjustments-to-saml-logout-response-signing" title="Permanent link">&para;</a></h3>
+<p>In previous versions of WSO2 Identity Server, there was a noticeable difference in handling SAML logout responses between Service Provider (SP) initiated and Identity Provider (IdP) initiated Single Sign-On (SSO) flows. Specifically, while logout responses were signed for SP initiated SSO flows when response signing was enabled, this was not the case for IdP initiated SSO flows.</p>
+<p>Change in IS 7.0.0:
+- Standardized Signing Behavior: IS 7.0.0 addresses this inconsistency. Now, if response signing is enabled for a Service Provider, logout responses will be signed for both SP and IdP initiated SSO flows.
+- Consistent Security Posture: This enhancement ensures a uniform security approach, providing consistent behavior regardless of the SSO flow initiation.</p>
+<p>Configuration for Previous Behavior:
+- While this update represents a move towards a more standardized and secure approach, some users may prefer to retain the previous behavior for specific use cases.
+- Optional Configuration: To opt-out of signing the SAML logout response during IdP initiated SSO flow, users can modify their <code>deployment.toml</code> file with the following setting:</p>
+<div class="highlight"><pre><span></span><code>[saml] 
+enable_saml_idp_init_logout_response_signing = false
+</code></pre></div>
+
+<h2 id="passive-sts">Passive STS<a class="headerlink" href="#passive-sts" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done to the Passive STS features of IS 7.0.0.</p>
+<h3 id="enhanced-security-with-reply-logout-url-validation-in-passivests">Enhanced Security with reply Logout URL Validation in PassiveSTS<a class="headerlink" href="#enhanced-security-with-reply-logout-url-validation-in-passivests" title="Permanent link">&para;</a></h3>
+<p>In WSO2 Identity Server 7.0.0, we have introduced validation for the logout url for applications configured with WS-Federation (Passive) authentication.</p>
+<p>We have introduced this to improve security, previously there was no validation for the logout url.</p>
+<p>A new field is introduced in the WS-Federation (Passive) Configuration to configure the logout reply url and the url in the logout request will be validated against this.</p>
+<p>Furthermore, in order to perform the validation, the realm parameter must be sent with the logout request. The realm of the passive sts application should be sent as the query parameter <code>wtrealm</code> in the logout request.</p>
+<p>To revert to the previous behavior and skip the validation, the following configuration can be added to the <code>deployment.toml</code> file:</p>
+<div class="highlight"><pre><span></span><code>[passive_sts] 
+enable_logout_wreply_validation = false
+</code></pre></div>
+
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done to the Authentication features of IS 7.0.0.</p>
+<h3 id="use-a-different-browser-to-open-the-email-magic-link-and-log-in-to-the-app">Use a different browser to open the email magic link and log in to the app<a class="headerlink" href="#use-a-different-browser-to-open-the-email-magic-link-and-log-in-to-the-app" title="Permanent link">&para;</a></h3>
+<p>In prior IS versions, the email magic link authenticator was limited to support login to the app by clicking on the link received to email only within the same browser. With IS 7.0.0, email magic link authenticator is enhanced to support login to the app by clicking the link received to the email opened in a different browser.</p>
+<p>If it is required to keep the earlier behavior without allowing cross-browser support, add the following config to the deployment.toml.</p>
+<div class="highlight"><pre><span></span><code>[session.nonce.cookie] 
+default_whitelist_authenticators=[]
+</code></pre></div>
+
+<h3 id="avoid-sending-ske-query-parameter-in-the-totp-enroll-flow">Avoid Sending <code>ske</code> Query Parameter in the TOTP Enroll Flow<a class="headerlink" href="#avoid-sending-ske-query-parameter-in-the-totp-enroll-flow" title="Permanent link">&para;</a></h3>
+<p>In IS 7.0.0, the <code>ske</code> query parameter has been removed from the TOTP enrollment flow due to security concerns. This change might impact existing customizations that rely on this query parameter.</p>
+<p>It's important to note that if there is an existing filter policy configured in the <code>deployment.toml</code> file to exclude parameters from the URL during the authentication flow, this new change will be overridden by the filter policy configuration. In such instances, it is advisable to take steps to include the <code>ske</code> parameter in the exclusion list.</p>
+<p>For those looking to maintain backward compatibility, adjustments can be made by adding the following configuration:</p>
+<div class="highlight"><pre><span></span><code>[authentication.endpoint.redirect_params] 
+filter_policy = &quot;exclude&quot; 
+remove_on_consume_from_api = &quot;true&quot; 
+parameters = [&quot;loggedInUser&quot;]
+</code></pre></div>
+
+<h3 id="executing-the-mutual-tls-client-authenticator-as-the-final-client-authenticator">Executing the Mutual TLS Client Authenticator as the final client authenticator<a class="headerlink" href="#executing-the-mutual-tls-client-authenticator-as-the-final-client-authenticator" title="Permanent link">&para;</a></h3>
+<p>In prior versions of IS, the Mutual TLS client authenticator was being executed before the PrivateKey JWT client authenticator.</p>
+<p>With onboarding FAPI compliance from IS 7.0.0, the priority of the Mutual TLS client authenticator was changed accordingly so that it will be executed at last once all the other client authenticators have been executed in order to improve the authenticating process.</p>
+<p>If maintaining the previous client authenticator execution order is necessary, you can retain the earlier functionality by adding the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[event.default_listener.mutual_tls_authenticator] 
+priority=158
+</code></pre></div>
+
+<h2 id="user-management">User Management<a class="headerlink" href="#user-management" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done to the User Management features of IS 7.0.0.</p>
+<h3 id="allowing-only-case-insensitive-username-filtering-in-ldap-via-scim2-api">Allowing only Case-Insensitive Username Filtering in LDAP via SCIM2 API<a class="headerlink" href="#allowing-only-case-insensitive-username-filtering-in-ldap-via-scim2-api" title="Permanent link">&para;</a></h3>
+<p>In WSO2 Identity Server 7.0.0, modifications have been implemented regarding the handling of username filtering in LDAP searches through the SCIM2 APIs. These alterations specifically involve supporting only case-insensitive username filtering in LDAP searches via the SCIM APIs. The purpose of these adjustments is to align LDAP searches in the Identity Server with the default LDAP searching behavior, which inherently operates in a case-insensitive manner.</p>
+<p>In earlier versions (6.0 and 6.1) of the Identity Server, the LDAP userstore configuration featured an option named <code>CaseInsensitiveUsernameFiltering</code>. This option was initially introduced to maintain backward compatibility. Upon careful review, it has been determined that the <code>CaseInsensitiveUsernameFiltering</code> configuration deviates from the default LDAP searching behavior. Consequently, in IS 7.0.0, this configuration has been removed.</p>
+<p>This change implies that any integrations or user practices relying on case-sensitive username filtering in LDAP via SCIM2 API need to be reassessed. Adjustments may be necessary to align with the new case-insensitive filtering approach. Administrators and users should be aware of this change to prevent unexpected behaviors in user search and authentication processes.</p>
+<h3 id="update-api-response-http-status-code-for-locked-user-account-scenarios">Update API Response HTTP Status Code for Locked User Account Scenarios<a class="headerlink" href="#update-api-response-http-status-code-for-locked-user-account-scenarios" title="Permanent link">&para;</a></h3>
+<p>With the release of version 7.0.0, the Rest API endpoints  now return a <code>401</code> Unauthorized status code for responses related to user account lock scenarios, transitioning from the previously used <code>503</code> Service Unavailable code.</p>
+<p>This modification is made to ensure that the HTTP response accurately represents the error as related to authentication, in compliance with standard practices for HTTP responses to unauthorized access</p>
+<p>Users utilizing REST API endpoints requiring authentication should adjust to this change. The shift from a <code>503</code> to a <code>401</code> response necessitates revised handling strategies, emphasizing the need for users to adapt their integration and migration practices accordingly.</p>
+<h3 id="support-for-tenant-level-password-input-validation">Support for Tenant Level Password Input Validation<a class="headerlink" href="#support-for-tenant-level-password-input-validation" title="Permanent link">&para;</a></h3>
+<p>IS 7.0.0 now provides first-class support for tenant level password input validation to enhance the security of user accounts in WSO2 Identity Server. Administrators can elevate password security effortlessly with this, by configuring intuitive validators for minimum and maximum characters, uppercase, lowercase, and special characters – providing a seamless and user-friendly experience for robust password protection.</p>
+<p>With enablement of this feature, password policy validation and user store level password pattern validation will be disabled. You can revert this behavior with following configurations.</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.password_policy.password_policy_validation_handler]
+enable=true 
+
+[event.default_listener.validation]
+enable=false
+</code></pre></div>
+
+<h3 id="improved-secondary-userstore-data-validation">Improved secondary userstore data validation<a class="headerlink" href="#improved-secondary-userstore-data-validation" title="Permanent link">&para;</a></h3>
+<p>With the IS 7.0.0 release, the userstore rest api are improved further to validate the input fields with the appropriate regex to avoid incorporating user-controllable data into dynamically evaluated code.
+Hence it will sanitize the input field based on the regex validation and will reject the input value.</p>
+<p>This change has been implemented inorder to avoid security vulnerability that occurs when an application allows user input to be evaluated as an expression within a template or within a specific context that supports expression evaluation.</p>
+<p>Hence with the above improvement, if the value for the userstore property starts with ${ or #{ then it will be sanitized and the input value will be rejected. Hence if the users already have the secondary JDBC userstore with the name, connection name, description and display name with the above pattern, then the user has to be aware of this change and need to do the proper data migration.</p>
+<h3 id="disabling-user-account-recovery-v1-api">Disabling User Account Recovery V1 API<a class="headerlink" href="#disabling-user-account-recovery-v1-api" title="Permanent link">&para;</a></h3>
+<p>With IS 7.0.0, the User Account Recovery v1 API will be disabled by default. It is recommended to migrate to the User Account Recovery v2 API. For users who still wish to use the v1 API, adjustments to the <code>deployment.toml</code> file are necessary. Add the following configuration to enable the v1 API:</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.recovery] 
+enable_v1_api = true
+</code></pre></div>
+
+<h3 id="retention-of-manually-added-roles-in-jit-provisioned-users">Retention of Manually Added Roles in JIT Provisioned Users<a class="headerlink" href="#retention-of-manually-added-roles-in-jit-provisioned-users" title="Permanent link">&para;</a></h3>
+<p>In earlier versions of WSO2 Identity Server, roles manually added to JIT provisioned users were invalidated and removed during subsequent user provisioning processes. This behavior often led to administrative overhead and inconsistency in role management.</p>
+<p>Update in IS 7.0.0:
+- Default Configuration Change: To streamline role management and enhance user experience, the default behavior has been modified. Now, the return_manually_added_local_roles configuration is set to true by default.
+- Effect of the Change: With this update, manually added roles to JIT provisioned users will be retained and not invalidated during subsequent provisioning. This ensures persistence of role assignments, reducing the need for reassigning roles after every provisioning cycle.</p>
+<p>If you wish to revert to the previous behavior, where the role assignment is removed from the user, set the mentioned configuration to false. To implement this change, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[idp_role_management] 
+return_manually_added_local_roles=false
+</code></pre></div>
+
+<h3 id="adjustments-to-user-emailmobile-number-update-verification-feature">Adjustments to user email/mobile number update verification feature<a class="headerlink" href="#adjustments-to-user-emailmobile-number-update-verification-feature" title="Permanent link">&para;</a></h3>
+<p>In the prior versions of Identity Server, even the user email verification for an updated email address feature was enabled, triggering an email account verification is skipped if the <code>verifyEmail</code> claim is not set to true in the user update request. Similarly sending the SMS OTP verification for an updated mobile number is also skipped if the <code>verifyMobile</code> claim is not set to true in the user update request.</p>
+<p>With the IS 7.0.0 release, this behavior has been changed. With the new behavior user email/mobile number update verification feature is not depending on the <code>verifyEmail/verifyMobile</code> claim. So it is not needed to send <code>verifyEmail/verifyMobile</code> claim with the user update request for triggering verification mail/sms and it is only needed to enable user email/mobile number update verification feature.</p>
+<p>To disable this and revert to the previous behavior, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.user_claim_update]
+use_verify_claim = true
+</code></pre></div>
+
+<h3 id="reintroducing-allowassociatingtoexistinguser-configuration-for-jit-provisioning">Reintroducing AllowAssociatingToExistingUser configuration for JIT provisioning<a class="headerlink" href="#reintroducing-allowassociatingtoexistinguser-configuration-for-jit-provisioning" title="Permanent link">&para;</a></h3>
+<p>In the Identity Server versions prior to wso2-is-6.0.0,  <code>AllowAssociatingToExistingUser</code> configuration was available to configure whether to allow silent JIT provisioning users to associate with existing local users or not.  However, with wso2-is-6.0.0 and wso2-is-6.1.0 product versions this configuration was not included and account linking was enabled by default.</p>
+<p>With the IS 7.0.0 release this behavior has been changed as we reintroduce the <code>AllowAssociatingToExistingUser</code> configuration which will be disabled by default, not allowing JIT provisioning users to associate with existing local users. To enable the previous behavior of associating to an existing user account, the following configuration has to be added to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[authentication.jit_provisioning]
+associating_to_existing_user=true
+</code></pre></div>
+
+<h3 id="disabling-application-level-outbound-provisioning-support">Disabling application level outbound provisioning support.<a class="headerlink" href="#disabling-application-level-outbound-provisioning-support" title="Permanent link">&para;</a></h3>
+<p>In IS 7.0.0, the configuration of application-based outbound provisioning has been removed. Only the configuration of organization-level outbound provisioning support is provided, as users are provisioned to the organization. Therefore, outbound provisioning should ideally be triggered at the organization level.</p>
+<p>If the previous behavior is desired, it can be preserved by adding the following configuration to the <code>deployment.toml</code> file</p>
+<div class="highlight"><pre><span></span><code>[outbound_provisioning_management]
+enable_application_based_outbound_provisioning=true
+</code></pre></div>
+
+<h3 id="providing-group-unique-id-support">Providing Group Unique ID Support<a class="headerlink" href="#providing-group-unique-id-support" title="Permanent link">&para;</a></h3>
+<p>In the prior versions of Identity Server, according to the SCIM2 implementation, the group attributes (group uuid, created date, modified date) are managed by the Identity Server (in IDN_SCIM_GROUP table). Therefore, when an existing userstore with groups is plugged to IS, SCIM2 will not work because the group attributes are not there in IS.</p>
+<p>With the IS 7.0 release, now the group attributes (group uuid, created date, modified date) are stored and managed in the userstore. So when an existing userstore with groups is plugged to IS, SCIM2 is working properly.</p>
+<p>To facilitate users who wish to retain the previous behavior for backward compatibility, a userstore property has been introduced. If the property is enabled, then corresponding group meta attributes (group uuid) will be derived from the userstore. If the property is disabled, then the group meta attributed will be derived from the Identity database.</p>
+<p>To disable group unique id support in the Primary userstore add below configuration to <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[user_store]
+properties.GroupIDEnabled = false
+</code></pre></div>
+
+<p>To disable group unique id support in the Secondary user stores add below userstore property to the <code>userstore.xml</code>.</p>
+<div class="highlight"><pre><span></span><code>&lt;Property name=&quot;GroupIDEnabled&quot;&gt;false&lt;/Property&gt;
+</code></pre></div>
+
+<blockquote>
+<p>Note:
+This backward compatible behavior will be only enforced on the migrating user stores. We highly recommend configuring groupId enabled user stores since this backward compatible support will be removed in future releases.</p>
+</blockquote>
+<h2 id="claim-mappings">Claim Mappings<a class="headerlink" href="#claim-mappings" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done related to the Claim Mappings in IS 7.0.0.</p>
+<h3 id="changing-custom-claim-mapping-behavior-of-connections-using-authenticators-with-standard-dialect">Changing custom claim mapping behavior of connections using authenticators with standard dialect<a class="headerlink" href="#changing-custom-claim-mapping-behavior-of-connections-using-authenticators-with-standard-dialect" title="Permanent link">&para;</a></h3>
+<p>In prior versions of Identity Server, when the authenticator of a connection has a standard dialect (Eg: OIDC authenticator which has a standard OIDC dialect), standard dialect is used for the claim mappings and custom claim mappings were ignored. With IS 7.0.0, this behavior was changed to use the custom claim mappings when custom claim mappings configured in the connection. Additionally, standard dialect will be used for the claims which do not have custom claim mappings configured.</p>
+<p>To enable the previous behavior of using only standard dialect for claim mappings, the following configuration has to be added to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[authentication.endpoint]
+enable_custom_claim_mappings=false
+</code></pre></div>
+
+<p>Additionally, if you have already used the following configuration previously to use custom claim mappings instead of standard dialect, additional behavior change of using standard dialect for the claims which do not have custom claim mappings will be introduced as mentioned in the initial description.</p>
+<div class="highlight"><pre><span></span><code>[authentication.endpoint]
+enable_custom_claim_mappings=true
+</code></pre></div>
+
+<p>To disable only the behavior of using standard dialect for the claims which do not have custom claim mappings configured, the following configuration has to be added to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[authentication.endpoint]
+enable_merging_custom_claim_mappings_with_default=false
+</code></pre></div>
+
+<h2 id="system-configs">System Configs<a class="headerlink" href="#system-configs" title="Permanent link">&para;</a></h2>
+<p>This section contains System Configuration related changes of IS 7.0.0.</p>
+<h3 id="changing-the-recovery-callback-url-regex-pattern">Changing the Recovery Callback URL Regex Pattern<a class="headerlink" href="#changing-the-recovery-callback-url-regex-pattern" title="Permanent link">&para;</a></h3>
+<p>In the IS 7.0.0 release, there have been modifications to the default regex patterns for recovery callback URLs. These alterations might impact existing callback URLs that adhere to previous patterns, potentially causing them to break. Previously, the defaultly provided regex pattern for the callback URL of the recovery endpoint would have posed some security vulnerabilities in certain instances, serving more as a sample regex pattern.</p>
+<p>Old regex pattern: <code>[[&lt;http://localhost:9443&gt;](&lt;http://localhost:9443/&gt;)].**[/authenticationendpoint/login.do]**</code></p>
+<p>The new regex pattern has been adjusted to: <code>http:\\/\\/localhost:9443\\/.*</code> For users who prefer to maintain the old behavior and utilize the previous regex pattern, the following configuration can be added to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt] 
+callback_url = &quot;[http://localhost:9443].*[/authenticationendpoint/login.do]*&quot;
+</code></pre></div>
+
+<h3 id="transitioning-from-sha1-to-sha256">Transitioning from SHA1 to SHA256<a class="headerlink" href="#transitioning-from-sha1-to-sha256" title="Permanent link">&para;</a></h3>
+<p>In line with enhancing security, WSO2 Identity Server has replaced default SHA1-based algorithms with more secure SHA256-based algorithms. This change, crucial for maintaining robust security standards, affects various components and flows within the system.</p>
+<p>Key Changes and Impacts:</p>
+<ul>
+<li>SAML IdPs and SPs: Newly created SAML Identity Providers (IdPs) and Service Providers (SPs) will default to SHA256-based signing and digest algorithms.</li>
+<li>SAML SP Creation via Metadata: New SAML SPs created using a metadata file will automatically use SHA-256 algorithms. To retain SHA1, modify the following configuration in deployment.toml.
+<div class="highlight"><pre><span></span><code>[saml]
+metadata.sp_enable_sha256= false
+</code></pre></div></li>
+<li>SAML IdP Metadata Signature: The downloaded SAML IdP metadata file will now be signed with the SHA-256 algorithm. This can be reverted with the following configuration.
+<div class="highlight"><pre><span></span><code>[saml]
+metadata.idp_enable_sha256= false
+</code></pre></div></li>
+<li>Public Methods in IdentityUtil: Methods like getPPIDDisplayValue(), getHMAC(), and generateUUID() will use SHA256 by default. To revert, adjust the [identity_util] settings.
+<div class="highlight"><pre><span></span><code>[identity_util]
+enable_sha256= false
+</code></pre></div></li>
+<li>Certificate Thumbprints: These will now be generated using SHA256. This behavior can be changed in the [cert_thumbprint] configuration.
+<div class="highlight"><pre><span></span><code>[cert_thumbprint]
+enable_sha256=false
+</code></pre></div></li>
+<li>Passive STS Response: The default signing and digest algorithms have shifted to SHA256. To revert to SHA1, use the following configuration.
+<div class="highlight"><pre><span></span><code>[sts]
+signature_algorithm = &quot;&lt;http://www.w3.org/2000/09/xmldsig#rsa-sha1&gt;&quot;
+digest_algorithm = &quot;&lt;http://www.w3.org/2000/09/xmldsig#sha1&gt;&quot;
+</code></pre></div></li>
+<li>OIDC SP Client Secrets: For newly created OIDC SPs, client secrets will be generated using HMACSHA256, resulting in longer lengths. This can be reverted in the [oauth] configuration.
+<div class="highlight"><pre><span></span><code>[oauth]
+enable_sha256= false
+</code></pre></div></li>
+<li>JWK Thumbprints in JWT Tokens: Now generated using SHA256. To revert, adjust the [oauth] settings.
+<div class="highlight"><pre><span></span><code>[oauth]
+jwk_thumbprint_enable_sha256= false
+</code></pre></div></li>
+<li>Auto-Login Cookie Operations: Signing, validation, and thumbprint generation will employ SHA256-based algorithms. This can be changed in the [signature_util] configuration.
+<div class="highlight"><pre><span></span><code>[signature_util]
+enable_sha256_algo= false
+</code></pre></div></li>
+<li>User Account Association Key: In the Associated Accounts API, the key will be generated using HMAC SHA256, leading to a longer key length. To revert, use the [user_account_association] configuration.
+<div class="highlight"><pre><span></span><code>[user_account_association]
+enable_sha256= false
+</code></pre></div>
+In addition to the above mentioned content, a usage of SHA1 was identified in mutual ssl authenticator. SHA1 was being used to generate thumbprints for the client certificates in mutual ssl authenticator. Now, it has been changed to SHA256 by default. The below mentioned configuration can be used to revert the new behaviour to use SHA1 as before.
+<div class="highlight"><pre><span></span><code>[admin_console.authenticator.mutual_ssl_authenticator.config]
+enableSHA256 = false
+</code></pre></div></li>
+</ul>
+<blockquote>
+<p>Reverting to SHA1: While the shift to SHA256 significantly enhances security, users needing to revert to SHA1 can do so through specific configurations in the <code>deployment.toml</code> file. However, it's important to note that reverting to less secure algorithms like SHA1 may expose systems to heightened security risks.</p>
+</blockquote>
+<h3 id="transitioning-to-the-improved-identitydatastoreservice-updating-configuration-for-custom-data-store-classes">Transitioning to the Improved IdentityDataStoreService: Updating Configuration for Custom Data Store Classes<a class="headerlink" href="#transitioning-to-the-improved-identitydatastoreservice-updating-configuration-for-custom-data-store-classes" title="Permanent link">&para;</a></h3>
+<p>In the Identity Server 7.0.0, we've made some improvements to how identity data stores are accessed. Previously, you might have configured the identity data store through the <code>IdentityStoreEventListener</code>, where the class name of the data store was specified in the event listener's settings.</p>
+<p>Now, we've introduced a more streamlined approach called the <code>IdentityDataStoreService</code>. This service, functioning as an OSGi service, is dedicated to accessing IdentityDataStores.</p>
+<p>The class name configuration for the identity data store has been separated from the listener configurations. If you're using a custom data store class, it's crucial to update your <code>deployment.toml</code> file to reflect this choice. This update ensures that your custom class will override the default configuration.</p>
+<p>To either maintain the previous behavior or use your custom data store, simply follow these steps and update your deployment.toml:</p>
+<p><div class="highlight"><pre><span></span><code>[identity_datastore]
+datastore_type = &quot;&lt;Name of the identityDataStore class&gt;&quot;
+</code></pre></div>
+By making this configuration adjustment, you can ensure that your system aligns with your preferred data store class, whether it's the previous default or a custom class you've implemented. This helps you tailor the system to your specific needs.</p>
+<h3 id="user-configured-alphanumeric-email-otp-type-has-been-reset-to-the-default-numeric-type">User configured alphanumeric Email OTP type has been reset to the default numeric type<a class="headerlink" href="#user-configured-alphanumeric-email-otp-type-has-been-reset-to-the-default-numeric-type" title="Permanent link">&para;</a></h3>
+<p>In WSO2 IS 7.0.0, the OnlyNumericCharactersForOtp property for the Email OTP authenticator, first introduced in WSO2 IS 5.10.0, has been renamed to useAlphanumericCharactersForOtp.</p>
+<p>Despite this, the default behavior is preserved to use numeric values for OTP. Users who have previously configured Email OTP with the alphanumeric OTP property set to true are required to adjust the field again to receive alphanumeric OTPs.</p>
+<p>To reconfigure for alphanumeric OTP, follow these steps:</p>
+<ul>
+<li>Navigate to the Email OTP federated IdP you have set up.</li>
+<li>Go to the <code>Federated Authenticators</code> section.</li>
+<li>Click to expand the <code>Email OTP Configuration</code>.</li>
+<li>Locate the <code>Use alphanumeric characters for OTP</code> setting.</li>
+<li>If alphanumeric OTPs are desired, ensure this field is checked.</li>
+</ul>
+<h3 id="default-usages-of-md5-replaced-with-sha256">Default usages of MD5 replaced with SHA256<a class="headerlink" href="#default-usages-of-md5-replaced-with-sha256" title="Permanent link">&para;</a></h3>
+<p>The public certificate for keystores for newly created tenants now will use SHA256 for the signing and digest algorithm by default. Already existing tenant keystores will not be affected by this. To revert this behavior, use the following config in the deployment.toml.</p>
+<div class="highlight"><pre><span></span><code>[tenant_mgt] 
+signing_alg = &quot;MD5withRSA&quot;
+</code></pre></div>
+
+<h3 id="enhancements-in-otp-configurations">Enhancements in OTP Configurations<a class="headerlink" href="#enhancements-in-otp-configurations" title="Permanent link">&para;</a></h3>
+<p>In IS 7.0.0, we have introduced updates to the OTP (One-Time Password) configurations to enhance user experience and security. These changes affect various user flows, including password reset, user registration, and user claim update.</p>
+<p>In versions up to 6.1, the OTP pattern was defined under <code>[identity_mgt.password_reset_sms]</code> with a sms_otp_regex configuration. This approach is no longer supported in IS 7.0.0.</p>
+<p>The new OTP pattern configuration is more versatile and user-friendly. It includes options for sending OTP instead of UUIDs in email verification links, and customizing the OTP format in terms of length, and the inclusion of uppercase, lowercase, and numeric characters. The configuration is as follows:</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.*.otp]
+send_otp_in_email = false
+use_uppercase_in_otp = true
+use_lowercase_in_otp = true
+use_numeric_in_otp = true
+otp_length = 6
+</code></pre></div>
+
+<p>This pattern is applied across various flows, including password reset, user self-registration, lite user registration, user claim updates, email verification upon creation.
+These changes reflect a shift from link-based to OTP-based email confirmations in various scenarios. The customizable OTP format addresses the need for more user-friendly, type-able codes, moving away from the less user-friendly UUID format. This enhancement caters to a broader range of use cases and improves the overall user experience.
+For users who wish to retain the previous SMS OTP regex pattern, similar configurations can still be applied in governance connectors for versions below IS 7.0.0. However, for IS 7.0.0 and onwards, the new OTP configuration pattern is recommended for a more streamlined and secure user experience.</p>
+<p>Covered Flows: The new OTP configurations cover a wide range of user interactions, including self-registration with email confirmation, email verification in user addition, lite user registration, password recovery, email update verification, and the ability to resend codes for all these scenarios.</p>
+<p>Forced password reset flow</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.password_reset_email.otp]
+send_otp_in_email = false
+use_uppercase_in_otp = true
+use_lowercase_in_otp = true
+use_numeric_in_otp = true
+otp_length = 6
+</code></pre></div>
+
+<p>Ask Password flow</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.user_onboarding.otp]
+send_otp_in_email = false
+use_uppercase_in_otp = true
+use_lowercase_in_otp = true
+use_numeric_in_otp = true
+otp_length = 6
+</code></pre></div>
+
+<p>User Self-Registration Flow</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.user_self_registration.otp]
+send_otp_in_email = false
+use_uppercase_in_otp = true
+use_lowercase_in_otp = true
+use_numeric_in_otp = true
+otp_length = 6
+</code></pre></div>
+
+<p>Lite user Registration Flow
+<div class="highlight"><pre><span></span><code>[identity_mgt.lite_user_registration.otp]
+send_otp_in_email = false
+use_uppercase_in_otp = true
+use_lowercase_in_otp = true
+use_numeric_in_otp = true
+otp_length = 6
+</code></pre></div></p>
+<p>User Claim Update Flow</p>
+<div class="highlight"><pre><span></span><code>[identity_mgt.user_claim_update.otp] 
+send_otp_in_email = false 
+use_uppercase_in_otp = true 
+use_lowercase_in_otp = true 
+use_numeric_in_otp = true otp_length = 6
+</code></pre></div>
+
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+<p>This section contains other changes of IS 7.0.0.</p>
+<h3 id="disabling-scope-validation-for-resource-access-control-is-no-longer-recommended">Disabling Scope Validation for Resource Access Control is No Longer Recommended<a class="headerlink" href="#disabling-scope-validation-for-resource-access-control-is-no-longer-recommended" title="Permanent link">&para;</a></h3>
+<p>With the IS 7.0.0 release, we are no longer recommending to disable the scope validation for the resource access control with the following configuration. From 5.10.0 onwards scope validation has been enabled for the resource access control. When the scope validation is disabled, permissions of the authenticated user were considered for the authorization. With the new version, we are not recommending to disable the scope validation due to security concerns.</p>
+<div class="highlight"><pre><span></span><code>[resource_access_control]
+disable_scope_validation = true
+</code></pre></div>
+
+<h3 id="addition-of-the-j2-file-for-charon-configxml">Addition of the .j2 file for charon-config.xml<a class="headerlink" href="#addition-of-the-j2-file-for-charon-configxml" title="Permanent link">&para;</a></h3>
+<p>IS 7.0.0 introduces charon-config.xml.j2 to the product. If any alterations have been made to the default charon-config.xml, those configurations must be moved to deployment.toml.
+Replace the following config with the corresponding values in your charon-config.xml.</p>
+<div class="highlight"><pre><span></span><code>[scim2]
+enable_schema_extension=&lt;user-schema-extension-enabled&gt;
+enable_custom_schema_extension=&lt;custom-user-schema-enabled&gt;
+custom_user_schema_uri=&lt;custom-user-schema-uri&gt;
+max_bulk_operations=&lt;bulk-maxOperations&gt;
+max_bulk_payload=&lt;bulk-maxPayloadSize&gt;
+documentation_uri=&lt;documentationUri&gt;
+oauth_bearer.primary=&lt;OAuth Bearer Token - primary&gt;
+http_basic.primary=&lt;HTTP Basic - primary&gt;
+basic_auth_documentation_uri=&lt;OAuth Bearer Token - documentationUri&gt;
+oauth_bearer_auth_documentation_uri=&lt;documentationUri - documentationUri&gt;
+</code></pre></div>
+
+<h3 id="disabling-internal-session-data-cleanup-task">Disabling Internal Session Data Cleanup Task<a class="headerlink" href="#disabling-internal-session-data-cleanup-task" title="Permanent link">&para;</a></h3>
+<p>With IS 7.0.0, the internal session data cleanup task will be disabled by default. This change is implemented as a precautionary measure to enhance system stability and prevent disruptions in production environments.</p>
+<p>Reason for the Change:</p>
+<ul>
+<li>Preventing Outages: Previous versions experienced outages and disruptions in production environments due to table locking issues caused by the session data cleanup process. Disabling this task by default aims to address and prevent such incidents.</li>
+</ul>
+<p>Impact of the Update:
+- Enhanced Stability: With this update, users will benefit from increased system stability, as the likelihood of outages related to session data cleanup is significantly reduced.</p>
+<p>Enabling the Cleanup Task (for Users who Prefer the Previous Behavior):
+- Configuration Adjustment Required: Users who wish to maintain the session data cleanup functionality, as observed in earlier versions of IS, can re-enable this feature. This requires a modification to the <code>deployment.toml</code> file.
+- Required Configuration: To activate the internal session data cleanup task, add the following lines to your <code>deployment.toml</code> file:</p>
+<div class="highlight"><pre><span></span><code>[session_data.cleanup]
+enable_expired_data_cleanup = true
+clean_logged_out_sessions_at_immediate_cycle = true
+enable_pre_session_data_cleanup = true
+</code></pre></div>
+
+<p>By incorporating this configuration, the system will continue to perform routine session data cleanup, aligning with behaviors observed in earlier versions.</p>
+<h3 id="login-and-logout-consent-are-skipped-by-default-for-newly-created-applications">Login and logout consent are skipped by default for newly created applications<a class="headerlink" href="#login-and-logout-consent-are-skipped-by-default-for-newly-created-applications" title="Permanent link">&para;</a></h3>
+<p>In IS 7.0.0, the default configuration for new applications will now enable 'skip login and logout consent'. Users will not be routinely prompted for consent during regular login and logout sessions. Previously, applications required users to give explicit consent at each login and logout, which, while secure, was often seen as repetitive and inconvenient.</p>
+<p>Previous Default Setting:</p>
+<p>Until this update, the default behavior for all new applications mandated users to provide consent at each login and logout event.</p>
+<p>New Default Behavior:</p>
+<ul>
+<li>Skip Consent by Default: The default configuration for new applications will now enable 'skip login and logout consent'.</li>
+<li>The behavior will not change for existing apps.</li>
+</ul>
+<p>Customising Consent Settings</p>
+<p>If needed, the consent flow can be reinstated by changing the application's advanced settings.</p>
+<h3 id="changing-the-x5ts256-attribute-value-calculation-process-of-the-jwks-response">Changing the x5t#S256 attribute value calculation process of the JWKS response<a class="headerlink" href="#changing-the-x5ts256-attribute-value-calculation-process-of-the-jwks-response" title="Permanent link">&para;</a></h3>
+<p>With the IS 7.0.0 release, when calculating the x5t#S256 attribute value of the JWKS endpoint it will get the sha256 hash/digest (DER encoding) of the certificate which is a 32 byte array and then base64 url encoded. This change has been implemented in order to be aligned with the specification (https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.8)</p>
+<p>The x5t#S256 attribute value of JWKS response will be changed. Hence the user needs to make the necessary changes from their end if they are using this attribute value for any validation.</p>
+<p>If the user wants to disable this behavior, they can do it by adding the following configuration into <code>deployment.toml</code>. </p>
+<div class="highlight"><pre><span></span><code>[oauth.jwks_endpoint]
+is_thumbprint_hexify_required = true
+</code></pre></div>
+
+<p>After disabling this behavior the x5t#S256 attribute value will be calculated by, getting the sha256 hash/digest (DER encoding) of the certificate which is a 32 byte array, convert the array to a hexadecimal string and then base64 url encoded.</p>
+<h3 id="notable-jar-removals">Notable JAR Removals<a class="headerlink" href="#notable-jar-removals" title="Permanent link">&para;</a></h3>
+<p>The transition to the workflow connector resulted in the removal of the following JAR files.</p>
+<ul>
+<li>org.objectweb.asm.commons</li>
+<li>org.objectweb.asm.tree</li>
+<li>geronimo-spec-jms</li>
+</ul>
+<p>If any customizations have been made which use these dependencies, it is essential to include them with your web app.</p>
+<h3 id="the-audit-tables-used-in-token-clean-up-script-should-be-altered-to-have-the-newly-introduced-column">The audit tables used in token clean up script should be altered to have the newly introduced column<a class="headerlink" href="#the-audit-tables-used-in-token-clean-up-script-should-be-altered-to-have-the-newly-introduced-column" title="Permanent link">&para;</a></h3>
+<p>IS 7.0.0 introduces a new column, <code>authorized_organization</code>, to the access token table which may be named differently depending on your configuration but is commonly referred to as <code>idn_oauth2_access_token</code>, enhancing organizational authorization control. Existing audit tables, previously used for token cleanup, need to be altered to include this new column.</p>
+<div class="highlight"><pre><span></span><code>ALTER TABLE IDN_OAUTH2_ACCESS_TOKEN ADD COLUMN AUTHORIZED_ORGANIZATION varchar(36) NOT NULL DEFAULT &#39;NONE&#39;
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * WSO2 Inc. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+
+ NOTE: Borrowed generously from MkDocs and MkDocs-material
+-->
+
+<footer class="md-footer md-typeset">
+  <div class="md-footer__content">
+    <div class="md-footer__meta-sections">
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="discord-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <div class="md-footer__meta-section__text-content">
+          <h3 class="md-footer__meta-section__heading">Join our Discord</h3>
+          <p class="md-footer__meta-section__description">
+            Connect with our community on our official Discord server. Share ideas, get help, and be a part of the
+            awesome conversations!
+          </p>
+          <a target="_blank" rel="noopener noreferrer" class="md-footer__meta-section__link" role="group"
+            href="https://discord.com/invite/wso2">Join Discord<svg class="chevron" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" height="14" width="14" fill="currentColor" aria-hidden="true" focusable="false"
+              class="chakra-icon css-1nyqxv">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></a>
+        </div>
+      </div>
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="md-footer__meta-section__links">
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="14" width="14">
+              <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" fill="#bcbbbb" />
+              <path
+                d="M8.477 19.8l13.993 2.923.585-2.806-13.993-2.923zm1.832-6.704l12.94 6.04 1.208-2.572-12.94-6.08zm3.586-6.353l10.99 9.12 1.832-2.183-10.99-9.12zM20.99 0l-2.3 1.715 8.536 11.46 2.3-1.715zM8.166 26.27H22.43v-2.845H8.166v2.845z"
+                fill="#f48024" />
+            </svg>
+            <label>Got a tough question?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://stackoverflow.com/questions/tagged/wso2-identity-server?tab=Newest">Ask on Stackoverflow</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" width="14" height="14" viewBox="0 0 256 249"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+              <g fill="#161614">
+                <path
+                  d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
+                <path
+                  d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
+              </g>
+            </svg>
+            <label>Want to contribute?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://github.com/wso2/docs-is">Head over to GitHub</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" fill="none" height="14" width="14"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006">
+              <path
+                d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z"
+                fill="#000" />
+            </svg>
+            <label>Like to stay updated?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://twitter.com/intent/follow?screen_name=wso2">Follow us on X (Formerly Twitter)</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="800px" height="800px" viewBox="0 -7 48 48" version="1.1">
+              <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Color-" transform="translate(-200.000000, -368.000000)" fill="#CE1312">
+                  <path
+                    d="M219.044,391.269916 L219.0425,377.687742 L232.0115,384.502244 L219.044,391.269916 Z M247.52,375.334163 C247.52,375.334163 247.0505,372.003199 245.612,370.536366 C243.7865,368.610299 241.7405,368.601235 240.803,368.489448 C234.086,368 224.0105,368 224.0105,368 L223.9895,368 C223.9895,368 213.914,368 207.197,368.489448 C206.258,368.601235 204.2135,368.610299 202.3865,370.536366 C200.948,372.003199 200.48,375.334163 200.48,375.334163 C200.48,375.334163 200,379.246723 200,383.157773 L200,386.82561 C200,390.73817 200.48,394.64922 200.48,394.64922 C200.48,394.64922 200.948,397.980184 202.3865,399.447016 C204.2135,401.373084 206.612,401.312658 207.68,401.513574 C211.52,401.885191 224,402 224,402 C224,402 234.086,401.984894 240.803,401.495446 C241.7405,401.382148 243.7865,401.373084 245.612,399.447016 C247.0505,397.980184 247.52,394.64922 247.52,394.64922 C247.52,394.64922 248,390.73817 248,386.82561 L248,383.157773 C248,379.246723 247.52,375.334163 247.52,375.334163 L247.52,375.334163 Z"
+                    id="Youtube">
+                  </path>
+                </g>
+              </g>
+            </svg>
+            <label>Prefer video tutorials?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://www.youtube.com/user/WSO2TechFlicks">Subscribe to our YouTube Channel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-copyright md-typeset">
+  <div class="md-copyright__content">
+    <div class="md-copyright__highlight">
+      
+      &copy; 2024 <a href="https://wso2.com/">WSO2</a> LLC.
+      
+    </div>
+    <div class="md-license__highlight">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC By 4.0</a>. |
+      Sample code licensed under <a href="http://www.apache.org/licenses/" target="_blank">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "content.tabs.link", "search.suggest", "search.share"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/js/theme.js"></script>
+      
+        <script src="../../../../assets/js/homePage.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Denied</title>
+    <link rel="stylesheet" href="access-denied.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon"><i class="fa fa-ban" aria-hidden="true"></i></div>
+      <!-- No entry symbol -->
+      <h1>You are not authorized</h1>
+      <p>
+        It seems like you don't have permission to use this portal.<br />
+        Please sign in with a different account.
+      </p>
+      <form action="/unauthorize" method="GET">
+        <button class="logout-button">Go to the Login Page</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2166 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open Banking">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/upgrading-wso2-api-manager-400/">
+      
+      
+        <link rel="prev" href="../upgrading-wso2-api-manager-320/">
+      
+      
+        <link rel="next" href="../upgrading-wso2-open-banking-200-to-300/">
+      
+      <link rel="icon" href="../../../../../assets/images/identity-server-favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>upgrading-wso2-api-manager-400 - Open Banking</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/libs/fontawesome-free-6.4.2-web/css/all.min.css">
+    
+      <link rel="stylesheet" href="../../../../../assets/css/theme.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgrading-to-wso2-api-manager-400" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+   
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a
+      href="../../../../.."
+      title="Open Banking"
+      class="md-header__button md-logo"
+      aria-label="Open Banking"
+      data-md-component="logo"
+    >
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+
+           
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../" class="md-tabs__link md-tabs__link--active">
+        Open Banking
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>  
+        
+        
+      </div>
+    </div>
+
+    
+    
+
+    
+
+    
+    <div class="md-header__version-select-dropdown">
+      <a class="dropdown-link" href="#!" id="version-dropdown">
+        Open Banking
+
+        <span class="icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+        </span>
+      </a>
+      <ul class="dropdown-content" tabindex="0">
+        <li><a href="/migration/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/" target="_blank">ob-1.5.0</a></li>
+        <li><a href="/migration/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/" target="_blank">ob-2.0.0</a></li>
+        <li><a href="/migration/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/" target="_blank">ob-3.0.0</a></li>
+      </ul>
+    </div>
+    
+    
+     
+    <form class="md-header__option" data-md-component="palette">
+       
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: light)"
+        data-md-color-scheme="default"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to dark mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_1"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to dark mode"
+        for="__palette_2"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 0.5C8.5 0.223858 8.27614 0 8 0C7.72386 0 7.5 0.223858 7.5 0.5V1.5C7.5 1.77614 7.72386 2 8 2C8.27614 2 8.5 1.77614 8.5 1.5V0.5ZM8.5 14.5C8.5 14.2239 8.27614 14 8 14C7.72386 14 7.5 14.2239 7.5 14.5V15.5C7.5 15.7761 7.72386 16 8 16C8.27614 16 8.5 15.7761 8.5 15.5V14.5ZM1.5 8.5C1.77614 8.5 2 8.27614 2 8C2 7.72386 1.77614 7.5 1.5 7.5H0.5C0.223858 7.5 0 7.72386 0 8C0 8.27614 0.223858 8.5 0.5 8.5H1.5ZM15.5 8.5C15.7761 8.5 16 8.27614 16 8C16 7.72386 15.7761 7.5 15.5 7.5H14.5C14.2239 7.5 14 7.72386 14 8C14 8.27614 14.2239 8.5 14.5 8.5H15.5ZM12.4464 2.83936C12.2512 3.03463 12.2512 3.35121 12.4464 3.54647C12.6417 3.74173 12.9583 3.74173 13.1535 3.54647L13.8606 2.83936C14.0559 2.6441 14.0559 2.32752 13.8606 2.13226C13.6654 1.937 13.3488 1.937 13.1535 2.13226L12.4464 2.83936ZM2.14645 2.86065C1.95118 2.66539 1.95118 2.3488 2.14645 2.15354C2.34171 1.95828 2.65829 1.95828 2.85355 2.15354L3.56066 2.86065C3.75592 3.05591 3.75592 3.37249 3.56066 3.56775C3.3654 3.76302 3.04882 3.76302 2.85355 3.56775L2.14645 2.86065ZM2.14645 13.1394C1.95118 13.3346 1.95118 13.6512 2.14645 13.8465C2.34171 14.0417 2.65829 14.0417 2.85355 13.8465L3.56066 13.1394C3.75592 12.9441 3.75592 12.6275 3.56066 12.4322C3.3654 12.237 3.04882 12.237 2.85355 12.4322L2.14645 13.1394ZM12.4464 13.1606C12.2512 12.9654 12.2512 12.6488 12.4464 12.4535C12.6417 12.2583 12.9583 12.2583 13.1535 12.4535L13.8606 13.1606C14.0559 13.3559 14.0559 13.6725 13.8606 13.8677C13.6654 14.063 13.3488 14.063 13.1535 13.8677L12.4464 13.1606ZM6.14708 3.35455C4.303 4.09075 3 5.8932 3 7.99998C3 10.7614 5.23858 13 8 13C10.6789 13 12.8657 10.8933 12.994 8.2462C12.998 8.16463 13 8.08254 13 7.99999C13 7.67166 12.9684 7.35072 12.9079 7.04005C12.2805 7.63501 11.4329 7.99999 10.5 7.99999C8.567 7.99999 7 6.43299 7 4.49999C7 3.98143 7.11277 3.48921 7.31514 3.04651C6.90813 3.10226 6.51674 3.20699 6.14708 3.35457C6.14708 3.35456 6.14708 3.35456 6.14708 3.35455ZM6.00013 4.53503C4.80446 5.22663 4 6.51936 4 7.99998C4 10.2091 5.79086 12 8 12C9.94598 12 11.5674 10.6104 11.9261 8.76934C11.478 8.91895 10.9984 8.99999 10.5 8.99999C8.02641 8.99999 6.01896 7.00418 6.00013 4.53503Z" fill="#40404B"/>
+</svg>
+      </label>
+        
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: dark)"
+        data-md-color-scheme="slate"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to light mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_2"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to light mode"
+        for="__palette_1"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C8.27614 0 8.5 0.223858 8.5 0.5V1.5C8.5 1.77614 8.27614 2 8 2C7.72386 2 7.5 1.77614 7.5 1.5V0.5C7.5 0.223858 7.72386 0 8 0ZM8 14C8.27614 14 8.5 14.2239 8.5 14.5V15.5C8.5 15.7761 8.27614 16 8 16C7.72386 16 7.5 15.7761 7.5 15.5V14.5C7.5 14.2239 7.72386 14 8 14ZM2 8C2 8.27614 1.77614 8.5 1.5 8.5H0.5C0.223858 8.5 0 8.27614 0 8C0 7.72386 0.223858 7.5 0.5 7.5H1.5C1.77614 7.5 2 7.72386 2 8ZM16 8C16 8.27614 15.7761 8.5 15.5 8.5H14.5C14.2239 8.5 14 8.27614 14 8C14 7.72386 14.2239 7.5 14.5 7.5H15.5C15.7761 7.5 16 7.72386 16 8ZM12.4464 3.54647C12.2512 3.35121 12.2512 3.03463 12.4464 2.83936L13.1535 2.13226C13.3488 1.937 13.6654 1.937 13.8606 2.13226C14.0559 2.32752 14.0559 2.6441 13.8606 2.83936L13.1535 3.54647C12.9583 3.74173 12.6417 3.74173 12.4464 3.54647ZM2.14645 2.15354C1.95118 2.3488 1.95118 2.66539 2.14645 2.86065L2.85355 3.56775C3.04882 3.76302 3.3654 3.76302 3.56066 3.56775C3.75592 3.37249 3.75592 3.05591 3.56066 2.86065L2.85355 2.15354C2.65829 1.95828 2.34171 1.95828 2.14645 2.15354ZM2.14645 13.8465C1.95118 13.6512 1.95118 13.3346 2.14645 13.1394L2.85355 12.4322C3.04882 12.237 3.3654 12.237 3.56066 12.4322C3.75592 12.6275 3.75592 12.9441 3.56066 13.1394L2.85355 13.8465C2.65829 14.0417 2.34171 14.0417 2.14645 13.8465ZM12.4464 12.4535C12.2512 12.6488 12.2512 12.9654 12.4464 13.1606L13.1535 13.8677C13.3488 14.063 13.6654 14.063 13.8606 13.8677C14.0559 13.6725 14.0559 13.3559 13.8606 13.1606L13.1535 12.4535C12.9583 12.2583 12.6417 12.2583 12.4464 12.4535ZM12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4C10.2091 4 12 5.79086 12 8ZM13 8C13 10.7614 10.7614 13 8 13C5.23858 13 3 10.7614 3 8C3 5.23858 5.23858 3 8 3C10.7614 3 13 5.23858 13 8Z" fill="#40404B"/>
+</svg>
+      </label>
+       
+    </form>
+       
+    <label class="md-header__button md-icon md-icon--hover" for="__search">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+    <div class="md-header__community">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-header__extra">
+  <div class="md-header__links">
+    <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord" onclick="javascript:window.open('https://discord.com/invite/wso2', '', 'noopener')">
+        <div class="md-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <label class="md-header__link__label">Get Help</label>
+      </button>
+      <div class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+    </div>
+    
+  </nav>
+  <script>
+    
+  </script>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Open Banking" class="md-nav__button md-logo" aria-label="Open Banking" data-md-component="logo">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    Open Banking
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../../">Open Banking</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Open Banking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ob-1.4.0-to-1.5.0/">ob-1.4.0-to-1.5.0</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          ob-1.4.0-to-1.5.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/application-attribution-changes/" class="md-nav__link">
+        application-attribution-changes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/custom-configurations/" class="md-nav__link">
+        custom-configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/db-and-synapse-configurations/" class="md-nav__link">
+        db-and-synapse-configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/psd2-data-reporting/" class="md-nav__link">
+        psd2-data-reporting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/upgrade-the-solution/" class="md-nav__link">
+        upgrade-the-solution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/upgrading-wso2-ob-au/" class="md-nav__link">
+        upgrading-wso2-ob-au
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/upgrading-wso2-ob-berlin/" class="md-nav__link">
+        upgrading-wso2-ob-berlin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.4.0-to-1.5.0/upgrading-wso2-ob-uk/" class="md-nav__link">
+        upgrading-wso2-ob-uk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ob-1.5.0-to-2.0.0/">ob-1.5.0-to-2.0.0</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          ob-1.5.0-to-2.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/">upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au</a>
+          
+            <label for="__nav_2_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/" class="md-nav__link">
+        upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/">upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin</a>
+          
+            <label for="__nav_2_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/" class="md-nav__link">
+        upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/">upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk</a>
+          
+            <label for="__nav_2_3_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/" class="md-nav__link">
+        upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.5.0-to-2.0.0/map-xml-to-toml/" class="md-nav__link">
+        map-xml-to-toml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-introduction/" class="md-nav__link">
+        upgrade-wso2-open-banking-1.5.0-to-2.0.0-introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">ob-2.0.0 to 3.0.0</a>
+          
+            <label for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          ob-2.0.0 to 3.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">berlin toolkit 1.0.0</a>
+          
+            <label for="__nav_2_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          berlin toolkit 1.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modifications-after-migration/" class="md-nav__link">
+        modifications-after-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-banking-data-migration/" class="md-nav__link">
+        open-banking-data-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrading-wso2-identity-server/" class="md-nav__link">
+        upgrading-wso2-identity-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrading-wso2-api-manager-320/" class="md-nav__link">
+        upgrading-wso2-api-manager-320
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          upgrading-wso2-api-manager-400
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        upgrading-wso2-api-manager-400
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-open-banking-accelerator-and-berlin-toolkit-for-api-manager" class="md-nav__link">
+    Set up Open Banking Accelerator and Berlin Toolkit for API Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-to-wso2-api-manager-400_1" class="md-nav__link">
+    Upgrading to WSO2 API Manager 4.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to WSO2 API Manager 4.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replace-custom-mediation-policies" class="md-nav__link">
+    Replace Custom Mediation Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-schema-validation" class="md-nav__link">
+    Enable Schema Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-workflow-extensions" class="md-nav__link">
+    Update Workflow-Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-api-life-cycle" class="md-nav__link">
+    Update API Life Cycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-identity-provider-entity-id" class="md-nav__link">
+    Update Identity Provider Entity ID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrading-wso2-open-banking-200-to-300/" class="md-nav__link">
+        upgrading-wso2-open-banking-200-to-300
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../cds-toolkit-1.0.0/">cds-toolkit-1.0.0</a>
+          
+            <label for="__nav_2_4_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          cds-toolkit-1.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/upgrade-wso2-open-banking-2.0.0-to-3.0.0-cds-toolkit-1.0.0/" class="md-nav__link">
+        upgrade wso2 Open banking 2.0.0 to 3.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../cds-toolkit-1.0.0/old-content-backup/">old Version</a>
+          
+            <label for="__nav_2_4_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          old Version
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/modifications-after-migration/" class="md-nav__link">
+        modifications-after-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/open-banking-data-migration/" class="md-nav__link">
+        open-banking-data-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/reporting-data-migration/" class="md-nav__link">
+        reporting-data-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-api-manager-320/" class="md-nav__link">
+        upgrading-wso2-api-manager-320
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-api-manager-400/" class="md-nav__link">
+        upgrading-wso2-api-manager-400
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-identity-server/" class="md-nav__link">
+        upgrading-wso2-identity-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-open-banking-200-to-300/" class="md-nav__link">
+        upgrading-wso2-open-banking-200-to-300
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../uk-toolkit-1.0.0/">uk-toolkit-1.0.0</a>
+          
+            <label for="__nav_2_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          uk-toolkit-1.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/upgrade-wso2-open-banking-2.0.0-to-3.0.0-uk-toolkit-1.0.0/" class="md-nav__link">
+        upgrade wso2 Open banking 2.0.0 to 3.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_4_3" id="__nav_2_4_4_3_label" tabindex="0">
+          old Version
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          old Version
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/README-v1/" class="md-nav__link">
+        README-v1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/modifications-after-migration/" class="md-nav__link">
+        modifications-after-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/open-banking-data-migration/" class="md-nav__link">
+        open-banking-data-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/reporting-data-migration/" class="md-nav__link">
+        reporting-data-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/upgrade-api-manager-4.0.0-to-4.2.0-and-identity-server-5.11.0-to-6.1.0/" class="md-nav__link">
+        upgrade-api-manager-4.0.0-to-4.2.0-and-identity-server-5.11.0-to-6.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/upgrade-to-wso2-api-manager-3.2.0/" class="md-nav__link">
+        upgrade-to-wso2-api-manager-3.2.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/upgrade-to-wso2-api-manager-4.0.0/" class="md-nav__link">
+        upgrade-to-wso2-api-manager-4.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uk-toolkit-1.0.0/old-content-backup/upgrade-to-wso2-identity-server-5.11.0/" class="md-nav__link">
+        upgrade-to-wso2-identity-server-5.11.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-open-banking-accelerator-and-berlin-toolkit-for-api-manager" class="md-nav__link">
+    Set up Open Banking Accelerator and Berlin Toolkit for API Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-to-wso2-api-manager-400_1" class="md-nav__link">
+    Upgrading to WSO2 API Manager 4.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to WSO2 API Manager 4.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replace-custom-mediation-policies" class="md-nav__link">
+    Replace Custom Mediation Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-schema-validation" class="md-nav__link">
+    Enable Schema Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-workflow-extensions" class="md-nav__link">
+    Update Workflow-Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-api-life-cycle" class="md-nav__link">
+    Update API Life Cycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-identity-provider-entity-id" class="md-nav__link">
+    Update Identity Provider Entity ID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="upgrading-to-wso2-api-manager-400">Upgrading to WSO2 API Manager 4.0.0<a class="headerlink" href="#upgrading-to-wso2-api-manager-400" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Before you begin:</strong></p>
+<p>Make sure you have upgraded your API Manager to 3.2.0 according to the <strong>Upgrading to WSO2 API Manager 3.2.0</strong> (<code>upgrading-wso2-api-manager-320.md</code>) documentation.</p>
+</blockquote>
+<ol>
+<li>Download and install the WSO2 API Manager 4.0.0 distribution from <a href="https://wso2.com/api-manager/">here</a>. </li>
+<li>Extract the downloaded archive file. This document refers to the root folder of the extracted file as <code>&lt;APIM_HOME&gt;</code>.</li>
+</ol>
+<h2 id="set-up-open-banking-accelerator-and-berlin-toolkit-for-api-manager">Set up Open Banking Accelerator and Berlin Toolkit for API Manager<a class="headerlink" href="#set-up-open-banking-accelerator-and-berlin-toolkit-for-api-manager" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Download the <code>wso2-obam-accelerator-3.0.0.zip</code> file and extract it to the <code>&lt;APIM_HOME&gt;</code> directory. </li>
+<li>Download the latest updates for <code>wso2-obam-accelerator-3.0.0</code>. For more information, see <a href="https://berlin.ob.docs.wso2.com/en/latest/install-and-setup/setting-up-servers/#getting-wso2-updates">Getting WSO2 Updates</a>.</li>
+<li>
+<p>Go to the <code>&lt;APIM_HOME&gt;/&lt;APIM_ACCELERATOR_HOME&gt;/bin</code> directory and run the merge.sh script.</p>
+<div class="highlight"><pre><span></span><code>./merge.sh
+</code></pre></div>
+
+</li>
+<li>
+<p>Download the <code>wso2-obam-toolkit-berlin-1.0.0.zip</code> file and extract it to the <code>&lt;APIM_HOME&gt;</code> directory. </p>
+</li>
+<li>Download the latest updates for <code>wso2-obam-toolkit-berlin-1.0.0</code>. For more information, see <a href="https://berlin.ob.docs.wso2.com/en/latest/install-and-setup/setting-up-servers/#getting-wso2-updates">Getting WSO2 Updates</a>.</li>
+<li>
+<p>Go to the <code>&lt;APIM_HOME&gt;/&lt;APIM_TOOLKIT_HOME&gt;/bin</code> directory and run the merge.sh script.</p>
+<div class="highlight"><pre><span></span><code>./merge.sh
+</code></pre></div>
+
+</li>
+<li>
+<p>Replace the existing <code>deployment.toml</code> file in the API Manager as follows:</p>
+<ul>
+<li>Go to the <code>&lt;APIM_HOME&gt;/&lt;OB_APIM_TOOLKIT_HOME&gt;/repository/resources</code> directory.</li>
+<li>Rename <code>wso2am-4.0.0-deployment-berlin.toml</code> to <code>deployment.toml</code>.</li>
+<li>Copy the <code>deployment.toml</code> file to the <code>&lt;APIM_HOME&gt;/repository/conf</code> directory and replace the existing file.</li>
+</ul>
+</li>
+<li>
+<p>Open the <code>&lt;APIM_HOME&gt;/repository/conf/deployment.toml</code> file, and configure the hostnames and databases related 
+     properties accordingly. </p>
+<ul>
+<li>When configuring database related properties, point to your existing Open Banking 2.0 databases.</li>
+</ul>
+</li>
+</ol>
+<h2 id="upgrading-to-wso2-api-manager-400_1">Upgrading to WSO2 API Manager 4.0.0<a class="headerlink" href="#upgrading-to-wso2-api-manager-400_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Before you begin:</strong></p>
+<p>Once the Identity Server 5.11.0 is configured as the Resident Key Manager, start the Identity Server 5.11.0.</p>
+</blockquote>
+<ol>
+<li>
+<p>Start the WSO2 API Manager 4.0.0 server and create a Custom Key Manager by following the
+   <a href="https://ob.docs.wso2.com/en/latest/learn/dynamic-client-registration-try-out/#step-2-configure-is-as-key-manager">Configuring IS as Key Manager</a> documentation.</p>
+</li>
+<li>
+<p>Do not copy any other Key Manager specific configurations from the previous API Manager version to the latest 
+one that points to the Identity Server.</p>
+</li>
+<li>
+<p>Get the <strong>Upgrading API Manager from 3.2.0 to 4.0.0</strong> documentation provided by the WSO2 team.</p>
+</li>
+<li>
+<p>Upgrade your API Manager from 3.2.0 to 4.0.0 by following the provided documentation.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>When following the above-mentioned documentation:</p>
+<ol>
+<li>
+<p>You can skip the steps 1,2, and 3 under <strong>Step 1 - Migrate the API Manager configurations</strong>.</p>
+</li>
+<li>
+<p>Modify the following configurations in the <code>&lt;APIM_HOME&gt;/repository/conf/deployment.toml</code> file before starting the migration.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">[[apim.gateway.environment]]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Production and Sandbox&quot;</span>
+<span class="k">[apim.sync_runtime_artifacts.gateway]</span>
+<span class="n">gateway_labels</span><span class="w"> </span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Production and Sandbox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Default&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<ol>
+<li>In <strong>Step 2 - Upgrade API Manager to 4.0.0</strong>, skip the steps 3 and 5.</li>
+</ol>
+</blockquote>
+<ol>
+<li>Start the API Manager server.</li>
+</ol>
+<h3 id="replace-custom-mediation-policies">Replace Custom Mediation Policies<a class="headerlink" href="#replace-custom-mediation-policies" title="Permanent link">&para;</a></h3>
+<p>This section explains how to replace the Custom Mediation Policy of each API with the latest Mediation Policy.</p>
+<ol>
+<li>Go to the API Publisher at <code>https://&lt;APIM_HOST&gt;:9443/publisher</code>.</li>
+<li>Select the respective API.</li>
+<li>Go to <strong>API Configurations &gt; Runtime</strong>.</li>
+<li>Click the <strong>Edit</strong> button under <strong>Request &gt; Message Mediation</strong> and remove the existing Custom Mediation Policy.</li>
+<li>Upload the relevant insequence file from the <code>&lt;APIM_HOME&gt;/&lt;OB_APIM_TOOLKIT_HOME&gt;/repository/resources/apis</code> directory 
+and click <strong>Select</strong>.</li>
+<li>Scroll down and click <strong>SAVE</strong>.</li>
+<li>Go to <strong>Deployments</strong> using the left menu pane.</li>
+<li>Click <strong>Deploy New Version</strong>.</li>
+<li>Select the <strong>API Gateway type</strong> and <strong>Deploy</strong>.</li>
+<li>Repeat these steps for all the APIs. </li>
+</ol>
+<h3 id="enable-schema-validation">Enable Schema Validation<a class="headerlink" href="#enable-schema-validation" title="Permanent link">&para;</a></h3>
+<p>This section explains how to enable Schema Validation for APIs.</p>
+<ol>
+<li>Go to the API Publisher at <code>https://&lt;APIM_HOST&gt;:9443/publisher</code>.</li>
+<li>Select the respective API.</li>
+<li>Go to <strong>API Configurations &gt; Runtime</strong>.</li>
+<li>Enable Schema Validation.</li>
+<li>Scroll down and click <strong>SAVE</strong>.</li>
+<li>Go to <strong>Deployments</strong> using the left menu pane.</li>
+<li>Click <strong>Deploy New Version</strong>.</li>
+<li>Select the <strong>API Gateway type</strong> and <strong>Deploy</strong>.</li>
+<li>Repeat these steps for all the APIs. </li>
+</ol>
+<h3 id="update-workflow-extensions">Update Workflow-Extensions<a class="headerlink" href="#update-workflow-extensions" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to the Management Console <code>https://&lt;APIM_HOST&gt;:9443/carbon</code> and log in as the admin user. <img alt="management_console" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/management-console.png" /></li>
+<li>Select <strong>Resources &gt; Browse</strong> in the left pane. <br/> <img alt="select-browse" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/select-browse.png" /></li>
+<li>Locate the <code>/_system/governance/apimgt/applicationdata/workflow-extensions.xml</code> file. <img alt="workflow_extensions" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/workflow-extensions.png" /></li>
+<li>Get the <code>workflow.txt</code> provided by the WSO2 team.</li>
+<li>Click <strong>Edit as text</strong> and replace the content with the content you received. <img alt="edit_as_text" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/edit-as-text.png" /></li>
+</ol>
+<h3 id="update-api-life-cycle">Update API Life Cycle<a class="headerlink" href="#update-api-life-cycle" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to the Management Console <code>https://&lt;APIM_HOST&gt;:9443/carbon</code> and log in as the admin user. <img alt="management_console" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/management-console.png" /></li>
+<li>Select <strong>Extensions &gt; Lifecycles</strong>. <br/> <img alt="select_lifecycles" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/select-lifecycles.png" /></li>
+<li>Click the <strong>View/Edit</strong> button for APILifeCycle. <img alt="view_edit_lifecycles" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/view-edit-lifecycles.png" /></li>
+<li>Get the <code>lifecycle.txt</code> provided by the WSO2 team.</li>
+<li>Replace the Lifecycle Source with the content you received.</li>
+</ol>
+<h3 id="update-identity-provider-entity-id">Update Identity Provider Entity ID<a class="headerlink" href="#update-identity-provider-entity-id" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to Identity Server Management Console <code>https://&lt;IS_HOST&gt;:9446/carbon</code> and log in as the admin user.</li>
+<li>Select <strong>Identity Providers &gt; Resident</strong>. <img alt="resident_identity_provider" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/resident-identity-provider.png" /></li>
+<li>Go to <strong>Inbound Authentication Configuration &gt; OAuth2/OpenID Connect Configuration</strong>.</li>
+<li>
+<p>Update the <strong>Identity Provider Entity ID</strong> to the following:</p>
+<div class="highlight"><pre><span></span><code>https://&lt;IS_HOST&gt;:9446/oauth2/token
+</code></pre></div>
+
+<p><img alt="update_resident_identity_provider" src="https://berlin.ob.docs.wso2.com/en/latest/assets/img/install-and-setup/upgrading-the-solution/update-resident-provider-entity.png" /></p>
+</li>
+<li>
+<p>Click <strong>Update</strong>.</p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * WSO2 Inc. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+
+ NOTE: Borrowed generously from MkDocs and MkDocs-material
+-->
+
+<footer class="md-footer md-typeset">
+  <div class="md-footer__content">
+    <div class="md-footer__meta-sections">
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="discord-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <div class="md-footer__meta-section__text-content">
+          <h3 class="md-footer__meta-section__heading">Join our Discord</h3>
+          <p class="md-footer__meta-section__description">
+            Connect with our community on our official Discord server. Share ideas, get help, and be a part of the
+            awesome conversations!
+          </p>
+          <a target="_blank" rel="noopener noreferrer" class="md-footer__meta-section__link" role="group"
+            href="https://discord.com/invite/wso2">Join Discord<svg class="chevron" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" height="14" width="14" fill="currentColor" aria-hidden="true" focusable="false"
+              class="chakra-icon css-1nyqxv">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></a>
+        </div>
+      </div>
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="md-footer__meta-section__links">
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="14" width="14">
+              <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" fill="#bcbbbb" />
+              <path
+                d="M8.477 19.8l13.993 2.923.585-2.806-13.993-2.923zm1.832-6.704l12.94 6.04 1.208-2.572-12.94-6.08zm3.586-6.353l10.99 9.12 1.832-2.183-10.99-9.12zM20.99 0l-2.3 1.715 8.536 11.46 2.3-1.715zM8.166 26.27H22.43v-2.845H8.166v2.845z"
+                fill="#f48024" />
+            </svg>
+            <label>Got a tough question?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://stackoverflow.com/questions/tagged/wso2-identity-server?tab=Newest">Ask on Stackoverflow</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" width="14" height="14" viewBox="0 0 256 249"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+              <g fill="#161614">
+                <path
+                  d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
+                <path
+                  d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
+              </g>
+            </svg>
+            <label>Want to contribute?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://github.com/wso2/docs-is">Head over to GitHub</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" fill="none" height="14" width="14"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006">
+              <path
+                d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z"
+                fill="#000" />
+            </svg>
+            <label>Like to stay updated?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://twitter.com/intent/follow?screen_name=wso2">Follow us on X (Formerly Twitter)</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="800px" height="800px" viewBox="0 -7 48 48" version="1.1">
+              <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Color-" transform="translate(-200.000000, -368.000000)" fill="#CE1312">
+                  <path
+                    d="M219.044,391.269916 L219.0425,377.687742 L232.0115,384.502244 L219.044,391.269916 Z M247.52,375.334163 C247.52,375.334163 247.0505,372.003199 245.612,370.536366 C243.7865,368.610299 241.7405,368.601235 240.803,368.489448 C234.086,368 224.0105,368 224.0105,368 L223.9895,368 C223.9895,368 213.914,368 207.197,368.489448 C206.258,368.601235 204.2135,368.610299 202.3865,370.536366 C200.948,372.003199 200.48,375.334163 200.48,375.334163 C200.48,375.334163 200,379.246723 200,383.157773 L200,386.82561 C200,390.73817 200.48,394.64922 200.48,394.64922 C200.48,394.64922 200.948,397.980184 202.3865,399.447016 C204.2135,401.373084 206.612,401.312658 207.68,401.513574 C211.52,401.885191 224,402 224,402 C224,402 234.086,401.984894 240.803,401.495446 C241.7405,401.382148 243.7865,401.373084 245.612,399.447016 C247.0505,397.980184 247.52,394.64922 247.52,394.64922 C247.52,394.64922 248,390.73817 248,386.82561 L248,383.157773 C248,379.246723 247.52,375.334163 247.52,375.334163 L247.52,375.334163 Z"
+                    id="Youtube">
+                  </path>
+                </g>
+              </g>
+            </svg>
+            <label>Prefer video tutorials?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://www.youtube.com/user/WSO2TechFlicks">Subscribe to our YouTube Channel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-copyright md-typeset">
+  <div class="md-copyright__content">
+    <div class="md-copyright__highlight">
+      
+      &copy; 2024 <a href="https://wso2.com/">WSO2</a> LLC.
+      
+    </div>
+    <div class="md-license__highlight">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC By 4.0</a>. |
+      Sample code licensed under <a href="http://www.apache.org/licenses/" target="_blank">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "content.tabs.link", "search.suggest", "search.share"], "search": "../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../../assets/js/theme.js"></script>
+      
+        <script src="../../../../../assets/js/homePage.js"></script>
+      
+    
+  </body>
+</html>

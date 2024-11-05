@@ -1,0 +1,2655 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Identity Server">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://wso2.com/is/docs/identity-server/migration-docs/is-6.0.0/what-has-changed/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/identity-server-favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>What Has Changed - Identity Server</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/libs/fontawesome-free-6.4.2-web/css/all.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/theme.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-has-changed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+   
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a
+      href="../../../.."
+      title="Identity Server"
+      class="md-header__button md-logo"
+      aria-label="Identity Server"
+      data-md-component="logo"
+    >
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+
+           
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../what-has-changed/config-changes-5.2.0-5.3.0/" class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>  
+        
+        
+      </div>
+    </div>
+
+    
+    
+
+    
+
+    
+
+    
+    <div class="md-header__version-select-dropdown">
+      <a class="dropdown-link" href="#!" id="version-dropdown">
+        Target Version
+
+        <span class="icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+        </span>
+      </a>
+      <ul class="dropdown-content" tabindex="0">
+        <li><a href="/migration/is/docs/identity-server/migration-docs/is-6.1.0/what-has-changed/" target="_blank">is-6.1.0</a></li>
+        <li><a href="/migration/is/docs/identity-server/migration-docs/is-7.0.0/what-has-changed/" target="_blank">is-7.0.0</a></li>
+      </ul>
+    </div>
+    
+
+    
+    
+     
+    <form class="md-header__option" data-md-component="palette">
+       
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: light)"
+        data-md-color-scheme="default"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to dark mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_1"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to dark mode"
+        for="__palette_2"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 0.5C8.5 0.223858 8.27614 0 8 0C7.72386 0 7.5 0.223858 7.5 0.5V1.5C7.5 1.77614 7.72386 2 8 2C8.27614 2 8.5 1.77614 8.5 1.5V0.5ZM8.5 14.5C8.5 14.2239 8.27614 14 8 14C7.72386 14 7.5 14.2239 7.5 14.5V15.5C7.5 15.7761 7.72386 16 8 16C8.27614 16 8.5 15.7761 8.5 15.5V14.5ZM1.5 8.5C1.77614 8.5 2 8.27614 2 8C2 7.72386 1.77614 7.5 1.5 7.5H0.5C0.223858 7.5 0 7.72386 0 8C0 8.27614 0.223858 8.5 0.5 8.5H1.5ZM15.5 8.5C15.7761 8.5 16 8.27614 16 8C16 7.72386 15.7761 7.5 15.5 7.5H14.5C14.2239 7.5 14 7.72386 14 8C14 8.27614 14.2239 8.5 14.5 8.5H15.5ZM12.4464 2.83936C12.2512 3.03463 12.2512 3.35121 12.4464 3.54647C12.6417 3.74173 12.9583 3.74173 13.1535 3.54647L13.8606 2.83936C14.0559 2.6441 14.0559 2.32752 13.8606 2.13226C13.6654 1.937 13.3488 1.937 13.1535 2.13226L12.4464 2.83936ZM2.14645 2.86065C1.95118 2.66539 1.95118 2.3488 2.14645 2.15354C2.34171 1.95828 2.65829 1.95828 2.85355 2.15354L3.56066 2.86065C3.75592 3.05591 3.75592 3.37249 3.56066 3.56775C3.3654 3.76302 3.04882 3.76302 2.85355 3.56775L2.14645 2.86065ZM2.14645 13.1394C1.95118 13.3346 1.95118 13.6512 2.14645 13.8465C2.34171 14.0417 2.65829 14.0417 2.85355 13.8465L3.56066 13.1394C3.75592 12.9441 3.75592 12.6275 3.56066 12.4322C3.3654 12.237 3.04882 12.237 2.85355 12.4322L2.14645 13.1394ZM12.4464 13.1606C12.2512 12.9654 12.2512 12.6488 12.4464 12.4535C12.6417 12.2583 12.9583 12.2583 13.1535 12.4535L13.8606 13.1606C14.0559 13.3559 14.0559 13.6725 13.8606 13.8677C13.6654 14.063 13.3488 14.063 13.1535 13.8677L12.4464 13.1606ZM6.14708 3.35455C4.303 4.09075 3 5.8932 3 7.99998C3 10.7614 5.23858 13 8 13C10.6789 13 12.8657 10.8933 12.994 8.2462C12.998 8.16463 13 8.08254 13 7.99999C13 7.67166 12.9684 7.35072 12.9079 7.04005C12.2805 7.63501 11.4329 7.99999 10.5 7.99999C8.567 7.99999 7 6.43299 7 4.49999C7 3.98143 7.11277 3.48921 7.31514 3.04651C6.90813 3.10226 6.51674 3.20699 6.14708 3.35457C6.14708 3.35456 6.14708 3.35456 6.14708 3.35455ZM6.00013 4.53503C4.80446 5.22663 4 6.51936 4 7.99998C4 10.2091 5.79086 12 8 12C9.94598 12 11.5674 10.6104 11.9261 8.76934C11.478 8.91895 10.9984 8.99999 10.5 8.99999C8.02641 8.99999 6.01896 7.00418 6.00013 4.53503Z" fill="#40404B"/>
+</svg>
+      </label>
+        
+      <input
+        class="md-option"
+        data-md-color-media="(prefers-color-scheme: dark)"
+        data-md-color-scheme="slate"
+        data-md-color-primary=""
+        data-md-color-accent=""
+        
+        aria-label="Switch to light mode"
+        
+        type="radio"
+        name="__palette"
+        id="__palette_2"
+      />
+      
+      <label
+        class="md-header__button md-icon md-theme-switch md-icon--hover"
+        title="Switch to light mode"
+        for="__palette_1"
+        hidden
+      >
+        <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C8.27614 0 8.5 0.223858 8.5 0.5V1.5C8.5 1.77614 8.27614 2 8 2C7.72386 2 7.5 1.77614 7.5 1.5V0.5C7.5 0.223858 7.72386 0 8 0ZM8 14C8.27614 14 8.5 14.2239 8.5 14.5V15.5C8.5 15.7761 8.27614 16 8 16C7.72386 16 7.5 15.7761 7.5 15.5V14.5C7.5 14.2239 7.72386 14 8 14ZM2 8C2 8.27614 1.77614 8.5 1.5 8.5H0.5C0.223858 8.5 0 8.27614 0 8C0 7.72386 0.223858 7.5 0.5 7.5H1.5C1.77614 7.5 2 7.72386 2 8ZM16 8C16 8.27614 15.7761 8.5 15.5 8.5H14.5C14.2239 8.5 14 8.27614 14 8C14 7.72386 14.2239 7.5 14.5 7.5H15.5C15.7761 7.5 16 7.72386 16 8ZM12.4464 3.54647C12.2512 3.35121 12.2512 3.03463 12.4464 2.83936L13.1535 2.13226C13.3488 1.937 13.6654 1.937 13.8606 2.13226C14.0559 2.32752 14.0559 2.6441 13.8606 2.83936L13.1535 3.54647C12.9583 3.74173 12.6417 3.74173 12.4464 3.54647ZM2.14645 2.15354C1.95118 2.3488 1.95118 2.66539 2.14645 2.86065L2.85355 3.56775C3.04882 3.76302 3.3654 3.76302 3.56066 3.56775C3.75592 3.37249 3.75592 3.05591 3.56066 2.86065L2.85355 2.15354C2.65829 1.95828 2.34171 1.95828 2.14645 2.15354ZM2.14645 13.8465C1.95118 13.6512 1.95118 13.3346 2.14645 13.1394L2.85355 12.4322C3.04882 12.237 3.3654 12.237 3.56066 12.4322C3.75592 12.6275 3.75592 12.9441 3.56066 13.1394L2.85355 13.8465C2.65829 14.0417 2.34171 14.0417 2.14645 13.8465ZM12.4464 12.4535C12.2512 12.6488 12.2512 12.9654 12.4464 13.1606L13.1535 13.8677C13.3488 14.063 13.6654 14.063 13.8606 13.8677C14.0559 13.6725 14.0559 13.3559 13.8606 13.1606L13.1535 12.4535C12.9583 12.2583 12.6417 12.2583 12.4464 12.4535ZM12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4C10.2091 4 12 5.79086 12 8ZM13 8C13 10.7614 10.7614 13 8 13C5.23858 13 3 10.7614 3 8C3 5.23858 5.23858 3 8 3C10.7614 3 13 5.23858 13 8Z" fill="#40404B"/>
+</svg>
+      </label>
+       
+    </form>
+       
+    <label class="md-header__button md-icon md-icon--hover" for="__search">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+    <div class="md-header__community">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-header__extra">
+  <div class="md-header__links">
+    <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord" onclick="javascript:window.open('https://discord.com/invite/wso2', '', 'noopener')">
+        <div class="md-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <label class="md-header__link__label">Get Help</label>
+      </button>
+      <div class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+    </div>
+    
+  </nav>
+  <script>
+    
+  </script>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Identity Server" class="md-nav__button md-logo" aria-label="Identity Server" data-md-component="logo">
+      <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+    
+        <img src="../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+    
+    
+        <img src="../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+    
+
+    </a>
+    Identity Server
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          What has changed
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          What has changed
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+          5.2.0 to 5.7.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          5.2.0 to 5.7.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.2.0-5.3.0/" class="md-nav__link">
+        5.2.0 to 5.3.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.3.0-5.4.0/" class="md-nav__link">
+        5.3.0 to 5.4.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.4.0-5.5.0/" class="md-nav__link">
+        5.4.0 to 5.5.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.5.0-5.6.0/" class="md-nav__link">
+        5.5.0 to 5.6.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/config-changes-5.6.0-5.7.0/" class="md-nav__link">
+        5.6.0 to 5.7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.7.0%20to%205.8.0/" class="md-nav__link">
+        5.7.0 to 5.8.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.8.0%20to%205.9.0/" class="md-nav__link">
+        5.8.0 to 5.9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.9.0%20to%205.10.0/" class="md-nav__link">
+        5.9.0 to 5.10.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.10.0%20to%205.11.0/" class="md-nav__link">
+        5.10.0 to 5.11.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-5.11.0%20to%206.0.0/" class="md-nav__link">
+        5.11.0 to 6.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-6.0.0%20to%206.1.0/" class="md-nav__link">
+        6.0.0 to 6.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-has-changed/what-has-changes-6.1.0%20to%207.0.0/" class="md-nav__link">
+        6.1.0 to 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          is-6.1.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          is-6.1.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          Migration process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/prepare-for-migration/" class="md-nav__link">
+        prepare-for-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/migration-process/" class="md-nav__link">
+        migration-process
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Migration Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-6.1.0/migrate-to-610/" class="md-nav__link">
+        migration 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          is-7.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          is-7.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          Migration process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/prepare-for-migration/" class="md-nav__link">
+        prepare-for-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migration-process/" class="md-nav__link">
+        migration-process
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          Migration Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrate-to-700/" class="md-nav__link">
+        migration 7.0.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Other Doc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other Doc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-configurations/" class="md-nav__link">
+        migrating-configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-customizations/" class="md-nav__link">
+        migrating-customizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-authorization-model/" class="md-nav__link">
+        migrating-authorization-model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-saas-applications/" class="md-nav__link">
+        migrating-saas-applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-roles-related-adaptive-script-functions/" class="md-nav__link">
+        migrating-roles-related-adaptive-script-functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../is-7.0.0/migrating-applications-for-tenanted-qualified-urls/" class="md-nav__link">
+        migrating-applications-for-tenanted-qualified-urls
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webapp" class="md-nav__link">
+    Webapp
+  </a>
+  
+    <nav class="md-nav" aria-label="Webapp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-app" class="md-nav__link">
+    Console App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-changes" class="md-nav__link">
+    Common Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    User Management
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-forced-password-reset" class="md-nav__link">
+    Admin Forced Password Reset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otp-authenticator" class="md-nav__link">
+    OTP Authenticator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticator-display-name" class="md-nav__link">
+    Authenticator Display Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-authentication-function-signature" class="md-nav__link">
+    Adaptive Authentication Function Signature
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-management" class="md-nav__link">
+    Application management
+  </a>
+  
+    <nav class="md-nav" aria-label="Application management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-roles-in-application-management-flows" class="md-nav__link">
+    Application Roles in Application Management Flows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-requested-claims" class="md-nav__link">
+    Application Requested Claims
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oidc-protocol" class="md-nav__link">
+    OIDC Protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="OIDC Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oidc-claim-mapping" class="md-nav__link">
+    OIDC Claim Mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oidc-backchannel-logout-token" class="md-nav__link">
+    OIDC Backchannel Logout Token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openid-scope" class="md-nav__link">
+    OpenID Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oidc-consent-updates" class="md-nav__link">
+    OIDC Consent Updates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userstore-management" class="md-nav__link">
+    Userstore management
+  </a>
+  
+    <nav class="md-nav" aria-label="Userstore management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-custom-userstore-managers" class="md-nav__link">
+    Configuring Custom Userstore Managers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisioning" class="md-nav__link">
+    Provisioning
+  </a>
+  
+    <nav class="md-nav" aria-label="Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provisioning-unmapped-roles-in-jit-provisioning" class="md-nav__link">
+    Provisioning Unmapped Roles in JIT Provisioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-locally-added-claims-of-jit-provisioned-users" class="md-nav__link">
+    Deleting locally added claims of JIT provisioned users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    Scopes
+  </a>
+  
+    <nav class="md-nav" aria-label="Scopes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-level-permission-binding-for-maintaining-internal-scopes" class="md-nav__link">
+    System Level Permission Binding for Maintaining Internal Scopes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope-based-claim-filtering-in-applications" class="md-nav__link">
+    Scope Based Claim Filtering in Applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token
+  </a>
+  
+    <nav class="md-nav" aria-label="Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jwt-access-token-signing-behavior" class="md-nav__link">
+    JWT Access Token Signing Behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id-token-signing-behavior-when-encryption-is-used" class="md-nav__link">
+    ID Token Signing Behavior (when Encryption is Used)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id-token-address-claim" class="md-nav__link">
+    ID Token Address Claim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thumbprint-certificate-hashing-algorithm" class="md-nav__link">
+    Thumbprint certificate hashing algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    Claims
+  </a>
+  
+    <nav class="md-nav" aria-label="Claims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-pattern-validation-for-user-claim-input-values" class="md-nav__link">
+    Regex Pattern Validation for User Claim Input Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex-pattern-validation-for-scim-attribute-names" class="md-nav__link">
+    Regex Pattern Validation for SCIM Attribute Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-of-claims-of-assertions-to-oidc-dialect" class="md-nav__link">
+    Conversion of Claims of Assertions to OIDC Dialect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-dialect-claim-mapping-updates" class="md-nav__link">
+    External Dialect Claim Mapping Updates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    API Endpoints
+  </a>
+  
+    <nav class="md-nav" aria-label="API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scim2-endpoint" class="md-nav__link">
+    SCIM2 Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-introspection-endpoint" class="md-nav__link">
+    Token Introspection Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-configuration-via-application-management-rest-api" class="md-nav__link">
+    Certificate Configuration via Application Management REST API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-dcr-endpoint-response" class="md-nav__link">
+    OAuth DCR Endpoint Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userinfo-endpoint-attributes" class="md-nav__link">
+    UserInfo Endpoint Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library-management-permissions" class="md-nav__link">
+    Library Management Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-configuration-management-api-permissions" class="md-nav__link">
+    CORS Configuration Management API Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-server-shutdownrestart-via-soap-api" class="md-nav__link">
+    Remote Server Shutdown/Restart via SOAP API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-management-api-restrictions" class="md-nav__link">
+    Server Management API Restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resend-code-api-restrictions" class="md-nav__link">
+    Resend Code API Restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-dcr-endpoint-deprecation" class="md-nav__link">
+    Legacy DCR Endpoint Deprecation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users-session-management-apis" class="md-nav__link">
+    User's Session Management APIs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h2-database-version-upgrade" class="md-nav__link">
+    H2 Database Version Upgrade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-providers" class="md-nav__link">
+    Data providers
+  </a>
+  
+    <nav class="md-nav" aria-label="Data providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introspection-data-providers" class="md-nav__link">
+    Introspection Data Providers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-configs" class="md-nav__link">
+    System configs
+  </a>
+  
+    <nav class="md-nav" aria-label="System configs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-cors-configuration" class="md-nav__link">
+    Default CORS Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log4j2-logging-in-hazelcast" class="md-nav__link">
+    Log4j2 logging in Hazelcast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-the-webxml-file" class="md-nav__link">
+    Changes to the web.xml file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="what-has-changed">What Has Changed<a class="headerlink" href="#what-has-changed" title="Permanent link">&para;</a></h1>
+<p>WSO2 Identity Server 6.0.0 brings a range of new features and major improvements. The following aspects have changed in 6.0.0 compared to the previous WSO2 IS versions.</p>
+<p>This page provides details about the behavioral changes from WSO2 Identity Server 5.11.0 to 6.0.0.</p>
+<blockquote>
+<p><strong>If you are migrating from an older version of Identity Server</strong></p>
+<p>To find the changes introduced in the previous versions, you can refer to the following documents
+ - <strong>What Has Changed in IS 5.11.0</strong>
+ - <strong>What Has Changed in IS 5.10.0</strong>
+ - <strong>What Has Changed in IS 5.9.0</strong>
+ - <strong>Migrating Configurations to IS 5.8.0</strong> section in the <strong>Upgrading From an Older Version of WSO2 IS</strong> document</p>
+</blockquote>
+<h2 id="webapp">Webapp<a class="headerlink" href="#webapp" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to Console application and the MyAccount application on Identity Server 6.0.0.</p>
+<h3 id="console-app">Console App<a class="headerlink" href="#console-app" title="Permanent link">&para;</a></h3>
+<p>Identity Server 5.11.0 had two ways of adding the certification for an application. The two methods used are as follows:
+- Upload the certificate through the UI
+- Add the certificate to the keystore and select the certificate through the UI.</p>
+<p>Having two methods for the same process creates redundancy, therefore in 6.0.0., the second option is removed by default. If you need to enable the signature validation certificate alias option in the UI, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">console</span><span class="p">.</span><span class="na">applications</span><span class="p">.</span><span class="na">ui</span><span class="o">]</span>
+<span class="n">certificate_alias_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<h3 id="common-changes">Common Changes<a class="headerlink" href="#common-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The default token binding type of both the Console and MyAccount is changed from <code>SSO-based binding</code> to <code>cookie-based binding</code>. Read more on <a href="https://is.docs.wso2.com/en/6.0.0/learn/configuring-oauth2-openid-connect-single-sign-on/">Access Token Binding Type</a>.</p>
+</li>
+<li>
+<p>With IS 6.0.0, the <code>Callback URL</code> and <code>Post-Logout Redirect URL</code> of the Console and MyAccount are now tenant qualified by default. Hence, after migrating to IS 6.0.0, the Callback URLs of both the MyAccount and Console applications should be updated as follows:</p>
+<ul>
+<li>
+<p>Console
+    <div class="highlight"><pre><span></span><code><span class="nx">regexp</span><span class="o">=</span><span class="p">(</span><span class="nx">https</span><span class="o">:</span><span class="c1">//&lt;hostname&gt;/console|https://&lt;hostname&gt;/t/(.*)/console)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>MyAccount
+    <div class="highlight"><pre><span></span><code><span class="nx">regexp</span><span class="o">=</span><span class="p">(</span><span class="nx">https</span><span class="o">:</span><span class="c1">//&lt;hostname&gt;/myaccount|https://&lt;hostname&gt;/t/(.*)/myaccount)</span>
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This change will be propagated to the migrated IS 6.0.0 via the migration client according to the following configuration in the migration-config.yaml.
+    <div class="highlight"><pre><span></span><code><span class="err">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;SystemAppRedirectURLMigrator&quot;</span>
+<span class="w">  </span><span class="n">order</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
+<span class="w">  </span><span class="n">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="n">consoleRedirectUrl</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;regexp=(https://localhost:9443/console|https://localhost:9443/t/(.*)/console)&quot;</span>
+<span class="w">    </span><span class="n">myaccountRedirectUrl</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;regexp=(https://localhost:9443/myaccount|https://localhost:9443/t/(.*)/myaccount)&quot;</span>
+</code></pre></div>
+  Before running the migration, make sure to update the URLs in the regular expressions with the server domain or hostname, if they are different from the default values.</p>
+<h2 id="user-management">User Management<a class="headerlink" href="#user-management" title="Permanent link">&para;</a></h2>
+<p>This section contains the changes of the User Management functionalities of IS 6.0.0.</p>
+<h3 id="admin-forced-password-reset">Admin Forced Password Reset<a class="headerlink" href="#admin-forced-password-reset" title="Permanent link">&para;</a></h3>
+<p>Identity Server 6.0.0, comes with a new configuration to specify the password reset code validity period for the admin initiated password reset flow.</p>
+<p>In earlier versions of the Identity Server, a single configuration was used to govern the code validity period of all password reset flows. The configuration used in the earlier versions of IS was the <code>ExpiryTime</code> in the <code>identity.xml</code> file. This property not only affects the admin initiated password reset flow but also some other password reset flows.</p>
+<p>Updating the <code>ExpiryTime</code> of the <code>identity.xml</code> file does not affect admin initiated password reset flow in IS 6.0.0. This is because usually the code of admin initiated password reset flow is expected to have a longer validity period than the other flows. Therefore  If you need to update the code validity period of this add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">identity_mgt</span><span class="p">.</span><span class="nx">password_reset_by_admin</span><span class="p">]</span>
+<span class="nx">code_validity_period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">time</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>This section contains the updates done to the Authentication features of IS 6.0.0.</p>
+<h3 id="otp-authenticator">OTP Authenticator<a class="headerlink" href="#otp-authenticator" title="Permanent link">&para;</a></h3>
+<p>Some significant changes have been made to the below mentioned OTP authenticators. Please follow the instructions given below to incorporate your custom OTP requirements and changes to Identity Server 6.0.0.</p>
+<h4>Email OTP Authenticator</h4>
+<p>The following changes have been made to the Email OTP authenticator.</p>
+<ul>
+<li>
+<p>It’s no longer required to add the Email OTP authenticator into the <code>dropins</code> folder as the authenticator has been moved into the <code>plugins</code> directory by default in IS 6.0.0.  </p>
+</li>
+<li>
+<p>The artifact ID of the authenticator has been updated.</p>
+</li>
+<li>
+<p>The <code>emailotpauthethentication</code> endpoint, which was packed with the product is now an integral part of the authentication portal. Following are the steps to integrate their changes to Identity Server 6.0.0 for users with customized email TOTP pages.</p>
+<ol>
+<li>
+<p>Merge the customizations to the authentication portal app.The pages related to Email OTP available in authentication portal are included in the table below.
+    <table>
+        <tr>
+            <th>Page name in IS 6.0.0</th>
+            <th>Page name in earlier version</th>
+            <th>Page description</th>
+        </tr>
+        <tr>
+            <td><code>emailAddressCapture.jsp</code></td>
+            <td><code>emailAddress.jsp</code></td>
+            <td>Email OTP email capture page</td>
+        </tr>
+        <tr>
+            <td><code>emailOtp.jsp</code></td>
+            <td><code>emailotp.jsp</code></td>
+            <td>Email OTP login page</td>
+        </tr>
+        <tr>
+        <td><code>emailOtpError.jsp</code></td>
+            <td><code>emailotpError.jsp</code></td>
+            <td>Email OTP error page</td>
+        </tr>
+    </table></p>
+</li>
+<li>
+<p>Deploy the existing customized email OTP web app to the server and add the following configurations to the <code>deployment.toml</code> file to direct the email OTP flows to the customized pages.
+    <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">authentication</span><span class="p">.</span><span class="nx">authenticator</span><span class="p">.</span><span class="nx">email_otp</span><span class="p">.</span><span class="nx">parameters</span><span class="p">]</span>
+<span class="nx">EMAILOTPAuthenticationEndpointURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://localhost:9443/emailotpauthenticationendpoint/emailotp.jsp&quot;</span>
+<span class="nx">EmailOTPAuthenticationEndpointErrorPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://localhost:9443/emailotpauthenticationendpoint/emailotpError.jsp&quot;</span>
+<span class="nx">EmailAddressRequestPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://localhost:9443/emailotpauthenticationendpoint/emailAddress.jsp&quot;</span>
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+</ul>
+<h4>TOTP Authenticator</h4>
+<p>The following changes have been made to the TOTP authenticator.</p>
+<ul>
+<li>
+<p>It’s no longer required to add the TOTP authenticator into the <code>dropins</code> folder as the authenticator has been moved into the <code>plugins</code> directory by default in IS 6.0.0.</p>
+</li>
+<li>
+<p>The <code>totpauthethentication</code> endpoint, which was packed with the product is now an integral part of the authentication portal. Following are the steps to integrate their changes to Identity Server 6.0.0 for users with customized TOTP pages.</p>
+<ol>
+<li>
+<p>Merge the customizations to the authentication portal app.The pages related to TOTP available in authentication portal are:</p>
+<ul>
+<li>enableTOTP.jsp (TOTP enroll page)</li>
+<li>totp.jsp (TOTP login page)</li>
+<li>totpError.jsp (TOTP error page)</li>
+</ul>
+</li>
+<li>
+<p>Deploy the existing customized TOTP web app to the server and add the following configurations to the <code>deployment.toml</code> file to direct the TOTP flows to the customized pages.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">authentication</span><span class="p">.</span><span class="nx">authenticator</span><span class="p">.</span><span class="nx">totp</span><span class="p">.</span><span class="nx">parameters</span><span class="p">]</span>
+<span class="nx">TOTPAuthenticationEndpointURL</span><span class="o">=</span><span class="s2">&quot;totpauthenticationendpoint/totp.jsp&quot;</span>
+<span class="nx">TOTPAuthenticationEndpointErrorPage</span><span class="o">=</span><span class="s2">&quot;totpauthenticationendpoint/totpError.jsp&quot;</span>
+<span class="nx">TOTPAuthenticationEndpointEnableTOTPPage</span><span class="o">=</span><span class="s2">&quot;totpauthenticationendpoint/enableTOTP.jsp&quot;</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Unlike the earlier versions of the Identity server, the TOTP authenticator of IS 6.0.0 does not offer sending the TOTP via email as a default option. Add the following configuration to the <code>deployment.toml</code> file to enable sending the TOTP through Email.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">authentication</span><span class="p">.</span><span class="nx">authenticator</span><span class="p">.</span><span class="nx">totp</span><span class="p">.</span><span class="nx">parameters</span><span class="p">]</span>
+<span class="nx">AllowSendingVerificationCodeByEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The i18n keys of both OTP authenticators have been moved to the i18n property file of the authentication portal.</p>
+</blockquote>
+<h3 id="authenticator-display-name">Authenticator Display Name<a class="headerlink" href="#authenticator-display-name" title="Permanent link">&para;</a></h3>
+<p>From IS 6.0.0 onward the display names of some of the local authenticators and handlers were renamed. The following table maps the previous authenticator display names to the IS 6.0.0 display names.</p>
+<table>
+    <tr>
+        <th>Authenticator</th>
+        <th>Previous display name</th>
+        <th>Current display name</th>
+    </tr>
+    <tr>
+        <td><code>IdentifierExecutor</code></td><td>identifier-first</td><td>Identifier First</td>
+    </tr>
+    <tr>
+        <td><code>JWTBasicAuthenticator</code></td><td>jwt-basic</td><td>JWT Basic</td>
+    </tr>
+    <tr>
+        <td><code>FIDOAuthenticator</code></td><td>fido</td><td>Security Key/Biometrics</td>
+    </tr>
+    <tr>
+        <td><code>BasicAuthenticator</code></td><td>basic</td><td>Username & Password</td>
+    </tr>
+    <tr>
+        <td><code>SessionExecutor</code></td><td>active-sessions-limit-handler</td><td>Active Sessions Limit</td>
+    </tr>
+</table>
+
+<h3 id="adaptive-authentication-function-signature">Adaptive Authentication Function Signature<a class="headerlink" href="#adaptive-authentication-function-signature" title="Permanent link">&para;</a></h3>
+<p>On WSO2 IS, <code>getUniqueUserWithClaimValues</code>  is an adaptive authentication Javascript utility function that is used to obtain a user definition along with claim values. The utility function will search on the underlying user stores and return a unique user with the claim values.</p>
+<p>In earlier versions of the Identity Server, the parameters required by this function were as follows:</p>
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>claimMap</code></td>
+        <td>A map contains the claim URI and claim value</td>
+    </tr>
+    <tr>
+        <td><code>tenantDomain</code></td>
+        <td>The tenant domain of the user</td>
+    </tr>
+    <tr>
+        <td><code>profile</code></td>
+        <td>Profile of the user. (Optional, the default value is 'default')</td>
+    </tr>
+</table>
+
+<p>The function in earlier versions of IS: <code>getUniqueUserWithClaimValues (claimMap, tenantDomain, profile)</code></p>
+<p>With Identity Server 6.0.0, the parameters of this method signature have been changed.The updated parameters used by this function are as follows:</p>
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>claimMap</code></td>
+        <td>A map contains the claim URI and claim value</td>
+    </tr>
+    <tr>
+        <td><code>contect</code></td>
+        <td><code>JsAuthenticationContext</code> object available in the authentication flow</td>
+    </tr>
+    <tr>
+        <td><code>profile</code></td>
+        <td>Profile of the user. (Optional, the default value is 'default')</td>
+    </tr>
+</table>
+
+<p>The function in IS 6.0.0: <code>getUniqueUserWithClaimValues (claimMap, context, profile)</code></p>
+<p>Example usage of the updated function:</p>
+<div class="highlight"><pre><span></span><code><span class="err">var</span><span class="w"> </span><span class="err">claimMap</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{}</span><span class="err">;</span>
+<span class="err">claimMap</span><span class="p">[</span><span class="err">MAPPED_FEDERATED_USER_NAME_CLAIM</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">fe</span><span class="err">dera</span><span class="kc">te</span><span class="err">dUserName;</span>
+<span class="err">claimMap</span><span class="p">[</span><span class="err">MAPPED_FEDERATED_IDP_NAME_CLAIM</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">idpName;</span>
+<span class="err">var</span><span class="w"> </span><span class="err">mappedUser</span><span class="kc">na</span><span class="err">me</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">ge</span><span class="kc">t</span><span class="err">U</span><span class="kc">n</span><span class="err">iqueUserWi</span><span class="kc">t</span><span class="err">hClaimValues(claimMap</span><span class="p">,</span><span class="w"> </span><span class="err">co</span><span class="kc">nte</span><span class="err">x</span><span class="kc">t</span><span class="err">);</span>
+</code></pre></div>
+
+<p>Make sure to update the usages of this function, if any, after the migration process.</p>
+<h2 id="application-management">Application management<a class="headerlink" href="#application-management" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to application configurations on Identity Server 6.0.0.</p>
+<h3 id="application-roles-in-application-management-flows">Application Roles in Application Management Flows<a class="headerlink" href="#application-roles-in-application-management-flows" title="Permanent link">&para;</a></h3>
+<p>With WSO2 IS 6.0.0, the following functions have been removed by default:
+- The creation of application roles
+- The validation of application roles in application management flows.</p>
+<p>With these changes,
+- Application roles will not be created nor assigned to the application owner during the application creation.
+- Application role validation will be skipped for users who initiate application management flows.</p>
+<p>The above said changes apply to both new and existing applications of WSO2 IS.</p>
+<p>If you require the former functionality, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">application_mgt</span><span class="p">]</span>
+<span class="nx">enable_role_validation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Important</strong></p>
+<p>When setting this configuration value to true, make sure that application roles have been created for all the applications and assigned to the relevant application owners. If not, create and assign the roles.</p>
+</blockquote>
+<h3 id="application-requested-claims">Application Requested Claims<a class="headerlink" href="#application-requested-claims" title="Permanent link">&para;</a></h3>
+<p>During federated login flows in IS 6.0.0, if requested claims are not configured for an application, none of the user claims sent from the external IDP will be sent to the application through the ID token.</p>
+<p>For the same scenario in IS versions 5.11.0 and below, all the claims sent from the external IDP will be sent to the application regardless of the requested claim configuration. If the previous behavior is required in IS 6.0.0, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[authentication]</span>
+<span class="n">allow_sp_requested_fed_claims_only</span><span class="w"> </span><span class="o">=</span><span class="kc">false</span>
+
+<span class="k">[oauth.oidc.claims]</span>
+<span class="n">enable_oidc_dialect</span><span class="o">=</span><span class="kc">false</span>
+</code></pre></div>
+
+<h2 id="oidc-protocol">OIDC Protocol<a class="headerlink" href="#oidc-protocol" title="Permanent link">&para;</a></h2>
+<p>According to the OIDC specification, the OIDC claim <code>locality</code> should be used to store the city of an address. In the earlier versions of the Identity Server, the <code>locality</code> claim was mapped to the local claim <code>http://wso2.org/claims/locality</code>, which is used to store a localization code used mainly in email templates.</p>
+<p>To maintain compliance with the OIDC specification, the local claim <code>http://wso2.org/claims/locality</code> will be used to store the city of an address with Identity Server 6.0.0 and upwards. The localization code information will be stored in the local claim <code>http://wso2.org/claims/local</code>.</p>
+<p>To revert to the previous claim usage system, add the following configuration to the deployment.toml file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">claims</span><span class="p">]</span>
+<span class="nx">use_legacy_localization_claim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<h3 id="oidc-claim-mapping">OIDC Claim Mapping<a class="headerlink" href="#oidc-claim-mapping" title="Permanent link">&para;</a></h3>
+<p>In Identity Server 6.0.0, the claim dialect of the website claim has been changed from <code>http://wso2.org/claims/url</code> to <code>http://wso2.org/claims/websiteurl</code>. This claim mapping migration will be done automatically when executing the migration client.</p>
+<h3 id="oidc-backchannel-logout-token">OIDC Backchannel Logout Token<a class="headerlink" href="#oidc-backchannel-logout-token" title="Permanent link">&para;</a></h3>
+<p>To maintain compliance with the OIDC specification for Backchannel logout, the logout token attributes have been updated. </p>
+<p>In Identity Server 5.11.0, a logout token generated during OIDC Backchannel logout would have looked like this.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;iss&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://server.example.com&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;sub&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;248289761001&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;aud&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;s6BhdRkqt3&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;iat&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1471566154</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;jti&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bWJq&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;sid&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;08a5019c-17e1-4977-8f42-65a12843ea02&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;event&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w"> </span><span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+
+<p>In Identity Server 6.0.0, the event attribute has been renamed to events and default value has been added to the events list. Hence, a logout token generated in IS 6.0.0 would be as follows.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="s2">&quot;iss&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://server.example.com&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;sub&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;248289761001&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;aud&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;s6BhdRkqt3&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;iat&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1471566154</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;jti&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bWJq&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;sid&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;08a5019c-17e1-4977-8f42-65a12843ea02&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="s2">&quot;events&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="s2">&quot;http://schemas.openid.net/event/backchannel-logout&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+
+<p>Make sure to update all the client applications that use OIDC Backchannel logout to work with the new format of the logout token.</p>
+<h3 id="openid-scope">OpenID Scope<a class="headerlink" href="#openid-scope" title="Permanent link">&para;</a></h3>
+<p>From Identity Server 6.0.0 onwards, using the openid scope in OpenID Connect flows will not return any user claims. This change will only affect new tenants and will not have an impact on the existing tenants. If user claims are required, the recommended approach is to define a custom OIDC scope with required claims and use that scope in the OIDC flows.</p>
+<h3 id="oidc-consent-updates">OIDC Consent Updates<a class="headerlink" href="#oidc-consent-updates" title="Permanent link">&para;</a></h3>
+<p>Following are the changes made to the behavior of the Consent prompt page in the login flow of IS 6.0.0:</p>
+<p>The OIDC scopes requested by a client application was displayed under the permissions section of the user consent page. These requested OIDC scopes are no longer mentioned under the permissions section of the user consent page. Only the relevant claims will be displayed.</p>
+<p>Prompting consent for the Subject Claim URI will be done only if it has also been configured as a Requested Claim. This is enabled by default. The previous behavior of the consent page did not prompt for consent for the Subject Claim URI at all, regardless of whether it had been configured as a Requested Claim or not. If the previous behavior is required, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">authentication</span><span class="p">.</span><span class="nx">consent</span><span class="p">.</span><span class="nx">subject</span><span class="p">]</span>
+<span class="nx">prompt</span><span class="o">=</span><span class="kc">false</span>
+</code></pre></div>
+
+<h2 id="userstore-management">Userstore management<a class="headerlink" href="#userstore-management" title="Permanent link">&para;</a></h2>
+<p>This sections contains the details of the updates related to User Management section in IS 6.0.0.</p>
+<h3 id="configuring-custom-userstore-managers">Configuring Custom Userstore Managers<a class="headerlink" href="#configuring-custom-userstore-managers" title="Permanent link">&para;</a></h3>
+<p>In earlier versions of WSO2 IS, custom userstore managers were enabled by adding the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">user_store_mgt</span><span class="p">]</span>
+<span class="nx">allowed_user_stores</span><span class="o">=</span><span class="p">[</span><span class="err">“</span><span class="o">&lt;</span><span class="nx">existing</span><span class="w"> </span><span class="nx">userstore</span><span class="w"> </span><span class="nx">managers</span><span class="p">...</span><span class="o">&gt;</span><span class="err">”</span><span class="p">,</span><span class="s2">&quot;&lt;new userstore managers…&gt;&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>This configuration requires the developer to enter the names of all existing userstore managers together with the new userstore managers that needed to be enabled.</p>
+<p>In Identity Server 6.0.0, a new configuration has been introduced to enable the custom userstore managers but adding the name of the new userstore manager only.</p>
+<p>You may use the following configuration on <code>deployment.toml</code> file to configure new custom userstore managers</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">user_store_mgt</span><span class="p">]</span>
+<span class="nx">custom_user_stores</span><span class="o">=</span><span class="p">[</span><span class="err">“</span><span class="o">&lt;</span><span class="ow">new</span><span class="w"> </span><span class="nx">userstore</span><span class="w"> </span><span class="nx">managers</span><span class="err">…</span><span class="o">&gt;</span><span class="err">”</span><span class="p">]</span>
+</code></pre></div>
+
+<h2 id="provisioning">Provisioning<a class="headerlink" href="#provisioning" title="Permanent link">&para;</a></h2>
+<p>This sections contains the details of the updates related to provisioing section in IS 6.0.0.</p>
+<h3 id="provisioning-unmapped-roles-in-jit-provisioning">Provisioning Unmapped Roles in JIT Provisioning<a class="headerlink" href="#provisioning-unmapped-roles-in-jit-provisioning" title="Permanent link">&para;</a></h3>
+<p>In Identity Server 5.11.0, provisioning of roles in the JIT provisioning flow took place only for roles which had role mappings configured.</p>
+<p>In Identity Server 6.0.0, this behavior has been changed. If there is a local role with a name similar to the Identity Provider role name, such roles will be provisioned during JIT provisioning even if there is no role mapping set in the IDP configuration. This is now the default behavior. If the previous behavior is required, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">idp_role_management</span><span class="p">]</span>
+<span class="nx">return_only_mapped_local_roles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<h3 id="deleting-locally-added-claims-of-jit-provisioned-users">Deleting locally added claims of JIT provisioned users<a class="headerlink" href="#deleting-locally-added-claims-of-jit-provisioned-users" title="Permanent link">&para;</a></h3>
+<p>In Identity Server 5.11.0, with the <code>Assert identity using mapped local subject identifier</code> option enabled for a service provider, the locally added claim values for a JIT provisioned user during initial provisioning will be retained, even if those specific claim values are not returned by the federated Identity Provider (IdP) during subsequent federated logins.</p>
+<p>In Identity Server 6.0.0, this behavior has been changed. The attribute synchronization process for a JIT provisioned user was changed so as to delete the existing claim mappings which are not present in the IDP claim mapping. This deletes existing local claim values that are not present in the subsequent federated logins after the initial provisioning.</p>
+<p>If the previous behavior is required(To preserve locally added claims of JIT provisioned users), add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">authentication</span><span class="p">.</span><span class="nx">jit_provisioning</span><span class="p">]</span>
+<span class="nx">preserve_locally_added_claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<h2 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">&para;</a></h2>
+<p>This sections contains the details of the updates related to scopes section in IS 6.0.0.</p>
+<h3 id="system-level-permission-binding-for-maintaining-internal-scopes">System Level Permission Binding for Maintaining Internal Scopes<a class="headerlink" href="#system-level-permission-binding-for-maintaining-internal-scopes" title="Permanent link">&para;</a></h3>
+<p>In earlier versions of the Identity Server, internal system scopes and permissions were managed separately for every tenant. This behavior was not a necessity as these scopes were only used to access the Identity Server’s internal APIs, but it had a negative impact on the tenant creation process.</p>
+<p>With Identity Servery 6.0.0, the internal scope’s permission bindings will be managed at the server level as system data. All tenants will now use the bindings available in the <code>oauth-scope-bindings.xml</code> file for internal scopes.</p>
+<p>If the previous behavior is required, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">oauth</span><span class="p">]</span>
+<span class="nx">enable_system_level_internal_scope_management</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+
+<h3 id="scope-based-claim-filtering-in-applications">Scope Based Claim Filtering in Applications<a class="headerlink" href="#scope-based-claim-filtering-in-applications" title="Permanent link">&para;</a></h3>
+<p>In the previous versions of the Identity Server, if there are requested claims configured at the service provider, the claims will be sent to the client application regardless of the scope set in the authorization request.</p>
+<p>From Identity Server 6.0.0 onwards, this behavior has been changed. The claims configured in the service provider will now be filtered by the scopes set in the authorization requests and only those filtered claims will be sent to the client application.</p>
+<p>To revert to the previous behavior, add the following configuration to the deployment.toml file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">authentication</span><span class="p">]</span>
+<span class="nx">enable_scope_based_claim_filtering</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+
+<h2 id="token">Token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to Token configurations on Identity Server 6.0.0.</p>
+<h3 id="jwt-access-token-signing-behavior">JWT Access Token Signing Behavior<a class="headerlink" href="#jwt-access-token-signing-behavior" title="Permanent link">&para;</a></h3>
+<p>In the previous versions of the Identity Server, JWT access token signing is done using the tenant of the user accessing  the application. This behavior has been improved to maintain consistency with the ID token which is signed using the application’s tenant by default. This behavioral change will also simplify token validation at the application, especially SaaS applications.</p>
+<p>In Identity Server 6.0.0, JWT Access Token signing is done using the tenant in which the application (service provider) has been registered. </p>
+<p>This behavioral change will have an impact on SaaS applications as the user may not always be from the same tenant as that of the application. Token validation may fail at the client application when obtaining new tokens after the migration. The SaaS client applications need to be updated to handle JWT token validation using the application tenant in order to function properly with this behavioral change. If the previous behavior is required, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">oauth</span><span class="p">.</span><span class="nx">access_token</span><span class="p">]</span>
+<span class="nx">generate_with_sp_tenant_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+
+<p>With this configuration in place, the SaaS applications can be used as they were without issues.</p>
+<p>This change will not have an impact on existing non-SaaS applications as both the application and the user will be from the same tenant in that context.</p>
+<h3 id="id-token-signing-behavior-when-encryption-is-used">ID Token Signing Behavior (when Encryption is Used)<a class="headerlink" href="#id-token-signing-behavior-when-encryption-is-used" title="Permanent link">&para;</a></h3>
+<p>In previous versions of the Identity Server, ID Token encryption happens before signing the token. This behavior has been updated to follow the OIDC specification.</p>
+<p>In Identity Server 6.0.0, ID Token encryption will occur after the token has been signed. It is important to note that the result of token decryption now will be a signed JWT, instead of the claims set as in previous versions. Hence, client applications that perform token decryption will have to be updated accordingly to read the claims in the JWT token.</p>
+<p>The following is an example written in JAVA portraying the differences between the old and new scenarios.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Using packages </span>
+<span class="c1">// com.nimbusds.jose.crypto.RSADecrypter</span>
+<span class="c1">// com.nimbusds.jwt.EncryptedJWT</span>
+<span class="c1">// com.nimbusds.jwt.JWTClaimsSet</span>
+
+<span class="c1">// Decrypt the ID Token</span>
+<span class="n">EncryptedJWT</span><span class="w"> </span><span class="n">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EncryptedJWT</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">idToken</span><span class="p">);</span><span class="w">        </span>
+<span class="n">RSADecrypter</span><span class="w"> </span><span class="n">decrypter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RSADecrypter</span><span class="p">(</span><span class="n">spPrivateKey</span><span class="p">);</span>
+<span class="n">jwt</span><span class="p">.</span><span class="na">decrypt</span><span class="p">(</span><span class="n">decrypter</span><span class="p">);</span>
+
+<span class="c1">// Obtaining claims set in IS 5.11.0 and prior versions</span>
+<span class="n">JWTClaimsSet</span><span class="w"> </span><span class="n">claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jwt</span><span class="p">.</span><span class="na">getJWTClaimsSet</span><span class="p">();</span>
+
+<span class="c1">// Obtaining claims set in IS 6.0.0</span>
+<span class="n">JWTClaimsSet</span><span class="w"> </span><span class="n">claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jwt</span><span class="p">.</span><span class="na">getPayload</span><span class="p">().</span><span class="na">toSignedJWT</span><span class="p">().</span><span class="na">getJWTClaimsSet</span><span class="p">();</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Important</strong></p>
+<p>This behavior cannot be reversed.</p>
+</blockquote>
+<h3 id="id-token-address-claim">ID Token Address Claim<a class="headerlink" href="#id-token-address-claim" title="Permanent link">&para;</a></h3>
+<p>In IS 6.0.0, the address claim that is returned with the ID token when the address scope is requested has been updated to comply with the <a href="https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim">OpenID Connect specification</a>. 
+<code>Country</code>, <code>postal_code</code>, <code>locality</code>, <code>region</code> and <code>street_address</code> child claims will now be returned within the address claim as shown in the example below. 
+Any client application that is consuming the ID token claims should be updated to properly parse this claim value.
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="nt">&quot;street_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234 Hollywood Blvd.&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;locality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90210&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="thumbprint-certificate-hashing-algorithm">Thumbprint certificate hashing algorithm<a class="headerlink" href="#thumbprint-certificate-hashing-algorithm" title="Permanent link">&para;</a></h3>
+<p>From IS 5.10.0 onwards, the hashing algorithm used for thumbprint certificate generation is updated to <code>SHA-256</code>. For versions before IS 5.10.0, WSO2 Identity Server used <code>SHA-1</code> as the hashing algorithm for thumbprint certificate generation.</p>
+<p>Therefore, if a user is migrating from IS 5.9.0 or a lower version to IS 6.0.0, the previously issued JWTs will not be validated against the new thumbprint included in the JWKS response of the latest version.</p>
+<h2 id="claims">Claims<a class="headerlink" href="#claims" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to claims on Identity Server 6.0.0.</p>
+<h3 id="regex-pattern-validation-for-user-claim-input-values">Regex Pattern Validation for User Claim Input Values<a class="headerlink" href="#regex-pattern-validation-for-user-claim-input-values" title="Permanent link">&para;</a></h3>
+<p>In Identity Server 6.0.0, server-side regex pattern validation has been introduced as a mechanism for validating inputs when adding and updating user claim values.
+With this feature, the input values for the user claims will be validated against the following patterns by default.</p>
+<table>
+    <tr>
+        <th>Claim</th>
+        <th>Regex Pattern</th>
+    </tr>
+    <tr>
+        <td>Mobile number</td>
+        <td><code>^\d{4}-\d{2}-\d{2}$</code></td>
+    </tr>
+    <tr>
+        <td>Date of birth</td>
+        <td><code>^\s*(?:\+?(\d{1,3}))?[-. (](\d{3})?[-. )](\d{3})?[-. ]*(\d{4,6})(?: x(\d+))?\s$</code></td>
+    </tr>
+    <tr>
+        <td>All other claims</td>
+        <td><code>[^<>\`"]+</code></td>
+    </tr>
+</table>
+
+<p>If the previous behavior is required, the regex pattern validation feature can be disabled adding the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">identity_mgt</span><span class="p">]</span>
+<span class="nx">enable_user_claim_input_regex_validation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+
+<p>However, if user claim value validation is required with different regex patterns, it can be done by configuring the required regex patterns in the user claim configuration window, which will override the default regex validation pattern for that claim. For this to work, the above configuration should be removed (as it is enabled by default) or the value should be set to true.</p>
+<h3 id="regex-pattern-validation-for-scim-attribute-names">Regex Pattern Validation for SCIM Attribute Names<a class="headerlink" href="#regex-pattern-validation-for-scim-attribute-names" title="Permanent link">&para;</a></h3>
+<p>With Identity Server 6.0.0, server-side regex pattern validation has been added for SCIM attribute names. This means that new SCIM attributes created will be validated against the regex <code>&lt;dialect_uri&gt;:[a-z 0-9$\-_]*$</code>. The regex only allows alphanumeric characters, <code>$</code>, <code>-</code> and <code>_</code> in the attribute names.</p>
+<p>If you are using a modified claim-config.xml file and you want to incorporate this update to your Identity Server 6.0.0 setup, add the regex patterns manually to your custom claim-config.xml file according to the format given below and replace the default file in <code>&lt;IS_HOME&gt;/repository/conf</code> directory. Refer the table for the Claim Dialect URIs and their corresponding regex patterns.</p>
+<h4>Dialect XML tag format</h4>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">Dialect</span><span class="w"> </span><span class="nx">dialectURI</span><span class="o">=</span><span class="s2">&quot;[Claim Dialect URI]&quot;</span><span class="w"> </span><span class="nx">claimURIRegex</span><span class="o">=</span><span class="err">&quot;</span><span class="p">[</span><span class="nx">Regex</span><span class="w"> </span><span class="nx">Pattern</span><span class="p">]</span><span class="err">”</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<h4>New Claim Dialect Validation Regexes</h4>
+<p><table>
+    <tr>
+        <th>Claim Dialect URI</th>
+        <th>Regex Pattern</th>
+    </tr>
+    <tr>
+        <td><code>urn:scim:schemas:core:1.0</td></code>
+        <td><code>urn:scim:schemas:core:1.0:[a-zA-Z0-9<span class="arithmatex"><span class="MathJax_Preview">\-_\.]*</span><script type="math/tex">\-_\.]*</script></span></td></code>
+    </tr>
+    <tr>
+        <td><code>urn:ietf:params:scim:schemas:core:2.0</td></code>
+        <td><code>urn:ietf:params:scim:schemas:core:2.0:[a-zA-Z0-9<span class="arithmatex"><span class="MathJax_Preview">\-_\.]*</span><script type="math/tex">\-_\.]*</script></span></td></code>
+    </tr>
+    <tr>
+        <td><code>urn:ietf:params:scim:schemas:core:2.0:User</td></code>
+        <td><code>urn:ietf:params:scim:schemas:core:2.0:User:[a-zA-Z0-9<span class="arithmatex"><span class="MathJax_Preview">\-_\.]*</span><script type="math/tex">\-_\.]*</script></span></td></code>
+    </tr>
+    <tr>
+        <td><code>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User</td></code>
+        <td><code>urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:[a-zA-Z0-9<span class="arithmatex"><span class="MathJax_Preview">\-_\.]*</span><script type="math/tex">\-_\.]*</script></span></td></code>
+    </tr>
+</table></p>
+<h3 id="conversion-of-claims-of-assertions-to-oidc-dialect">Conversion of Claims of Assertions to OIDC Dialect<a class="headerlink" href="#conversion-of-claims-of-assertions-to-oidc-dialect" title="Permanent link">&para;</a></h3>
+<p>For OAuth/OIDC applications, the default behavior of Identity Server versions till 5.11.0 was to send the original claims sent from IDP directly to the service provider/application as it is without converting the claims to the OIDC dialect.</p>
+<p>In Identity Server 6.0.0, this behavior has been changed. The claims sent from IDP are now being converted to the OIDC dialect by default before they are sent to the service provider.</p>
+<p>To disable this and revert to the previous behavior, add the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">oauth</span><span class="p">.</span><span class="nx">oidc</span><span class="p">.</span><span class="nx">claims</span><span class="p">]</span>
+<span class="nx">enable_oidc_dialect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+
+<h3 id="external-dialect-claim-mapping-updates">External Dialect Claim Mapping Updates<a class="headerlink" href="#external-dialect-claim-mapping-updates" title="Permanent link">&para;</a></h3>
+<p>In Identity Server 6.0.0, the claim mapping of the <code>meta.version</code> claim of the external claim dialect <code>urn:ietf:params:scim:schemas:core:2.0</code> has been changed from the local claim <code>http://wso2.org/claims/im</code> to the newly added local claim <code>http://wso2.org/claims/metadata.version</code>. 
+This has been done to address an issue that affected updating the value of the IM attribute which is used for other purposes.</p>
+<p>Although this new claim mapping is available in a fresh Identity Server 6.0.0, this change will <strong>not</strong> be propagated from the older versions to a migrated IS 6.0.0 as it would create inconsistencies if <code>urn:ietf:params:scim:schemas:core:2.0:meta.version</code> values have been utilized following the older mapping. 
+If the <code>IM</code> attribute and <code>meta.version</code> attribute values are required separately, it is recommended to manually update the claim mapping via the Console once the migration is complete.</p>
+<h2 id="api-endpoints">API Endpoints<a class="headerlink" href="#api-endpoints" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to APIs and API endpoints on Identity Server 6.0.0.</p>
+<h3 id="scim2-endpoint">SCIM2 Endpoint<a class="headerlink" href="#scim2-endpoint" title="Permanent link">&para;</a></h3>
+<p>This section covers the updates related to the SCIM2 endpoint on Identity Server 6.0.0.</p>
+<h4>Intermediate Certificate Validation</h4>
+<p>In WSO2 Identity Server versions 5.11.0 and older, intermediate certificate validation is skipped for the SCIM2 endpoint.
+This has been enabled by default in WSO2 Identity Server 6.0.0. If the previous behavior is required, add the following configuration to the <code>deployment.toml</code> file.</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">intermediate_cert_validation</span><span class="p">]</span>
+<span class="nx">exempt_contexts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="nx">scim2</span><span class="err">”</span><span class="p">]</span>
+</code></pre></div>
+Read more about <a href="https://is.docs.wso2.com/en/6.0.0/apis/overview/#configure-intermediate-certificate-validation">Intermediate Certificate Validation</a>.</p>
+<h4>Removal of Duplicate Entries in the SCIM2 Users Response</h4>
+<p>In the older versions of the Identity Server, the responses of the SCIM2 Users endpoint did not contain duplicate entries of the same user (it is possible to have to duplicate usernames in separate userstores).</p>
+<p>In Identity Server 6.0.0, the SCIM2 User responses will contain duplicate entries of the same user as returned by the list of userstores. This has been done to maintain the consistency of the results returned by the userstores for the search queries.</p>
+<p>If this behavior is not required, it can be disabled using the following configuration.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">scim2</span><span class="p">]</span>
+<span class="nx">remove_duplicate_users_in_users_response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span>
+</code></pre></div>
+
+<h4>Data type change for boolean attributes from the Schemas endpoint</h4>
+<p>In previous versions of WSO2 Identity Server, the <code>scim2/Schemas</code> endpoint returned the attribute type of boolean attributes as <code>string</code>.
+<div class="highlight"><pre><span></span><code>caseExact: false
+description: &quot;Status of the account&quot;
+displayName: &quot;Active&quot;
+displayOrder: &quot;20&quot;
+multiValued: false
+mutability: &quot;READ_WRITE&quot;
+name: &quot;active&quot;
+required: false
+returned: &quot;DEFAULT&quot;
+type: &quot;STRING&quot;
+</code></pre></div>
+In Identity Server 6.0.0, the attribute type returned for boolean attributes from the <code>scim2/Schemas</code> endpoint is <code>boolean</code>.
+<div class="highlight"><pre><span></span><code>caseExact: false
+description: &quot;Status of the account&quot;
+displayName: &quot;Active&quot;
+displayOrder: &quot;20&quot;
+multiValued: false
+mutability: &quot;READ_WRITE&quot;
+name: &quot;active&quot;
+required: false
+returned: &quot;DEFAULT&quot;
+type: &quot;BOOLEAN&quot;
+</code></pre></div></p>
+<h3 id="token-introspection-endpoint">Token Introspection Endpoint<a class="headerlink" href="#token-introspection-endpoint" title="Permanent link">&para;</a></h3>
+<h4>Disabling Cross Tenant Token Introspection</h4>
+<p>The ability to introspect tokens across tenants will be disabled by default in IS 6.0.0. With this change, cross tenant endpoints will not be accessible using a tenanted access token.
+For example, using an access token obtained for tenant A to access the user info endpoint of tenant B will result in an "Access token validation failed" error response. 
+The tenanted user info endpoint can only be used with an access token that was issued for that particular tenant. 
+Hence, the URLs of the introspection (user info) endpoints used in client applications will have to be updated to tenanted endpoints if tenanted access tokens are used. Eg: /userinfo -&gt; /t/tenantdomin/userinfo.</p>
+<p>If a user needs to enable cross-tenant token introspection, the following config should be added to the <code>deployment.toml</code> file.
+<div class="highlight"><pre><span></span><code><span class="k">[oauth.introspect]</span>
+<span class="n">allow_cross_tenant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div></p>
+<h3 id="certificate-configuration-via-application-management-rest-api">Certificate Configuration via Application Management REST API<a class="headerlink" href="#certificate-configuration-via-application-management-rest-api" title="Permanent link">&para;</a></h3>
+<p>With IS 6.0.0, it is no longer possible to add expired certificates to applications or update existing certificates of applications with expired certificates using the Application Management REST API.</p>
+<h3 id="oauth-dcr-endpoint-response">OAuth DCR Endpoint Response<a class="headerlink" href="#oauth-dcr-endpoint-response" title="Permanent link">&para;</a></h3>
+<p>With WSO2 Identity Server 6.0.0, the response model of an application <code>GET/PUT</code> response from the OAuth DCR endpoint has been updated.
+The data type of the <code>client_secret_expires_at</code> property of an OAuth2 Application object has been changed from <code>string</code> to <code>long</code>.</p>
+<p>Therefore, any client applications that are using this API must update the response parsing mechanisms to work with a long value for this attribute.</p>
+<h3 id="userinfo-endpoint-attributes">UserInfo Endpoint Attributes<a class="headerlink" href="#userinfo-endpoint-attributes" title="Permanent link">&para;</a></h3>
+<h4>Groups Claim</h4>
+<p>The representation of the groups claim in the <code>UserInfo</code> response has been changed. The groups claim is a multi-valued attribute, and it is represented accordingly as a JSON array in the ID token. But in earlier versions of the Identity Server, the value of the groups claim in the UserInfo response is a single string of comma-separated values as shown below.</p>
+<p><code>"groups": "Internal/everyone,dev"</code></p>
+<p>With Identity Server 6.0.0, the UserInfo response has been updated to return a JSON array value for the groups claim, similar to that in the ID token.</p>
+<p><code>"groups": ["Internal/everyone","dev"]</code>
+Hence, any client application that consumes the UserInfo response should be updated to parse this new format of the response properly.</p>
+<h4>Address Claims</h4>
+<p>The representation of the following claims in the <code>UserInfo</code> response has been changed. 
+- country 
+- locality 
+- region 
+- postal_code</p>
+<p>These claims will be listed as sub-claims within a JSON object under the address claim in the ID token. In earlier versions of the Identity Server, these claims were listed separately in the UserInfo response as shown below.</p>
+<div class="highlight"><pre><span></span><code>&quot;country&quot;: &quot;Andorra&quot;,
+&quot;locality&quot;: &quot;Wales&quot;
+</code></pre></div>
+
+<p>With Identity Server 6.0.0, the UserInfo response will list the above claims inside the address claim as shown below.</p>
+<p><div class="highlight"><pre><span></span><code>&quot;address&quot;: {
+   &quot;country&quot;: &quot;Andorra&quot;,
+   &quot;locality&quot;: &quot;Wales&quot;
+}   
+</code></pre></div>
+Hence, any client application that consumes the UserInfo response should be updated to parse this new format of the response properly.</p>
+<h3 id="library-management-permissions">Library Management Permissions<a class="headerlink" href="#library-management-permissions" title="Permanent link">&para;</a></h3>
+<p>Up until WSO2 Identity Server 5.11.0, manage level permissions were required to access the Function Library Management Admin services and APIs.</p>
+<p>With WSO2 Identity Server 6.0.0, more fine-grained permissions are supported for these services and APIs. The following table maps the operation to the required permissions.</p>
+<table>
+    <tr>
+        <th>Service Operation</th>
+        <th>API Call</th>
+        <th>Permissions Required</th>
+    </tr>
+    <tr>
+        <td><code>createFunctionLibrary</code></td>
+        <td><code>POST /api/server/v1/script-libraries(.*)</code></td>
+        <td><code> /permission/admin/manage/functionsLibrarymgt/create</code></td>
+    </tr>
+    <tr>
+        <td><code>listFunctionLibraries, getFunctionLibrary</code></td>
+        <td><code>GET /api/server/v1/script-libraries(.*)</code></td>
+        <td><code>/permission/admin/manage/functionslibrarymgt/view</code></td>
+    </tr>
+    <tr>
+        <td><code>deleteFunctionLibrary</code></td>
+        <td><code>DELETE /api/server/v1/script-libraries(.*)</code></td>
+        <td><code>/permission/admin/managefunctionslibrarymgt/delete</code></td>
+    </tr>
+    <tr>
+        <td><code>updateFunctionLibrary</code></td>
+        <td><code>PUT /api/server/v1/script-libraries(.*)</code></td>
+        <td><code>/permission/admin/manage/functionslibrarymgt/update</code></td>
+    </tr>
+</table>
+
+<h3 id="cors-configuration-management-api-permissions">CORS Configuration Management API Permissions<a class="headerlink" href="#cors-configuration-management-api-permissions" title="Permanent link">&para;</a></h3>
+<p>Up until WSO2 Identity Server 5.11.0, <code>manage</code> level permissions were required to access the CORS Configuration Management APIs.
+With IS 6.0.0, more fine-grained permissions have been introduced for this API. 
+The permission <code>/permission/admin/manage/identity/cors/origins/view</code> is now sufficient to access the <code>/api/server/v1/cors/origins</code> API endpoint.</p>
+<h3 id="remote-server-shutdownrestart-via-soap-api">Remote Server Shutdown/Restart via SOAP API<a class="headerlink" href="#remote-server-shutdownrestart-via-soap-api" title="Permanent link">&para;</a></h3>
+<p>With Identity Server 6.0.0, the capability of the SOAP APIs to initiate server shutdowns or restarts has been disabled by default. If these features are required, add the following configurations to the <code>deployment.toml</code> file to enable the features.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">server</span><span class="p">]</span>
+<span class="nx">enable_shutdown_from_api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="nx">enable_restart_from_api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<h3 id="server-management-api-restrictions">Server Management API Restrictions<a class="headerlink" href="#server-management-api-restrictions" title="Permanent link">&para;</a></h3>
+<p>From Identity Server 6.0.0 onwards, only client applications configured as Management Applications are able to access Server Management APIs.</p>
+<p>Applications can configured as management applications in the following methods:
+- Check the <strong>Management Application</strong> option available in the application's edit page.
+- Set the <code>isManagementApp</code> attribute to <code>true</code> using Application Management REST API for the required applications.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>This will affect only new applications. All applications that existed prior to the migration will still be able to access the Server's Management APIs.</p>
+</blockquote>
+<h3 id="resend-code-api-restrictions">Resend Code API Restrictions<a class="headerlink" href="#resend-code-api-restrictions" title="Permanent link">&para;</a></h3>
+<p>From Identity Server 6.0.0 onwards, only users with identity management permission are able to invoke the resend-code API.</p>
+<h3 id="legacy-dcr-endpoint-deprecation">Legacy DCR Endpoint Deprecation<a class="headerlink" href="#legacy-dcr-endpoint-deprecation" title="Permanent link">&para;</a></h3>
+<p>With IS 6.0.0, the legacy DCR endpoint which was accessible via <code>/identity/register</code> has been deprecated. 
+The recommended API for DCR should be OAuth2.0 DCR endpoint (<code>/identity/oauth2/dcr/v1.1</code>).</p>
+<p>If the deprecated legacy DCR endpoint needs to be enabled, use the following config in <code>deployment.toml</code> file.
+<div class="highlight"><pre><span></span><code><span class="k">[[legacy_feature]]</span>
+<span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;identity/register&quot;</span>
+<span class="n">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div></p>
+<h3 id="users-session-management-apis">User's Session Management APIs<a class="headerlink" href="#users-session-management-apis" title="Permanent link">&para;</a></h3>
+<p>From Identity Server 6.0.0 onwards, two new API endpoints will be available to retrieve user session information.</p>
+<ul>
+<li><code>/{user-id}/sessions/{session-id}</code>: To retrieve information related to the active session given a session-id and a user-id.</li>
+<li><code>/sessions</code>: To retrieve all active sessions of the tenant. This endpoint supports filtering with some of the attributes.</li>
+</ul>
+<p>Read more on <a href="https://is.docs.wso2.com/en/6.0.0/apis/session-mgt-rest-api/">User's Session Management API Definition</a>.</p>
+<p>From Identity Server 6.0.0 onwards, federated authentication sessions associated with local user sessions will be returned with the session's response.</p>
+<h2 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to database configurations on Identity Server 6.0.0.</p>
+<h3 id="h2-database-version-upgrade">H2 Database Version Upgrade<a class="headerlink" href="#h2-database-version-upgrade" title="Permanent link">&para;</a></h3>
+<p>The H2 database engine version has been upgraded from <code>1.4.199</code> to <code>2.1.210</code> in Identity Server 6.0.0. As a result of this, Identity Server 6.0.0 will not be able to properly interact with existing H2 databases of the older version.</p>
+<p>Therefore, it is mandatory to migrate the existing H2 databases to the newer version before running the product migration tool. This applies mainly to the embedded H2 database in the product, if being used.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>If you are migrating from IS 5.11.0 which is using the embedded H2 database and has been updated to update level 111 or higher, the H2 database migration need not be done as the database has already been migrated with update 111.</p>
+</blockquote>
+<p>To migrate the H2 databases to the newer versions, follow the instructions given below.</p>
+<ol>
+<li>
+<p>Get the <code>migration.sh</code> script provided by the WSO2 team and run it using the command <code>sh migration.sh</code>.</p>
+<p>Alternatively, you could run the following command to download and run the script in one go.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="nx">https</span><span class="o">:</span><span class="c1">//raw.githubusercontent.com/wso2/samples-is/master/h2-migration-tool/migration.sh | bash</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Once you run the script, you will be prompted with the following questions on the terminal:</p>
+<ul>
+<li><strong>Enter the path to the previous database files:</strong>
+    If the database being migrated is the embedded H2 database, the path should be <code>&lt;OLD_IS_HOME&gt;/repository/database</code>.</li>
+<li><strong>Enter the path to store the newly created files:</strong>
+    Enter the path of the target directory where the new database files should be generated.</li>
+</ul>
+</li>
+<li>
+<p>After successfully executing the migration script, copy the files in the target directory to the <code>repository/database</code> directory in the new Identity Server 6.0.0 pack for embedded H2 database migration.</p>
+</li>
+</ol>
+<h2 id="data-providers">Data providers<a class="headerlink" href="#data-providers" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to data provider configurations on WSO2 Identity Server 6.0.0.</p>
+<h3 id="introspection-data-providers">Introspection Data Providers<a class="headerlink" href="#introspection-data-providers" title="Permanent link">&para;</a></h3>
+<p>Up until WSO2 Identity Server 5.11.0, the following single configuration was used to enable or disable all the registered OAuth introspection data providers.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">oauth</span><span class="p">.</span><span class="nx">grant_type</span><span class="p">.</span><span class="nx">uma_ticket</span><span class="p">]</span>
+<span class="nx">retrieve_uma_permission_info_through_introspection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<p>This configuration is deprecated from Identity Server 6.0.0 onwards. Introspection data providers are now registered as event listeners and can be individually activated using the configurations given below in the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">default_listener</span><span class="p">.</span><span class="nx">is_introspection_data_provider</span><span class="p">]</span>
+<span class="nx">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+
+<span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">default_listener</span><span class="p">.</span><span class="nx">uma_introspection_data_provider</span><span class="p">]</span>
+<span class="nx">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+
+<h2 id="system-configs">System configs<a class="headerlink" href="#system-configs" title="Permanent link">&para;</a></h2>
+<p>This section covers the updates related to system configurations on Identity Server 6.0.0.</p>
+<h3 id="default-cors-configuration">Default CORS Configuration<a class="headerlink" href="#default-cors-configuration" title="Permanent link">&para;</a></h3>
+<p>In previous versions of WSO2 Identity Server, the default HTTP methods allowed for CORS were only <code>GET</code>, <code>POST</code>, <code>HEAD</code> and <code>OPTIONS</code>.</p>
+<p>In Identity Server 6.0.0, this has been changed to allow the following HTTP methods <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>, <code>HEAD</code> and <code>OPTIONS</code>.</p>
+<p>Learn more on <a href="https://is.docs.wso2.com/en/6.0.0/deploy/configure-cors/">how to change the CORS configuration</a>.</p>
+<h3 id="log4j2-logging-in-hazelcast">Log4j2 logging in Hazelcast<a class="headerlink" href="#log4j2-logging-in-hazelcast" title="Permanent link">&para;</a></h3>
+<p>If you have been using WSO2 Identity Server in a <a href="https://is.docs.wso2.com/en/6.0.0/deploy/configure-hazelcast/">Hazelcast cluster</a>, you may have configured the logging type for Hazelcast as log4j <code>(Log4j1)</code>. Log4j1 logging is no longer supported in WSO2 Identity Server.</p>
+<p>In WSO2 Identity Server 6.0.0, the Log4j version is upgraded to <code>Log4j2</code>. Therefore the Hazelcast configuration needs to be updated to <code>log4j2</code> by adding the following configuration to the <code>deployment.toml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="nx">hazelcast</span><span class="p">]</span>
+<span class="nx">hazelcast</span><span class="p">.</span><span class="nx">logging</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">log4j2</span>
+</code></pre></div>
+
+<h3 id="changes-to-the-webxml-file">Changes to the <code>web.xml</code> file<a class="headerlink" href="#changes-to-the-webxml-file" title="Permanent link">&para;</a></h3>
+<p>In previous versions of the WSO2 Identity Server, the <code>authenticationendpoint</code> configurations, <code>accountrecoveryendpoint</code> configurations, and servlet configurations were done in the <code>web.xml</code> file. </p>
+<p>From WSO2 Identity Server 6.0.0 onwards the <code>authenticationendpoint</code> configurations, <code>accountrecoveryendpoint</code> configurations, and servlet configurations should be done in the <code>deployment.toml</code> file.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * WSO2 Inc. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+
+ NOTE: Borrowed generously from MkDocs and MkDocs-material
+-->
+
+<footer class="md-footer md-typeset">
+  <div class="md-footer__content">
+    <div class="md-footer__meta-sections">
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="discord-icon">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+        </div>
+        <div class="md-footer__meta-section__text-content">
+          <h3 class="md-footer__meta-section__heading">Join our Discord</h3>
+          <p class="md-footer__meta-section__description">
+            Connect with our community on our official Discord server. Share ideas, get help, and be a part of the
+            awesome conversations!
+          </p>
+          <a target="_blank" rel="noopener noreferrer" class="md-footer__meta-section__link" role="group"
+            href="https://discord.com/invite/wso2">Join Discord<svg class="chevron" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" height="14" width="14" fill="currentColor" aria-hidden="true" focusable="false"
+              class="chakra-icon css-1nyqxv">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></a>
+        </div>
+      </div>
+      <div class="md-footer__meta-section md-footer__meta-section--discord">
+        <div class="md-footer__meta-section__links">
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="14" width="14">
+              <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" fill="#bcbbbb" />
+              <path
+                d="M8.477 19.8l13.993 2.923.585-2.806-13.993-2.923zm1.832-6.704l12.94 6.04 1.208-2.572-12.94-6.08zm3.586-6.353l10.99 9.12 1.832-2.183-10.99-9.12zM20.99 0l-2.3 1.715 8.536 11.46 2.3-1.715zM8.166 26.27H22.43v-2.845H8.166v2.845z"
+                fill="#f48024" />
+            </svg>
+            <label>Got a tough question?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://stackoverflow.com/questions/tagged/wso2-identity-server?tab=Newest">Ask on Stackoverflow</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" width="14" height="14" viewBox="0 0 256 249"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+              <g fill="#161614">
+                <path
+                  d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
+                <path
+                  d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
+              </g>
+            </svg>
+            <label>Want to contribute?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://github.com/wso2/docs-is">Head over to GitHub</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo community-logo--monochrome" fill="none" height="14" width="14"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006">
+              <path
+                d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z"
+                fill="#000" />
+            </svg>
+            <label>Like to stay updated?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://twitter.com/intent/follow?screen_name=wso2">Follow us on X (Formerly Twitter)</a>
+          </div>
+          <div class="md-footer__meta-section__link md-footer__meta-section__link--composite">
+            <svg class="community-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="800px" height="800px" viewBox="0 -7 48 48" version="1.1">
+              <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Color-" transform="translate(-200.000000, -368.000000)" fill="#CE1312">
+                  <path
+                    d="M219.044,391.269916 L219.0425,377.687742 L232.0115,384.502244 L219.044,391.269916 Z M247.52,375.334163 C247.52,375.334163 247.0505,372.003199 245.612,370.536366 C243.7865,368.610299 241.7405,368.601235 240.803,368.489448 C234.086,368 224.0105,368 224.0105,368 L223.9895,368 C223.9895,368 213.914,368 207.197,368.489448 C206.258,368.601235 204.2135,368.610299 202.3865,370.536366 C200.948,372.003199 200.48,375.334163 200.48,375.334163 C200.48,375.334163 200,379.246723 200,383.157773 L200,386.82561 C200,390.73817 200.48,394.64922 200.48,394.64922 C200.48,394.64922 200.948,397.980184 202.3865,399.447016 C204.2135,401.373084 206.612,401.312658 207.68,401.513574 C211.52,401.885191 224,402 224,402 C224,402 234.086,401.984894 240.803,401.495446 C241.7405,401.382148 243.7865,401.373084 245.612,399.447016 C247.0505,397.980184 247.52,394.64922 247.52,394.64922 C247.52,394.64922 248,390.73817 248,386.82561 L248,383.157773 C248,379.246723 247.52,375.334163 247.52,375.334163 L247.52,375.334163 Z"
+                    id="Youtube">
+                  </path>
+                </g>
+              </g>
+            </svg>
+            <label>Prefer video tutorials?</label><a target="_blank" rel="noopener noreferrer"
+              href="https://www.youtube.com/user/WSO2TechFlicks">Subscribe to our YouTube Channel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+<div class="md-copyright md-typeset">
+  <div class="md-copyright__content">
+    <div class="md-copyright__highlight">
+      
+      &copy; 2024 <a href="https://wso2.com/">WSO2</a> LLC.
+      
+    </div>
+    <div class="md-license__highlight">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC By 4.0</a>. |
+      Sample code licensed under <a href="http://www.apache.org/licenses/" target="_blank">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "content.tabs.link", "search.suggest", "search.share"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/js/theme.js"></script>
+      
+        <script src="../../../../assets/js/homePage.js"></script>
+      
+    
+  </body>
+</html>
