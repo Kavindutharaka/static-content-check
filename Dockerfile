@@ -1,3 +1,11 @@
+FROM kavindut2/maven-dependency-cache AS build
+WORKDIR /app
+COPY pom.xml .
+COPY io.asgardeo.tomcat.oidc.agent ./io.asgardeo.tomcat.oidc.agent
+COPY migration-docs-app ./migration-docs-app
+
+RUN mvn clean install -DskipTests
+
 # Stage 3: Tomcat Setup
 FROM tomcat:9.0.91-jdk17
 
@@ -21,7 +29,7 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 COPY server.xml $CATALINA_HOME/conf/
 
 # Deploy WAR file 
-COPY migration-docs-app/target/ROOT.war $CATALINA_HOME/webapps/ROOT.war
+COPY  --from=build /app/migration-docs-app/target/ROOT.war $CATALINA_HOME/webapps/ROOT.war
 # COPY tomcat_webapp/io.asgardeo.tomcat.oidc.sample/target/ROOT.war $CATALINA_HOME/webapps/ROOT.war
 
 # Unzip ROOT.war 
