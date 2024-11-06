@@ -107,36 +107,47 @@
      }
  
      @Override
-public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
-        throws IOException, ServletException {
-
-    HttpServletRequest httpRequest = (HttpServletRequest) request;
-    HttpServletResponse httpResponse = (HttpServletResponse) response;
-
-    String requestURI = httpRequest.getRequestURI();
-    String refererHeader = httpRequest.getHeader("Referer");
-    String allowedReferer = "https://wso2sndev.service-now.com/";  // Base URL of the allowed application
-
-    logger.debug("Referer is : "+refererHeader);
-
-    // Step 1: Exclude specific pages (unauthorized and login) from the filter
-    if (requestURI.endsWith("/unauthorized.html")) {
-        printRequestHeaders(httpRequest);
-        filterChain.doFilter(request, response);
-        return;
-    }
-
-    // Step 2: Check if Referer header is null or doesn't match the allowed referer
-    if (refererHeader == null || !refererHeader.startsWith(allowedReferer)) {
-        // Redirect to unauthorized page if Referer is missing or doesn't match
-        httpResponse.sendRedirect("/unauthorized.html");
-        return;
-    }
-    printRequestHeaders(httpRequest);
-    // Step 3: If Referer is valid, proceed with redirection to login page
-    httpResponse.sendRedirect("/ob/docs/");  // Adjust this to the actual login URL if needed
-    filterChain.doFilter(request, response);
-}
+     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
+             throws IOException, ServletException {
+     
+         HttpServletRequest httpRequest = (HttpServletRequest) request;
+         HttpServletResponse httpResponse = (HttpServletResponse) response;
+         HttpSession session = httpRequest.getSession();
+     
+         String requestURI = httpRequest.getRequestURI();
+         String refererHeader = httpRequest.getHeader("Referer");
+         String allowedReferer = "https://wso2sndev.service-now.com/";  // Base URL of the allowed application
+     
+         logger.debug("Referer is: " + refererHeader);
+     
+         // Step 1: Exclude specific pages (unauthorized and login) from the filter
+         if (requestURI.endsWith("/unauthorized.html")) {
+             printRequestHeaders(httpRequest);
+             filterChain.doFilter(request, response); // Allow access to the unauthorized page
+             return;
+         }
+     
+         // Step 2: Check if Referer header is null or doesn't match the allowed referer
+         if (refererHeader == null || !refererHeader.startsWith(allowedReferer)) {
+             // Redirect to unauthorized page if Referer is missing or doesn't match
+             httpResponse.sendRedirect("/unauthorized.html");
+             return; // Prevent further processing
+         }
+     
+         printRequestHeaders(httpRequest);
+         
+         // Step 3: Check if this is the first successful referer check
+         if (session.getAttribute("hasRedirected") == null) {
+             // First successful referer check, redirect to /ob/docs/
+             httpResponse.sendRedirect("/ob/docs/");
+             session.setAttribute("hasRedirected", true); // Set flag to avoid repeated redirects
+             return; // Stop further processing on this request
+         }
+         
+         // Step 4: If the redirect has already occurred, continue with the filter chain
+         filterChain.doFilter(request, response);
+     }
+     
 
      
 
