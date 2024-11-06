@@ -4,7 +4,9 @@ COPY pom.xml .
 COPY io.asgardeo.tomcat.oidc.agent ./io.asgardeo.tomcat.oidc.agent
 COPY migration-docs-app ./migration-docs-app
 
-RUN mvn clean install -DskipTests
+# RUN mvn clean install -DskipTests
+RUN mvn clean
+RUN mvn package
 
 # Stage 3: Tomcat Setup
 FROM tomcat:9.0.91-jdk17
