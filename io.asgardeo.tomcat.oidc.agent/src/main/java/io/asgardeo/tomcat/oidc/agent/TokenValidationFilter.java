@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2020, WSO2 LLC. (https://www.wso2.org) All Rights Reserved.
  *
  * WSO2 Inc. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -18,29 +18,52 @@
 
  package io.asgardeo.tomcat.oidc.agent;
 
-
+ import com.nimbusds.jwt.JWTClaimsSet;
+ import com.nimbusds.jwt.SignedJWT;
+ import com.nimbusds.oauth2.sdk.util.StringUtils;
  import io.asgardeo.java.oidc.sdk.HTTPSessionBasedOIDCProcessor;
  import io.asgardeo.java.oidc.sdk.SSOAgentConstants;
+ import io.asgardeo.java.oidc.sdk.bean.RequestContext;
+ import io.asgardeo.java.oidc.sdk.bean.SessionContext;
+ import io.asgardeo.java.oidc.sdk.bean.User;
  import io.asgardeo.java.oidc.sdk.config.model.OIDCAgentConfig;
  import io.asgardeo.java.oidc.sdk.exception.SSOAgentClientException;
  import io.asgardeo.java.oidc.sdk.exception.SSOAgentException;
+ import io.asgardeo.java.oidc.sdk.exception.SSOAgentServerException;
+ import io.asgardeo.java.oidc.sdk.request.OIDCRequestResolver;
+ import org.apache.logging.log4j.Level;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
+ 
+ import java.io.BufferedReader;
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.InputStreamReader;
+ import java.io.OutputStream;
+ import java.net.HttpURLConnection;
+ import java.net.URL;
+ import java.net.URLEncoder;
+ import java.text.ParseException;
+ import java.util.Base64;
+ import java.util.Date;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Properties;
+ 
+ import javax.servlet.Filter;
  import javax.servlet.FilterChain;
  import javax.servlet.FilterConfig;
-
+ import javax.servlet.RequestDispatcher;
  import javax.servlet.ServletContext;
  import javax.servlet.ServletException;
  import javax.servlet.ServletRequest;
  import javax.servlet.ServletResponse;
  import javax.servlet.http.HttpServletRequest;
  import javax.servlet.http.HttpServletResponse;
-
+ import javax.servlet.http.HttpSession;
  
+ import okhttp3.*;
  
  /**
   * OIDCAgentFilter is the Filter class responsible for building
@@ -84,58 +107,51 @@ import javax.servlet.Filter;
      }
  
      @Override
-     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
-             throws IOException, ServletException {
- 
-         HttpServletRequest request = (HttpServletRequest) servletRequest;
-         HttpServletResponse response = (HttpServletResponse) servletResponse;
- 
-         Boolean validateFilter = isRefererAllowed(request, response);
-         printRequestHeaders(request);     
- 
-         if (validateFilter) {
-             response.sendRedirect("/index.html");
-         }
-         response.sendRedirect("/unauthorized.html");
- 
-     }
- 
-     @Override
-     public void destroy() {
- 
-     }
- 
-     public boolean isRefererAllowed(HttpServletRequest request, HttpServletResponse response) {
- 
-         String referer = request.getHeader("Referer");
- 
-         // System.out.println("referer url is : " + referer);
-         logger.debug("referer url is : " + referer);
-         String Allowed_url = "https://wso2sndev.service-now.com/";
-   
- 
-         if (referer != null && referer.startsWith(Allowed_url)) {
-             return true;
-         } else {
-             return false;
-         }
-     }
-     private void printRequestHeaders (HttpServletRequest request) {
-         // Get all header names and store them in a list
-         java.util.List<String> headerNamesList = new java.util.ArrayList<>();
-         java.util.Enumeration<String> headerNames = request.getHeaderNames();
-         
-         // Collect all the header names
-         while (headerNames.hasMoreElements()) {
-             headerNamesList.add(headerNames.nextElement());
-         }
-         
-         // Use a for loop to log each header name and its value
-         for (String headerName : headerNamesList) {
-             String headerValue = request.getHeader(headerName);
-             logger.debug("Header: " + headerName + " = " + headerValue);
-         }
-     }
-     
- }
- 
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
+            throws IOException, ServletException {
+
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+        String requestURI = httpRequest.getRequestURI();
+
+        // Step 1: Check if the request is for CSS, JS, or images
+        if (requestURI.startsWith("/css/") || requestURI.startsWith("/js/") || requestURI.startsWith("/images/")) {
+            
+            // Step 2: Check if the user is authenticated
+            if (isUserAuthenticated(httpRequest)) {
+                // User is authenticated, proceed with the filter chain
+                filterChain.doFilter(request, response);
+                return;
+            } else {
+                // Step 3: Check the Referer header for authentication origin
+                String refererHeader = httpRequest.getHeader("Referer");
+                logger.debug("Referer header is : "+refererHeader);
+                String allowedReferer = "https://wso2sndev.service-now.com/";  // Base URL of your authenticated application
+
+                // Step 4: If the Referer is valid, allow access to resources
+                if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
+                    filterChain.doFilter(request, response);
+                    return;
+                }
+            }
+
+            // Step 5: If the user is not authenticated or Referer is invalid, redirect to login
+            httpResponse.sendRedirect("/unauthorized.html");
+        } else {
+            // Step 6: If not a CSS, JS, or image resource, pass through the filter chain
+            filterChain.doFilter(request, response);
+        }
+    }
+
+    @Override
+    public void destroy() {
+        // Cleanup logic if needed
+    }
+
+    // Dummy function to check user authentication status (replace with actual logic)
+    private boolean isUserAuthenticated(HttpServletRequest request) {
+        // This is a placeholder. Replace with actual authentication check logic, 
+        // such as checking a session or token.
+        return request.getSession().getAttribute("user") != null;
+    }
+}
