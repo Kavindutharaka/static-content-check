@@ -28,12 +28,12 @@
     <!-- <filter>
         <filter-name>OIDCAgentFilter</filter-name>
         <filter-class>io.asgardeo.tomcat.oidc.agent.OIDCAgentFilter</filter-class>
-    </filter> -->
-    <!-- <filter-mapping>
+    </filter>
+    <filter-mapping>
         <filter-name>OIDCAgentFilter</filter-name>
         <url-pattern>/logout</url-pattern>
-    </filter-mapping> -->
-    <!-- <filter-mapping>
+    </filter-mapping>
+    <filter-mapping>
         <filter-name>OIDCAgentFilter</filter-name>
         <url-pattern>/oauth2client</url-pattern>
     </filter-mapping> -->
@@ -80,20 +80,6 @@
     <filter-mapping>
         <filter-name>TokenValidationFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <filter-class>io.com.example.UrlRewriteFilter</filter-class>
-    </filter>
-    
-    <filter-mapping>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <url-pattern>/home</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <url-pattern>/unauthorized</url-pattern>
     </filter-mapping>
     
     

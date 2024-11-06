@@ -160,10 +160,9 @@ public class OIDCAgentFilter implements Filter {
             }
             // System.out.println("Hit the filter once");
             // if (hasValidSubscriptionOrAccess(request)){
-            //     response.sendRedirect(homePage);
+            // response.sendRedirect(homePage);
             // }
             // logAndDenyAccess(response);
-            
 
             response.sendRedirect(homePage);
             // returnToken(request);
@@ -172,31 +171,30 @@ public class OIDCAgentFilter implements Filter {
 
         if (!isActiveSessionPresent(request)) {
             try {
-                    oidcManager.sendForLogin(request, response);
-                    // response.sendRedirect("unauthorized.html");
-                
+                oidcManager.sendForLogin(request, response);
+
             } catch (SSOAgentException e) {
                 handleException(request, response, e);
             }
         } else {
-            if(!hasValidSubscriptionOrAccess(request)){
-                logAndDenyAccess(request,response);
+            if (!hasValidSubscriptionOrAccess(request)) {
+                logAndDenyAccess(request, response);
             }
             filterChain.doFilter(request, response);
 
-            
             // String mytoken = returnToken(request);
-    
+
             // // Check if the token is expired
             // if (isTokenExpired(mytoken)) {
-            //     // Log and inform the user about the session expiration
-            //     System.out.println("Your session is expired. Please renew your session.");
-                
-            //     // Redirect to a session renewal endpoint or show a renewal UI
-            //     response.sendRedirect("/renewSession.html"); // Redirecting to a renewal page
-            //     return;
+            // // Log and inform the user about the session expiration
+            // System.out.println("Your session is expired. Please renew your session.");
+
+            // // Redirect to a session renewal endpoint or show a renewal UI
+            // response.sendRedirect("/renewSession.html"); // Redirecting to a renewal page
+            // return;
             // } else {
-            //     filterChain.doFilter(request, response); // Proceed normally if token is valid
+            // filterChain.doFilter(request, response); // Proceed normally if token is
+            // valid
             // }
         }
     }
@@ -280,14 +278,14 @@ public class OIDCAgentFilter implements Filter {
 
     private boolean hasValidSubscriptionOrAccess(HttpServletRequest request) {
         String email = getUserEmail(request);
-        // String idToken = getIdToken(request); 
+        // String idToken = getIdToken(request);
         String idToken = "eyJ4NXQiOiJ4ek1kUHdzZ2RXZHIwSjBPaW1sQjltNnZfcEUiLCJraWQiOiJaamMxWlRWbVlUaGhNakpsTVRZMU5EZ3dObU13WW1GbE1HWTBObVF5TURjME5tWmpOV1ZtWkRCbE5qZzRNemN5TTJObVpUSmtORGs1TjJJNE5UZzVPUV9SUzI1NiIsInR5cCI6ImF0K2p3dCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI3Mzc1MmI5ZS1hMTcyLTQ0NjItYTg4Zi0zYWY3YzhmOWEzY2MiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6WyJOZ2ZBdVJqamRkT1JkQV8zTEd3U3FmRlhmOFVhIiwiY2hvcmVvOmRlcGxveW1lbnQ6c2FuZGJveCJdLCJuYmYiOjE3Mjk0OTk4MTUsImF6cCI6Ik5nZkF1UmpqZGRPUmRBXzNMR3dTcWZGWGY4VWEiLCJvcmdfaWQiOiIxMTczNzQyMi03MDc4LTg1MTAtMTA3NC04MjA4OTI2MzExOTQiLCJpc3MiOiJodHRwczpcL1wvYXBpLmFzZ2FyZGVvLmlvXC90XC93c28yXC9vYXV0aDJcL3Rva2VuIiwiZXhwIjoxNzI5NTAwNzE1LCJvcmdfbmFtZSI6IndzbzIiLCJpYXQiOjE3Mjk0OTk4MTUsImp0aSI6ImM3NzNmNDE1LWU4ZWEtNGRlOS04YjFlLWRiOGYyMzNkZDM0NSIsImNsaWVudF9pZCI6Ik5nZkF1UmpqZGRPUmRBXzNMR3dTcWZGWGY4VWEifQ.QsHQYphxt-e-K2wRhWaXcnTiHVcHRKJzUNru_-Bwcr-Kbg3kCWycvk2CqiEh2pROMPajAdMk5f0ZFeFbrrwu6Ki34uMMYcMKtgduWH5A1AVX9CzbMi8mkexTCVKKJbf2PAPRXNktXJICWR-CtRNiSudXRmId7VOtV1tORyNvNv9rydh42GKC5kswnXlj-VV-fygQAUQGpSOdxUiM8grUgUVhnO0OCr4mmWNH05E6AFmnVbviV7xs7fIvLw_8hTSIOutZ1EEWbGNKXQfcFi9chepWFqUZIomgZnzsICFvC2Xj27g2so6HoYl74mpJ8zFqnKFBUMeXLFnj_fgxX_eCrQ";
         String mytoken = returnToken(request);
         if (idToken == null || isTokenExpired(mytoken)) {
             logger.warn("Invalid or expired ID token for user: " + email);
-            return false; 
+            return false;
         }
-    
+
         if (checkOrgEmail(request) || checkSubscription(email, idToken)) {
             return true;
         }
@@ -309,13 +307,12 @@ public class OIDCAgentFilter implements Filter {
         }
     }
 
-    private void logAndDenyAccess(HttpServletRequest request, HttpServletResponse response) 
-        throws IOException, ServletException {
-    logger.warn("Unauthorized access attempt: User lacks subscription or valid organization email.");
-    System.out.println("Unauthorized User");
-    response.sendRedirect("/unauthorized");
-}
-
+    private void logAndDenyAccess(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        logger.warn("Unauthorized access attempt: User lacks subscription or valid organization email.");
+        System.out.println("Unauthorized User");
+        response.sendRedirect("/unauthorized");
+    }
 
     private String getUserEmail(HttpServletRequest request) {
 
@@ -351,7 +348,7 @@ public class OIDCAgentFilter implements Filter {
 
     private boolean checkSubscription(String email, String token) {
         Properties properties = new Properties();
-        
+
         // Load the properties file
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("oidc-sample-app.properties")) {
             if (input == null) {
@@ -363,28 +360,28 @@ public class OIDCAgentFilter implements Filter {
             e.printStackTrace();
             return false;
         }
-    
+
         // Get the subscription API endpoint from the properties file
         String apiEndpoint = properties.getProperty("subscriptionCall");
         if (apiEndpoint == null) {
             System.err.println("API endpoint not defined in properties file.");
             return false;
         }
-    
+
         OkHttpClient client = new OkHttpClient.Builder().build();
         String apiUrl = apiEndpoint + "?customerEmail=" + email;
-    
+
         // Create an empty request body
         MediaType mediaType = MediaType.parse("text/plain");
         RequestBody body = RequestBody.create(mediaType, "");
-    
-        // Build the request 
+
+        // Build the request
         Request request = new Request.Builder()
                 .url(apiUrl)
                 .post(body)
                 .addHeader("Authorization", "Bearer " + token)
                 .build();
-    
+
         // Execute the request and handle the response
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful()) {
@@ -396,10 +393,9 @@ public class OIDCAgentFilter implements Filter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    
+
         return false;
     }
-    
 
     private String returnToken(HttpServletRequest request) {
 
@@ -424,6 +420,26 @@ public class OIDCAgentFilter implements Filter {
         }
         System.out.println("User is not a Wso2 Employee: " + email);
         return false;
+    }
+
+    public String sendRequestWithJwt(String url, String jwtToken) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+    
+        // Build the request with the Authorization header
+        Request request = new Request.Builder()
+            .url(url)
+            .addHeader("Authorization", "Bearer " + jwtToken) // Add JWT token
+            .build();
+    
+        // Execute the request and get the response
+        try (Response response = client.newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                throw new IOException("Unexpected code " + response);
+            }
+    
+            // Return the response body as a string
+            return response.body().string();
+        }
     }
 
 }
