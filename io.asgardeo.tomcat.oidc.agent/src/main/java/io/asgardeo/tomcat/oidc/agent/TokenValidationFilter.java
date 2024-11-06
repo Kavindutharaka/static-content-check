@@ -120,7 +120,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
     logger.debug("Referer is : "+refererHeader);
 
     // Step 1: Exclude specific pages (unauthorized and login) from the filter
-    if (requestURI.endsWith("/unauthorized.html") || requestURI.endsWith("/index.html")) {
+    if (requestURI.endsWith("/unauthorized.html")) {
         printRequestHeaders(httpRequest);
         filterChain.doFilter(request, response);
         return;
@@ -132,9 +132,10 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
         httpResponse.sendRedirect("/unauthorized.html");
         return;
     }
-
+    printRequestHeaders(httpRequest);
     // Step 3: If Referer is valid, proceed with redirection to login page
-    httpResponse.sendRedirect("/index.html");  // Adjust this to the actual login URL if needed
+    httpResponse.sendRedirect("/ob/docs/");  // Adjust this to the actual login URL if needed
+    filterChain.doFilter(request, response);
 }
 
      
