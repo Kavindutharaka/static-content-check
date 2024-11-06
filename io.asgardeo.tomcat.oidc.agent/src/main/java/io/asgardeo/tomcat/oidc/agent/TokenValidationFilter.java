@@ -107,51 +107,60 @@
      }
  
      @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
-            throws IOException, ServletException {
+public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
+        throws IOException, ServletException {
 
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
-        String requestURI = httpRequest.getRequestURI();
+    HttpServletRequest httpRequest = (HttpServletRequest) request;
+    HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        // Step 1: Check if the request is for CSS, JS, or images
-        if (requestURI.startsWith("/css/") || requestURI.startsWith("/js/") || requestURI.startsWith("/images/")) {
-            
-            // Step 2: Check if the user is authenticated
-            if (isUserAuthenticated(httpRequest)) {
-                // User is authenticated, proceed with the filter chain
-                filterChain.doFilter(request, response);
-                return;
-            } else {
-                // Step 3: Check the Referer header for authentication origin
-                String refererHeader = httpRequest.getHeader("Referer");
-                logger.debug("Referer header is : "+refererHeader);
-                String allowedReferer = "https://wso2sndev.service-now.com/";  // Base URL of your authenticated application
+    String requestURI = httpRequest.getRequestURI();
+    String refererHeader = httpRequest.getHeader("Referer");
+    String allowedReferer = "https://wso2sndev.service-now.com/";  // Base URL of the allowed application
 
-                // Step 4: If the Referer is valid, allow access to resources
-                if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
-                    filterChain.doFilter(request, response);
-                    return;
-                }
-            }
+    logger.debug("Referer is : "+refererHeader);
 
-            // Step 5: If the user is not authenticated or Referer is invalid, redirect to login
-            httpResponse.sendRedirect("/unauthorized.html");
-        } else {
-            // Step 6: If not a CSS, JS, or image resource, pass through the filter chain
-            filterChain.doFilter(request, response);
-        }
+    // Step 1: Exclude specific pages (unauthorized and login) from the filter
+    if (requestURI.endsWith("/unauthorized.html") || requestURI.endsWith("/index.html")) {
+        printRequestHeaders(httpRequest);
+        filterChain.doFilter(request, response);
+        return;
     }
+
+    // Step 2: Check if Referer header is null or doesn't match the allowed referer
+    if (refererHeader == null || !refererHeader.startsWith(allowedReferer)) {
+        // Redirect to unauthorized page if Referer is missing or doesn't match
+        httpResponse.sendRedirect("/unauthorized.html");
+        return;
+    }
+
+    // Step 3: If Referer is valid, proceed with redirection to login page
+    httpResponse.sendRedirect("/index.html");  // Adjust this to the actual login URL if needed
+}
+
+     
 
     @Override
     public void destroy() {
         // Cleanup logic if needed
     }
 
-    // Dummy function to check user authentication status (replace with actual logic)
-    private boolean isUserAuthenticated(HttpServletRequest request) {
-        // This is a placeholder. Replace with actual authentication check logic, 
-        // such as checking a session or token.
-        return request.getSession().getAttribute("user") != null;
+    private void printRequestHeaders(HttpServletRequest request) {
+        // Get all header names and store them in a list
+        java.util.List<String> headerNamesList = new java.util.ArrayList<>();
+        java.util.Enumeration<String> headerNames = request.getHeaderNames();
+        
+        // Collect all the header names
+        while (headerNames.hasMoreElements()) {
+            headerNamesList.add(headerNames.nextElement());
+        }
+    
+        // Use a for loop to log each header name and its value
+        for (String headerName : headerNamesList) {
+            String headerValue = request.getHeader(headerName);
+            logger.info("Header: " + headerName + " = " + headerValue);
+        }
     }
+    
+
+ 
 }
