@@ -120,12 +120,14 @@ public class TokenValidationFilter implements Filter {
         logger.debug("Referer is: " + refererHeader);
 
         if ((refererHeader != null && refererHeader.startsWith(allowedReferer))
-                || session.getAttribute("hasauth") == true) {
+                || Boolean.TRUE.equals(session.getAttribute("hasauth"))) {
 
             printRequestHeaders(httpRequest);
-            session.setAttribute("hasauth", true);
-            filterChain.doFilter(request, response);
+            session.setAttribute("hasauth", true); 
+            filterChain.doFilter(request, response); 
         } else {
+        
+            logger.debug("Invalid referer or unauthenticated session, redirecting to /index.html");
             httpResponse.sendRedirect("/index.html");
         }
 
