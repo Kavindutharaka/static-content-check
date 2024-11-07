@@ -115,25 +115,18 @@ public class TokenValidationFilter implements Filter {
 
         String requestURI = httpRequest.getRequestURI();
         String refererHeader = httpRequest.getHeader("Referer");
-        String allowedReferer = "https://wso2sndev.service-now.com/"; 
+        String allowedReferer = "https://wso2sndev.service-now.com/";
 
         logger.debug("Referer is: " + refererHeader);
 
-         if (requestURI.endsWith("/index.html")) {
-            printRequestHeaders(httpRequest);
-            filterChain.doFilter(request, response); 
-            return;
-        }
+        if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
 
-        if(refererHeader != null && refererHeader.startsWith(allowedReferer)){
-            
             printRequestHeaders(httpRequest);
             filterChain.doFilter(request, response);
-
+        } else {
+            httpResponse.sendRedirect("/index.html");
         }
-        httpResponse.sendRedirect("/index.html");
-        return;
-    
+
     }
 
     @Override
