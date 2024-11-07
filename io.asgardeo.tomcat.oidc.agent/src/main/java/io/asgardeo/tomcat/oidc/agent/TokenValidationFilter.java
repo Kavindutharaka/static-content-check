@@ -199,7 +199,7 @@ public class TokenValidationFilter implements Filter {
 
 private void setRefererCookie(HttpServletResponse response,HttpServletRequest request) {
     UUID uuid = UUID.randomUUID();
-    HttpSession session = request.getSession(true);
+    HttpSession session = request.getSession();
     session.setAttribute("wso2sndev.service-now.com",uuid.toString());
     Cookie cookie = new Cookie("glide_session_out", uuid.toString());
     cookie.setPath("/");
