@@ -49,6 +49,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -62,8 +63,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Cookie;
-
-
 
 /**
  * OIDCAgentFilter is the Filter class responsible for building
@@ -149,12 +148,24 @@ public class TokenValidationFilter implements Filter {
         String refererHeader = httpRequest.getHeader("Referer");
         String allowedReferer = "https://wso2sndev.service-now.com/";
 
+        // if (isRefererCookieAvaibale(httpRequest)) {
+        //     logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
+        //     filterChain.doFilter(request, response);
+        // } else if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
+        //     logger.debug("Check Referer is: " + refererHeader);
+        //     setRefererCookie(httpResponse);
+        //     filterChain.doFilter(request, response);
+        // } else {
+        //     logger.debug("No referer Referer is: " + refererHeader);
+        //     httpResponse.sendRedirect("https://support.wso2.com/support");
+        // }
         if (isRefererCookieAvaibale(httpRequest)) {
             logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
+            setRefererCookie(httpResponse,httpRequest);
             filterChain.doFilter(request, response);
-        } else if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
+        }else if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
             logger.debug("Check Referer is: " + refererHeader);
-            setRefererCookie(httpResponse);
+            setRefererCookie(httpResponse,httpRequest);
             filterChain.doFilter(request, response);
         } else {
             logger.debug("No referer Referer is: " + refererHeader);
@@ -164,12 +175,14 @@ public class TokenValidationFilter implements Filter {
     }
 
     private boolean isRefererCookieAvaibale(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String attribute = (String) session.getAttribute("wso2sndev.service-now.com");
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("wso2-referer".equals(cookie.getName())) {
                     String cookieValue = cookie.getValue();
-                    if (cookieValue.equals("wso2sndev.service-now.com")) {
+                    if (cookieValue.equals(attribute)) {
                         return true;
                     }
                 }
@@ -178,17 +191,47 @@ public class TokenValidationFilter implements Filter {
         return false;
     }
 
-    private void setRefererCookie(HttpServletResponse response) {
-        Cookie cookie = new Cookie("wso2-referer", "wso2sndev.service-now.com");
-        cookie.setPath("/");
-        cookie.setMaxAge(60 * 60 * 24);
-        cookie.setSecure(true);
-        cookie.setHttpOnly(true);
-        cookie.setDomain("example.com");
-        response.setHeader("Set-Cookie",
-                "wso2-referer=wso2sndev.service-now.com; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
-        response.addCookie(cookie);
-    }
+private void setRefererCookie(HttpServletResponse response,HttpServletRequest request) {
+    UUID uuid = UUID.randomUUID();
+    HttpSession session = request.getSession();
+    session.setAttribute("wso2sndev.service-now.com",uuid.toString());
+    Cookie cookie = new Cookie("wso2-referer", uuid.toString());
+    cookie.setPath("/");
+    cookie.setMaxAge(60 * 60 * 24);
+    cookie.setSecure(true);
+    cookie.setHttpOnly(true);
+    cookie.setDomain("example.com");
+    response.setHeader("Set-Cookie", "wso2-referer=wso2sndev.service-now.com; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
+    response.addCookie(cookie);
+}
+
+    // private boolean isRefererCookieAvaibale(HttpServletRequest request) {
+    // Cookie[] cookies = request.getCookies();
+    // if (cookies != null) {
+    // for (Cookie cookie : cookies) {
+    // if ("wso2-referer".equals(cookie.getName())) {
+    // String cookieValue = cookie.getValue();
+    // if (cookieValue.equals("wso2sndev.service-now.com")) {
+    // return true;
+    // }
+    // }
+    // }
+    // }
+    // return false;
+    // }
+
+    // private void setRefererCookie(HttpServletResponse response) {
+    // Cookie cookie = new Cookie("wso2-referer", "wso2sndev.service-now.com");
+    // cookie.setPath("/");
+    // cookie.setMaxAge(60 * 60 * 24);
+    // cookie.setSecure(true);
+    // cookie.setHttpOnly(true);
+    // cookie.setDomain("example.com");
+    // response.setHeader("Set-Cookie",
+    // "wso2-referer=wso2sndev.service-now.com; Path=/; Max-Age=86400; Secure;
+    // HttpOnly; SameSite=None");
+    // response.addCookie(cookie);
+    // }
 
     @Override
     public void destroy() {
@@ -196,20 +239,20 @@ public class TokenValidationFilter implements Filter {
     }
 
     // private void printRequestHeaders(HttpServletRequest request) {
-    //     // Get all header names and store them in a list
-    //     java.util.List<String> headerNamesList = new java.util.ArrayList<>();
-    //     java.util.Enumeration<String> headerNames = request.getHeaderNames();
+    // // Get all header names and store them in a list
+    // java.util.List<String> headerNamesList = new java.util.ArrayList<>();
+    // java.util.Enumeration<String> headerNames = request.getHeaderNames();
 
-    //     // Collect all the header names
-    //     while (headerNames.hasMoreElements()) {
-    //         headerNamesList.add(headerNames.nextElement());
-    //     }
+    // // Collect all the header names
+    // while (headerNames.hasMoreElements()) {
+    // headerNamesList.add(headerNames.nextElement());
+    // }
 
-    //     // Use a for loop to log each header name and its value
-    //     for (String headerName : headerNamesList) {
-    //         String headerValue = request.getHeader(headerName);
-    //         logger.info("Header: " + headerName + " = " + headerValue);
-    //     }
+    // // Use a for loop to log each header name and its value
+    // for (String headerName : headerNamesList) {
+    // String headerValue = request.getHeader(headerName);
+    // logger.info("Header: " + headerName + " = " + headerValue);
+    // }
     // }
 
 }
