@@ -200,7 +200,7 @@ private void setRefererCookie(HttpServletResponse response,HttpServletRequest re
     cookie.setMaxAge(60 * 60 * 24);
     cookie.setSecure(true);
     cookie.setHttpOnly(true);
-    cookie.setDomain("wso2sndev.service");
+    cookie.setDomain("https://9bc178fc-2b99-4624-974a-cab7df1035d8.e1-us-east-azure.choreoapps.dev");
     response.setHeader("Set-Cookie", "glide_session_out="+ uuid.toString() +"; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
     response.addCookie(cookie);
 }
