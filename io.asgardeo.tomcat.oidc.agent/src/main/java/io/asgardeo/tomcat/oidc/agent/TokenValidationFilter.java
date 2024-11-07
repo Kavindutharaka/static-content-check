@@ -158,7 +158,7 @@ public class TokenValidationFilter implements Filter {
             filterChain.doFilter(request, response);
         } else {
             logger.debug("No referer Referer is: " + refererHeader);
-            httpResponse.sendRedirect("/index.html");
+            httpResponse.sendRedirect("https://support.wso2.com/support");
         }
 
     }
