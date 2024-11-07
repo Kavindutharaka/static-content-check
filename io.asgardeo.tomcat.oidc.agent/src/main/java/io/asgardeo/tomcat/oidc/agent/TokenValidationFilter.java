@@ -119,9 +119,11 @@ public class TokenValidationFilter implements Filter {
 
         logger.debug("Referer is: " + refererHeader);
 
-        if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
+        if ((refererHeader != null && refererHeader.startsWith(allowedReferer))
+                || session.getAttribute("hasauth") == true) {
 
             printRequestHeaders(httpRequest);
+            session.setAttribute("hasauth", true);
             filterChain.doFilter(request, response);
         } else {
             httpResponse.sendRedirect("/index.html");
