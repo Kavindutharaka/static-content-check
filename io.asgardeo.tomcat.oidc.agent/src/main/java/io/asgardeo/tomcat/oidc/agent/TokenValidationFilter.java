@@ -61,8 +61,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Cookie;
 
-import okhttp3.*;
+
 
 /**
  * OIDCAgentFilter is the Filter class responsible for building
@@ -194,21 +195,21 @@ public class TokenValidationFilter implements Filter {
         // Cleanup logic if needed
     }
 
-    private void printRequestHeaders(HttpServletRequest request) {
-        // Get all header names and store them in a list
-        java.util.List<String> headerNamesList = new java.util.ArrayList<>();
-        java.util.Enumeration<String> headerNames = request.getHeaderNames();
+    // private void printRequestHeaders(HttpServletRequest request) {
+    //     // Get all header names and store them in a list
+    //     java.util.List<String> headerNamesList = new java.util.ArrayList<>();
+    //     java.util.Enumeration<String> headerNames = request.getHeaderNames();
 
-        // Collect all the header names
-        while (headerNames.hasMoreElements()) {
-            headerNamesList.add(headerNames.nextElement());
-        }
+    //     // Collect all the header names
+    //     while (headerNames.hasMoreElements()) {
+    //         headerNamesList.add(headerNames.nextElement());
+    //     }
 
-        // Use a for loop to log each header name and its value
-        for (String headerName : headerNamesList) {
-            String headerValue = request.getHeader(headerName);
-            logger.info("Header: " + headerName + " = " + headerValue);
-        }
-    }
+    //     // Use a for loop to log each header name and its value
+    //     for (String headerName : headerNamesList) {
+    //         String headerValue = request.getHeader(headerName);
+    //         logger.info("Header: " + headerName + " = " + headerValue);
+    //     }
+    // }
 
 }
