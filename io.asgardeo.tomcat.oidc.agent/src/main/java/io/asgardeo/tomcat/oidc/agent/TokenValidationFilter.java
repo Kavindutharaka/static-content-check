@@ -159,6 +159,12 @@ public class TokenValidationFilter implements Filter {
         //     logger.debug("No referer Referer is: " + refererHeader);
         //     httpResponse.sendRedirect("https://support.wso2.com/support");
         // }
+        if (session.isNew()) {
+            logger.debug("New session created with ID: " + session.getId());
+        } else {
+            logger.debug("Existing session ID: " + session.getId());
+        }
+
         if (isRefererCookieAvaibale(httpRequest)) {
             logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
             setRefererCookie(httpResponse,httpRequest);
@@ -198,10 +204,10 @@ private void setRefererCookie(HttpServletResponse response,HttpServletRequest re
     Cookie cookie = new Cookie("glide_session_out", uuid.toString());
     cookie.setPath("/");
     cookie.setMaxAge(60 * 60 * 24);
-    cookie.setSecure(true);
-    cookie.setHttpOnly(true);
-    cookie.setDomain("https://9bc178fc-2b99-4624-974a-cab7df1035d8.e1-us-east-azure.choreoapps.dev");
-    response.setHeader("Set-Cookie", "glide_session_out="+ uuid.toString() +"; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
+    // cookie.setSecure(true);
+    // cookie.setHttpOnly(true);
+    // cookie.setDomain("https://9bc178fc-2b99-4624-974a-cab7df1035d8.e1-us-east-azure.choreoapps.dev");
+    // response.setHeader("Set-Cookie", "glide_session_out="+ uuid.toString() +"; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
     response.addCookie(cookie);
 }
 
