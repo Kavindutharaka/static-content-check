@@ -193,14 +193,14 @@ public class TokenValidationFilter implements Filter {
 
 private void setRefererCookie(HttpServletResponse response,HttpServletRequest request) {
     UUID uuid = UUID.randomUUID();
-    HttpSession session = request.getSession();
+    HttpSession session = request.getSession(true);
     session.setAttribute("wso2sndev.service-now.com",uuid.toString());
     Cookie cookie = new Cookie("glide_session_out", uuid.toString());
     cookie.setPath("/");
     cookie.setMaxAge(60 * 60 * 24);
     cookie.setSecure(true);
     cookie.setHttpOnly(true);
-    cookie.setDomain("wso2sndev.service-now.com");
+    cookie.setDomain("wso2sndev.service");
     response.setHeader("Set-Cookie", "glide_session_out="+ uuid.toString() +"; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
     response.addCookie(cookie);
 }
