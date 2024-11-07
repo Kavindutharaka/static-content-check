@@ -105,6 +105,37 @@ public class TokenValidationFilter implements Filter {
         }
     }
 
+    // @Override
+    // public void doFilter(ServletRequest request, ServletResponse response,
+    // FilterChain filterChain)
+    // throws IOException, ServletException {
+
+    // HttpServletRequest httpRequest = (HttpServletRequest) request;
+    // HttpServletResponse httpResponse = (HttpServletResponse) response;
+    // HttpSession session = httpRequest.getSession();
+
+    // String requestURI = httpRequest.getRequestURI();
+    // String refererHeader = httpRequest.getHeader("Referer");
+    // String allowedReferer = "https://wso2sndev.service-now.com/";
+
+    // logger.debug("Referer is: " + refererHeader);
+    // session.setAttribute("hasauth", null);
+
+    // if ((refererHeader != null && refererHeader.startsWith(allowedReferer))
+    // || Boolean.TRUE.equals(session.getAttribute("hasauth"))) {
+
+    // printRequestHeaders(httpRequest);
+    // session.setAttribute("hasauth", true);
+    // filterChain.doFilter(request, response);
+    // } else {
+
+    // logger.debug("Invalid referer or unauthenticated session, redirecting to
+    // /index.html");
+    // httpResponse.sendRedirect("/index.html");
+    // }
+
+    // }
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
             throws IOException, ServletException {
@@ -117,20 +148,45 @@ public class TokenValidationFilter implements Filter {
         String refererHeader = httpRequest.getHeader("Referer");
         String allowedReferer = "https://wso2sndev.service-now.com/";
 
-        logger.debug("Referer is: " + refererHeader);
-
-        if ((refererHeader != null && refererHeader.startsWith(allowedReferer))
-                || Boolean.TRUE.equals(session.getAttribute("hasauth"))) {
-
-            printRequestHeaders(httpRequest);
-            session.setAttribute("hasauth", true); 
-            filterChain.doFilter(request, response); 
+        if (isRefererCookieAvaibale(httpRequest)) {
+            logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
+            filterChain.doFilter(request, response);
+        } else if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
+            logger.debug("Check Referer is: " + refererHeader);
+            setRefererCookie(httpResponse);
+            filterChain.doFilter(request, response);
         } else {
-        
-            logger.debug("Invalid referer or unauthenticated session, redirecting to /index.html");
+            logger.debug("No referer Referer is: " + refererHeader);
             httpResponse.sendRedirect("/index.html");
         }
 
+    }
+
+    private boolean isRefererCookieAvaibale(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("wso2-referer".equals(cookie.getName())) {
+                    String cookieValue = cookie.getValue();
+                    if (cookieValue.equals("wso2sndev.service-now.com")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private void setRefererCookie(HttpServletResponse response) {
+        Cookie cookie = new Cookie("wso2-referer", "wso2sndev.service-now.com");
+        cookie.setPath("/");
+        cookie.setMaxAge(60 * 60 * 24);
+        cookie.setSecure(true);
+        cookie.setHttpOnly(true);
+        cookie.setDomain("example.com");
+        response.setHeader("Set-Cookie",
+                "wso2-referer=wso2sndev.service-now.com; Path=/; Max-Age=86400; Secure; HttpOnly; SameSite=None");
+        response.addCookie(cookie);
     }
 
     @Override
