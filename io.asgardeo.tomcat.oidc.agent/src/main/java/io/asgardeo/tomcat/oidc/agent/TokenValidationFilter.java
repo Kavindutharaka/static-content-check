@@ -125,19 +125,21 @@ public class TokenValidationFilter implements Filter {
             return;
         }
 
-        if ((refererHeader == null  || !refererHeader.startsWith(allowedReferer)) && session.getAttribute("hasRedirected") == null) {
-            httpResponse.sendRedirect("/unauthorized.html");
-            return;
-        }
+        if(refererHeader != null && refererHeader.startsWith(allowedReferer)){
+            if (session.getAttribute("hasRedirected") == null) {
+                httpResponse.sendRedirect("/ob/docs/");
+                session.setAttribute("hasRedirected", true); 
+                return; 
+            }
+            else{
+                printRequestHeaders(httpRequest);
+                filterChain.doFilter(request, response);
 
-    
-        if (session.getAttribute("hasRedirected") == null) {
-            httpResponse.sendRedirect("/ob/docs/");
-            session.setAttribute("hasRedirected", true); 
-            return; 
-        }
+            }
 
-        filterChain.doFilter(request, response);
+        }
+        httpResponse.sendRedirect("/unauthorized.html");
+        return;
     
     }
 
