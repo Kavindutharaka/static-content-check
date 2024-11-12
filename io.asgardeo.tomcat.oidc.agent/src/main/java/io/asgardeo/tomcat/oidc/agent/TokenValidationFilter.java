@@ -145,8 +145,8 @@ public class TokenValidationFilter implements Filter {
         HttpSession session = httpRequest.getSession();
 
         String requestURI = httpRequest.getRequestURI();
-        // String refererHeader = httpRequest.getHeader("Referer");
-        String refererHeader = "https://wso2sndev.service-now.com/";
+        String refererHeader = httpRequest.getHeader("Referer");
+        // String refererHeader = "https://wso2sndev.service-now.com/";
         String allowedReferer = "https://wso2sndev.service-now.com/";
         printRequestHeaders(httpRequest);
         if (isRefererCookieAvaibale(httpRequest)) {
