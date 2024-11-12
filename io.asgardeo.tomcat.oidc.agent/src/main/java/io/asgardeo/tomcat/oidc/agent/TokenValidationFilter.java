@@ -147,7 +147,7 @@ public class TokenValidationFilter implements Filter {
         String requestURI = httpRequest.getRequestURI();
         String refererHeader = httpRequest.getHeader("Referer");
         String allowedReferer = "https://wso2sndev.service-now.com/";
-
+        printRequestHeaders(request);
         if (isRefererCookieAvaibale(httpRequest)) {
             logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
             filterChain.doFilter(request, response);
@@ -157,7 +157,7 @@ public class TokenValidationFilter implements Filter {
             filterChain.doFilter(request, response);
         } else {
             logger.debug("No referer Referer is: " + refererHeader);
-            httpResponse.sendRedirect("https://support.wso2.com/support");
+            httpResponse.sendRedirect("unauthorized.html");
         }
 
         // if (session.isNew()) {
