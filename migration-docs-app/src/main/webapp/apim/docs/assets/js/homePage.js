@@ -1,59 +1,16 @@
-const baseURl = "http://localhost:8000/migration/docs";
+// const baseURl = "http://localhost:8000/migration/docs";
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   var path = window.location.pathname;
 
+//   console.log(path);
+
+// });
+
 //   console.log("Dom Loaded");
 //   console.log("path is " + path);
-//   var dropdownContent = document.querySelector(".dropdown-content");
 
-//   var chevronIcon = `
-//     <span class="icon">
-//       {% set chevron_icon = "fontawesome/solid/chevron-down" %}
-//       {% include ".icons/" ~ chevron_icon ~ ".svg" %}
-//     </span>
-//   `;
 
-//   var versionData = {
-//     "enterprise-integrator": [
-//       {
-//         version: "ei-6.6.0",
-//         path: `${baseURl}/enterprise-integrator/migration-docs/ei-6.6.0/upgrading-wso2-ei/`,
-//       },
-//       {
-//         version: "ei-7.0.0",
-//         path: `${baseURl}/enterprise-integrator/migration-docs/ei-7.0.0/upgrading-wso2-ei/`,
-//       },
-//       {
-//         version: "ei-7.1.0",
-//         path: `${baseURl}/enterprise-integrator/migration-docs/ei-7.1.0/upgrading-wso2-ei/`,
-//       },
-//     ],
-//     "open-banking": [
-//       {
-//         version:"ob-1.5.0",
-//         path: `${baseURl}/open-banking/migration-docs/ob-1.4.0-to-1.5.0/ReadMe/`
-//       },
-//       { version: "ob-2.0.0", 
-//         path: `${baseURl}/open-banking/migration-docs/ob-1.5.0-to-2.0.0/ReadMe/`
-//        },
-//       {
-//         version: "ob-3.0.0",
-//         path: `${baseURl}/open-banking/migration-docs/ob-2.0.0-to-3.0.0/ReadMe/`,
-//       },
-     
-//     ],
-//     "api-manager" : [
-//       {
-//         version:"API-M 4.2.0",
-//         path: `${baseURl}api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/config-migration/`
-//       },
-//       {
-//         version: "API-M 4.2.0",
-//         path: `${baseURl}api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/config-migration/`
-//       },
-//     ],
-//   };
 
 //   var versions = null;
 //   var currentTitle = null;
@@ -156,3 +113,32 @@ function navApi() {
 
   console.log("Navigate To Enterprise Integrator Sucessfully");
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  var path = window.location.pathname;
+  var navElement = document.getElementById('__nav_2_3_label');
+  var navElement1 = document.getElementById('__nav_2_4_label');
+
+  console.log("path is " + path);
+
+  var pathTitle = "/identity-server/migration-docs/is-6.1.0/migrate-to-610.md"
+
+  if (path.includes("is-6.1.0") && !path.includes("/is-6.1.0/what-has-changed/") || path.includes("/is-5.9.0/migrating-to-log4j2/")) {
+    console.log("Hit Version: 6.1.0");
+    if (navElement1) {
+        navElement1.style.display = 'none';
+    }
+  
+  }
+  else if(path.includes("is-7.0.0") && !path.includes("/is-7.0.0/what-has-changed/") || path.includes("/is-5.10.0/migrating-to-log4j2/")){
+    console.log("Hit Version: 7.0.0");
+    if (navElement) {
+        navElement.style.display = 'none';
+    }
+  }
+    
+
+  
+});

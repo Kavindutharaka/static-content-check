@@ -15,17 +15,13 @@
         <link rel="canonical" href="https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/modifications-after-migration/">
       
       
-        <link rel="prev" href="../README-v1/">
-      
-      
-        <link rel="next" href="../open-banking-data-migration/">
       
       <link rel="icon" href="../../../../../../assets/images/identity-server-favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.2">
     
     
       
-        <title>modifications-after-migration - Open Banking</title>
+        <title>Modifications After Migration - Open Banking</title>
       
     
     
@@ -133,20 +129,18 @@
 
 
     
-        <img src="../../../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+        <img src="../../../../../../assets/images/ob-docs-logo-light.svg" alt="logo" data-md-component="logo" data-md-color="default">
     
     
-        <img src="../../../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+        <img src="../../../../../../assets/images/ob-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="slate">
     
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-      
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
-
            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
@@ -171,18 +165,23 @@
         
   
   
-    
-  
 
+
+  
+  
+  
+    
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../../ob-1.4.0-to-1.5.0/" class="md-tabs__link">
         Open Banking
       </a>
     </li>
+  
+
   
 
       
@@ -190,34 +189,43 @@
   </div>
 </nav>  
         
-        
       </div>
     </div>
 
-    
-    
-
-    
-
-    
+      
     <div class="md-header__version-select-dropdown">
       <a class="dropdown-link" href="#!" id="version-dropdown">
-        Open Banking
+        Target Version
 
         <span class="icon">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
         </span>
       </a>
       <ul class="dropdown-content" tabindex="0">
-        <li><a href="/migration/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/" target="_blank">ob-1.5.0</a></li>
-        <li><a href="/migration/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/" target="_blank">ob-2.0.0</a></li>
-        <li><a href="/migration/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/" target="_blank">ob-3.0.0</a></li>
+        <li>
+          <a
+            href="/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/"
+            target="_blank"
+            >ob-1.5.0</a
+          >
+        </li>
+        <li>
+          <a
+            href="/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/"
+            target="_blank"
+            >ob-2.0.0</a
+          >
+        </li>
+        <li>
+          <a
+            href="/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/upgrading-wso2-open-banking-200-to-300/"
+            target="_blank"
+            >ob-3.0.0</a
+          >
+        </li>
       </ul>
     </div>
-    
-    
-     
+        
     <form class="md-header__option" data-md-component="palette">
        
       <input
@@ -386,11 +394,22 @@
 </div>
     </div>
     
+    <form action="logout" method="GET">
+    <button
+      class="md-typeset md-button md-button--primary md-button--small md-button--flex md-button--asgardeo"
+    >
+      <span>Logout</span>
+      <span class="asgardeo-community-icon">
+        <img
+          src="../../../../../../assets/images/icons/logout-svgrepo-com.svg"
+          alt="Logout Icon"
+          style="width: 15px; height: 15px; color: white"
+        />
+      </span>
+    </button>
+  </form>
   </nav>
-  <script>
-    
-  </script>
-  
+  <script></script>
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -434,10 +453,10 @@
 
 
     
-        <img src="../../../../../../assets/images/identity-server-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="default">
+        <img src="../../../../../../assets/images/ob-docs-logo-light.svg" alt="logo" data-md-component="logo" data-md-color="default">
     
     
-        <img src="../../../../../../assets/images/identity-server-docs-logo.svg" alt="logo" data-md-component="logo" data-md-color="slate">
+        <img src="../../../../../../assets/images/ob-docs-logo-dark.svg" alt="logo" data-md-component="logo" data-md-color="slate">
     
 
     </a>
@@ -497,50 +516,36 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
-          
-            
           
         
           
         
           
         
-          
-        
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../">Open Banking</a>
-          
-            <label for="__nav_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Open Banking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Open Banking
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
           
             
               
@@ -553,14 +558,12 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
       
       
         
           
             
-          
-        
           
         
           
@@ -584,14 +587,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../../ob-1.4.0-to-1.5.0/">ob-1.4.0-to-1.5.0</a>
           
-            <label for="__nav_2_2">
+            <label for="__nav_2_1">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           ob-1.4.0-to-1.5.0
         </label>
@@ -605,8 +608,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ob-1.4.0-to-1.5.0/application-attribution-changes/" class="md-nav__link">
-        application-attribution-changes
+      <a href="../../../../ob-1.4.0-to-1.5.0/db-and-synapse-configurations/" class="md-nav__link">
+        db-and-synapse-configurations
       </a>
     </li>
   
@@ -633,8 +636,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ob-1.4.0-to-1.5.0/db-and-synapse-configurations/" class="md-nav__link">
-        db-and-synapse-configurations
+      <a href="../../../../ob-1.4.0-to-1.5.0/application-attribution-changes/" class="md-nav__link">
+        application-attribution-changes
       </a>
     </li>
   
@@ -649,20 +652,6 @@
     <li class="md-nav__item">
       <a href="../../../../ob-1.4.0-to-1.5.0/psd2-data-reporting/" class="md-nav__link">
         psd2-data-reporting
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../ob-1.4.0-to-1.5.0/upgrade-the-solution/" class="md-nav__link">
-        upgrade-the-solution
       </a>
     </li>
   
@@ -729,14 +718,12 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
       
       
         
           
             
-          
-        
           
         
           
@@ -754,19 +741,287 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../../ob-1.5.0-to-2.0.0/">ob-1.5.0-to-2.0.0</a>
           
-            <label for="__nav_2_3">
+            <label for="__nav_2_2">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ob-1.5.0-to-2.0.0
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/" class="md-nav__link">
+        upgrading-wso2-ob-au
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/" class="md-nav__link">
+        upgrading-wso2-ob-berlin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/" class="md-nav__link">
+        upgrading-wso2-ob-uk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+          Supporting Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Supporting Documents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ob-1.5.0-to-2.0.0/map-xml-to-toml/" class="md-nav__link">
+        map-xml-to-toml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          ob-2.0.0 to 3.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          ob-2.0.0 to 3.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          berlin toolkit 1.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          berlin toolkit 1.0.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-open-banking-200-to-300/" class="md-nav__link">
+        upgrading-ob-200-to-300
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-api-manager-320/" class="md-nav__link">
+        upgrading-wso2-apim-320
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-identity-server/" class="md-nav__link">
+        upgrading-wso2-is
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-api-manager-400/" class="md-nav__link">
+        upgrading-wso2-apim-400
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../berlin-toolkit-1.0.0/open-banking-data-migration/" class="md-nav__link">
+        open-banking-data-migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../berlin-toolkit-1.0.0/modifications-after-migration/" class="md-nav__link">
+        modifications-after-migration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
             
           
             
@@ -785,31 +1040,137 @@
       
         
           
-            
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/">upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au</a>
-          
-            <label for="__nav_2_3_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          cds-toolkit-1.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_3_2">
           <span class="md-nav__icon md-icon"></span>
-          upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au
+          cds-toolkit-1.0.0
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cds-toolkit-1.0.0/upgrade-wso2-open-banking-2.0.0-to-3.0.0-cds-toolkit-1.0.0/" class="md-nav__link">
+        upgrade wso2 Open banking 2.0.0 to 3.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2_2" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2_2" id="__nav_2_3_2_2_label" tabindex="0">
+          Supporting Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Supporting Documents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../identity-server/migration-docs/is-6.1.0/migrate-to-610.md" class="md-nav__link">
+        Migrating to 6.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2_2_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2_2_2" id="__nav_2_3_2_2_2_label" tabindex="0">
+          API-M 3.1.0 to 4.2.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_3_2_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          API-M 3.1.0 to 4.2.0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/upgrading-from-310-to-420.md" class="md-nav__link">
+        ReadMe
+      </a>
+    </li>
+  
+
             
           
             
@@ -818,9 +1179,79 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/" class="md-nav__link">
-        upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au
+      <a href="../../../../../../api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/config-migration.md" class="md-nav__link">
+        step 1 Configurations
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/extensions-and-customizations-migration.md" class="md-nav__link">
+        step 2 Extensions and Customizations Migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/resource-and-artifact-migration.md" class="md-nav__link">
+        step 3 Resource and Artifact Migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/data-migration.md" class="md-nav__link">
+        step 4 Data Migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/server-startup-actions.md" class="md-nav__link">
+        step 5 Server Startup Actions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -849,618 +1280,20 @@
       
         
           
-            
-          
-        
-          
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/">upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin</a>
-          
-            <label for="__nav_2_3_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          uk-toolkit-1.0.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_3_3">
           <span class="md-nav__icon md-icon"></span>
-          upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/" class="md-nav__link">
-        upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_4" >
-      
-      
-        
-          
-            
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/">upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk</a>
-          
-            <label for="__nav_2_3_4">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_3_4">
-          <span class="md-nav__icon md-icon"></span>
-          upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/" class="md-nav__link">
-        upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../ob-1.5.0-to-2.0.0/map-xml-to-toml/" class="md-nav__link">
-        map-xml-to-toml
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-introduction/" class="md-nav__link">
-        upgrade-wso2-open-banking-1.5.0-to-2.0.0-introduction
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../">ob-2.0.0 to 3.0.0</a>
-          
-            <label for="__nav_2_4">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2_4">
-          <span class="md-nav__icon md-icon"></span>
-          ob-2.0.0 to 3.0.0
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../berlin-toolkit-1.0.0/">berlin toolkit 1.0.0</a>
-          
-            <label for="__nav_2_4_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          berlin toolkit 1.0.0
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../berlin-toolkit-1.0.0/modifications-after-migration/" class="md-nav__link">
-        modifications-after-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../berlin-toolkit-1.0.0/open-banking-data-migration/" class="md-nav__link">
-        open-banking-data-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-identity-server/" class="md-nav__link">
-        upgrading-wso2-identity-server
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-api-manager-320/" class="md-nav__link">
-        upgrading-wso2-api-manager-320
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-api-manager-400/" class="md-nav__link">
-        upgrading-wso2-api-manager-400
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../berlin-toolkit-1.0.0/upgrading-wso2-open-banking-200-to-300/" class="md-nav__link">
-        upgrading-wso2-open-banking-200-to-300
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../cds-toolkit-1.0.0/">cds-toolkit-1.0.0</a>
-          
-            <label for="__nav_2_4_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_4_3">
-          <span class="md-nav__icon md-icon"></span>
-          cds-toolkit-1.0.0
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/upgrade-wso2-open-banking-2.0.0-to-3.0.0-cds-toolkit-1.0.0/" class="md-nav__link">
-        upgrade wso2 Open banking 2.0.0 to 3.0.0
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3" >
-      
-      
-        
-          
-        
-          
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../cds-toolkit-1.0.0/old-content-backup/">old Version</a>
-          
-            <label for="__nav_2_4_3_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_4_3_3">
-          <span class="md-nav__icon md-icon"></span>
-          old Version
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/modifications-after-migration/" class="md-nav__link">
-        modifications-after-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/open-banking-data-migration/" class="md-nav__link">
-        open-banking-data-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/reporting-data-migration/" class="md-nav__link">
-        reporting-data-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-api-manager-320/" class="md-nav__link">
-        upgrading-wso2-api-manager-320
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-api-manager-400/" class="md-nav__link">
-        upgrading-wso2-api-manager-400
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-identity-server/" class="md-nav__link">
-        upgrading-wso2-identity-server
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-open-banking-200-to-300/" class="md-nav__link">
-        upgrading-wso2-open-banking-200-to-300
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" checked>
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">uk-toolkit-1.0.0</a>
-          
-            <label for="__nav_2_4_4">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2_4_4">
-          <span class="md-nav__icon md-icon"></span>
           uk-toolkit-1.0.0
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
           
             
               
@@ -1471,182 +1304,6 @@
       <a href="../../upgrade-wso2-open-banking-2.0.0-to-3.0.0-uk-toolkit-1.0.0/" class="md-nav__link">
         upgrade wso2 Open banking 2.0.0 to 3.0.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4_3" checked>
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2_4_4_3" id="__nav_2_4_4_3_label" tabindex="0">
-          old Version
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_4_3_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2_4_4_3">
-          <span class="md-nav__icon md-icon"></span>
-          old Version
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../README-v1/" class="md-nav__link">
-        README-v1
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        modifications-after-migration
-      </a>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../open-banking-data-migration/" class="md-nav__link">
-        open-banking-data-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reporting-data-migration/" class="md-nav__link">
-        reporting-data-migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-api-manager-4.0.0-to-4.2.0-and-identity-server-5.11.0-to-6.1.0/" class="md-nav__link">
-        upgrade-api-manager-4.0.0-to-4.2.0-and-identity-server-5.11.0-to-6.1.0
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-to-wso2-api-manager-3.2.0/" class="md-nav__link">
-        upgrade-to-wso2-api-manager-3.2.0
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-to-wso2-api-manager-4.0.0/" class="md-nav__link">
-        upgrade-to-wso2-api-manager-4.0.0
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-to-wso2-identity-server-5.11.0/" class="md-nav__link">
-        upgrade-to-wso2-identity-server-5.11.0
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 

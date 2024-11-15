@@ -36,6 +36,7 @@
 .md-header__inner {
   padding: 0 1rem;
   min-height: var(--md-header-min-height);
+  justify-content: space-between;
 }
 
 .md-header__topic {
@@ -97,12 +98,13 @@
 /* Buttons */
 .md-header__button {
   margin-right: var(--md-header-links-vertical-spacing);
+  
 }
 
 /* Logo */
 .md-header__button.md-logo img, 
 .md-header__button.md-logo svg {
-  height: 1.4rem;
+  height: 1.1rem;
   padding: .1rem 0;
 }
 

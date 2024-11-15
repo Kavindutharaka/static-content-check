@@ -2,327 +2,307 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wso2.com/ob/docs/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/page-not-found/</loc>
-         <lastmod>2024-08-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wso2.com/ob/docs/open-banking/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.2.0-to-1.3.0/upgrading-wso2-ob-130-for%20uk/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.2.0-to-1.3.0/upgrading-wso2-ob-130-for-berlin/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/authentication-script/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/custom-configurations/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/datasource-changes/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/db-and-synapse-configurations/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/fraud-detection/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/key-manager-extension/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/psd2-data-reporting/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/request-payload-validation/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/transaction-risk-analysis/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/upgrade-the-solution/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/upgrading-wso2-ob-berlin/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.3.0-to-1.4.0/upgrading-wso2-ob-uk/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/application-attribution-changes/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/custom-configurations/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/db-and-synapse-configurations/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/psd2-data-reporting/</loc>
-         <lastmod>2024-08-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/upgrade-the-solution/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/upgrading-wso2-ob-au/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/upgrading-wso2-ob-berlin/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.4.0-to-1.5.0/upgrading-wso2-ob-uk/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/map-xml-to-toml/</loc>
-         <lastmod>2024-08-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-introduction/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-au/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-berlin/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-1.5.0-to-2.0.0/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/upgrade-wso2-open-banking-1.5.0-to-2.0.0-for-uk/</loc>
-         <lastmod>2024-08-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/modifications-after-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/open-banking-data-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/upgrading-wso2-api-manager-320/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/upgrading-wso2-api-manager-400/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/upgrading-wso2-identity-server/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/berlin-toolkit-1.0.0/upgrading-wso2-open-banking-200-to-300/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/upgrade-wso2-open-banking-2.0.0-to-3.0.0-cds-toolkit-1.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/modifications-after-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/open-banking-data-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/reporting-data-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-api-manager-320/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-api-manager-400/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-identity-server/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/cds-toolkit-1.0.0/old-content-backup/upgrading-wso2-open-banking-200-to-300/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/upgrade-wso2-open-banking-2.0.0-to-3.0.0-uk-toolkit-1.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/README-v1/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/modifications-after-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/open-banking-data-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/reporting-data-migration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/upgrade-api-manager-4.0.0-to-4.2.0-and-identity-server-5.11.0-to-6.1.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/upgrade-to-wso2-api-manager-3.2.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/upgrade-to-wso2-api-manager-4.0.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/upgrade-to-wso2-identity-server-5.11.0/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/upgrade-wso2-open-banking-2.0.0-to-3.0.0-introduction/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/ob/docs/open-banking/migration-docs/ob-2.0.0-to-3.0.0/uk-toolkit-1.0.0/old-content-backup/upgrade-wso2-open-banking-2.0.0-to-3.0.0-uk-toolkit-1.0.0-v2/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-11-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

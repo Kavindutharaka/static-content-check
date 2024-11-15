@@ -146,10 +146,11 @@ public class TokenValidationFilter implements Filter {
 
         String requestURI = httpRequest.getRequestURI();
         String refererHeader = httpRequest.getHeader("Referer");
+        //Referer
         // String refererHeader = "https://wso2sndev.service-now.com/";
         String allowedReferer = "https://wso2sndev.service-now.com/";
         printRequestHeaders(httpRequest);
-        if (isRefererCookieAvaibale(httpRequest)) {
+        if (    (httpRequest)) {
             logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
             filterChain.doFilter(request, response);
         } else if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
