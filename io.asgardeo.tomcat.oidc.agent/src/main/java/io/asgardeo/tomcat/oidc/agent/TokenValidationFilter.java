@@ -150,7 +150,7 @@ public class TokenValidationFilter implements Filter {
         // String refererHeader = "https://wso2sndev.service-now.com/";
         String allowedReferer = "https://wso2sndev.service-now.com/";
         printRequestHeaders(httpRequest);
-        if (    (httpRequest)) {
+        if (isRefererCookieAvaibale(httpRequest)) {
             logger.debug("isRefererCookieAvaibale >> Referer is: " + refererHeader);
             filterChain.doFilter(request, response);
         } else if (refererHeader != null && refererHeader.startsWith(allowedReferer)) {
