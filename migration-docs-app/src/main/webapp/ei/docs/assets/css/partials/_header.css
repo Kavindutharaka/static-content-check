@@ -118,6 +118,10 @@
   fill: var(--md-default-fg-color);
 }
 
+.md-header__option {
+  margin-left: auto;
+}
+
 [data-md-toggle=search]:checked~.md-header .md-header__option {
   opacity: 1;
   max-width: none;

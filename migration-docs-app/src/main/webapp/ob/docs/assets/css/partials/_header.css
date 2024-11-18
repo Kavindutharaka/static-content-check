@@ -36,6 +36,7 @@
 .md-header__inner {
   padding: 0 1rem;
   min-height: var(--md-header-min-height);
+  justify-content: space-between;
 }
 
 .md-header__topic {
@@ -97,6 +98,7 @@
 /* Buttons */
 .md-header__button {
   margin-right: var(--md-header-links-vertical-spacing);
+  
 }
 
 /* Logo */
@@ -114,6 +116,10 @@
 
 .md-header .md-header__button.md-icon.md-theme-switch svg path {
   fill: var(--md-default-fg-color);
+}
+
+.md-header__option {
+  margin-left: auto;
 }
 
 [data-md-toggle=search]:checked~.md-header .md-header__option {

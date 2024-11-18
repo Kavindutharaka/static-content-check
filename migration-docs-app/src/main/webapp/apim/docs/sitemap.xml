@@ -2,467 +2,467 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wso2.com/apim/docs/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/page-not-found/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/general-config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/general-data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/general-extensions-and-customizations/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/general-guidelines/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/general-resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/troubleshooting-and-FAQs/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/what-has-changed/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-to-apim-400/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-300-to-400/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-300-to-400/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-300-to-400/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-300-to-400/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-300-to-400/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-300-to-400/upgrading-from-300-to-400/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-310-to-400/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-310-to-400/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-310-to-400/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-310-to-400/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-310-to-400/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-310-to-400/upgrading-from-310-to-400/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-320-to-400/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-320-to-400/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-320-to-400/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-320-to-400/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-320-to-400/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-400/upgrading-from-320-to-400/upgrading-from-320-to-400/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-to-apim-410/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgarding-from-400-to-410/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgarding-from-400-to-410/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgarding-from-400-to-410/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgarding-from-400-to-410/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgarding-from-400-to-410/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgarding-from-400-to-410/upgrading-from-400-to-410/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-300-to-410/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-300-to-410/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-300-to-410/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-300-to-410/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-300-to-410/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-300-to-410/upgrading-from-300-to-410/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-310-to-410/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-310-to-410/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-310-to-410/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-310-to-410/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-310-to-410/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-310-to-410/upgrading-from-310-to-410/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-320-to-410/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-320-to-410/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-320-to-410/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-320-to-410/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-320-to-410/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-410/upgrading-from-320-to-410/upgrading-from-320-to-410/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-to-apim-420/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgarding-from-400-to-420/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgarding-from-400-to-420/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgarding-from-400-to-420/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgarding-from-400-to-420/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgarding-from-400-to-420/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgarding-from-400-to-420/upgrading-from-400-to-420/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-300-to-420/upgrading-from-300-to-420/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-310-to-420/upgrading-from-310-to-420/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-320-to-420/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-320-to-420/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-320-to-420/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-320-to-420/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-320-to-420/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-320-to-420/upgrading-from-320-to-420/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-410-to-420/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-410-to-420/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-410-to-420/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-410-to-420/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-410-to-420/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-420/upgrading-from-410-to-420/upgrading-from-410-to-420/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-to-apim-430/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-from-420-to-430/config-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-from-420-to-430/data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-from-420-to-430/extensions-and-customizations-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-from-420-to-430/resource-and-artifact-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-from-420-to-430/server-startup-actions/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/migration-catalog/upgrading-to-apim-430/upgrading-from-420-to-430/upgrading-from-420-to-430/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/other-docs/data-migration-on-different-envs/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/apim/docs/api-manager/apim-revamped/other-docs/k8s-data-migration/</loc>
-         <lastmod>2024-11-15</lastmod>
+         <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
