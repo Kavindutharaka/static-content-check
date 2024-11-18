@@ -73,7 +73,7 @@
         <filter-name>OIDCAgentFilter</filter-name>
         <url-pattern>/is/*</url-pattern>
     </filter-mapping> -->
-    <filter>
+    <!-- <filter>
         <filter-name>TokenValidationFilter</filter-name>
         <filter-class>io.asgardeo.tomcat.oidc.agent.TokenValidationFilter</filter-class>
     </filter>
@@ -81,7 +81,7 @@
         <filter-name>TokenValidationFilter</filter-name>
         <url-pattern>*.html</url-pattern>
     </filter-mapping>
-    
+     -->
     
 
     <listener>
