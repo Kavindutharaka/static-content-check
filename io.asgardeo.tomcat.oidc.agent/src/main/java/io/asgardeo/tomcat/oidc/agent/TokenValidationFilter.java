@@ -160,6 +160,7 @@ public class TokenValidationFilter implements Filter {
         } else {
             logger.debug("No referer Referer is: " + refererHeader);
             httpResponse.sendRedirect("unauthorized.html");
+            return;
         }
 
         // if (session.isNew()) {
