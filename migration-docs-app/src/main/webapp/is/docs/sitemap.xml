@@ -2,157 +2,157 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wso2.com/is/docs/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/page-not-found/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.10.0/migrating-to-log4j2/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.10.0/migrating-what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.11.0/migrating-what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.0.0-5.1.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.1.0-5.2.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.2.0-5.3.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.3.0-5.4.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.4.0-5.5.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.5.0-5.6.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/config-changes-5.6.0-5.7.0/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.8.0/understanding-what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.9.0/migrating-to-log4j2/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-5.9.0/migrating-what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-6.0.0/what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-6.1.0/migrate-to-610/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-6.1.0/migration-process/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-6.1.0/prepare-for-migration/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-6.1.0/what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrate-to-700/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrating-applications-for-tenanted-qualified-urls/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrating-authorization-model/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrating-configurations/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrating-customizations/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrating-roles-related-adaptive-script-functions/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migrating-saas-applications/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/migration-process/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/prepare-for-migration/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wso2.com/is/docs/identity-server/migration-docs/is-7.0.0/what-has-changed/</loc>
-         <lastmod>2024-11-19</lastmod>
+         <lastmod>2024-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
